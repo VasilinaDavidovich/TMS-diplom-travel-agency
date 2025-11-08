@@ -1,0 +1,331 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 mb-4" style="color: rgba(255, 255, 255, 0.7)">🚀 Добро пожаловать в Star Travel!</h1>
+    <p class="lead mb-5" style="color: rgba(255, 255, 255, 0.6)">Откройте для себя галактику удивительных отелей</p>
+</div>
+
+<div class="row mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-body text-center">
+                <h5 style="color: rgba(255, 255, 255, 0.7)">🌍 Отели по всей Европе</h5>
+                <p style="color: rgba(255, 255, 255, 0.6)">Путешествуйте с комфортом</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-body text-center">
+                <h5 style="color: rgba(255, 255, 255, 0.7)">⭐ Лучшие отзывы</h5>
+                <p style="color: rgba(255, 255, 255, 0.6)">Работаем только с проверенными компаниями</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white">
+            <div class="card-body text-center">
+                <h5 style="color: rgba(255, 255, 255, 0.7)">💫 Легкое бронирование</h5>
+                <p style="color: rgba(255, 255, 255, 0.6)">Быстро и безопасно</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card bg-dark text-white mb-5">
+    <div class="card-body">
+        <h4 class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7)">🔍 Найти идеальный отель</h4>
+        <form id="searchForm">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
+                    <select class="form-select" id="countrySelect" name="country">
+                        <option value="">Все страны</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Город</label>
+                    <select class="form-select" id="citySelect" name="city" disabled>
+                        <option value="">Все города</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Звёзды</label>
+                    <select class="form-select" id="starsSelect" name="stars">
+                        <option value="">Все звёзды</option>
+                        <option value="1">⭐ (1)</option>
+                        <option value="2">⭐⭐ (2)</option>
+                        <option value="3">⭐⭐⭐ (3)</option>
+                        <option value="4">⭐⭐⭐⭐ (4)</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Цена от (€)</label>
+                    <input type="number"
+                           class="form-control"
+                           id="minPrice"
+                           name="min_price"
+                           placeholder="0"
+                           min="0">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Цена до (€)</label>
+                    <input type="number"
+                           class="form-control"
+                           id="maxPrice"
+                           name="max_price"
+                           placeholder="1000"
+                           min="0">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="submit" class="btn btn-primary">
+                            🔍 Найти отели
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="resetFilters">
+                            Сбросить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h2 class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7)">🌍 Популярные направления</h2>
+
+<div class="row mb-5">
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Вена')">
+            <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                 class="img-fluid rounded mb-2"
+                 alt="Вена"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Вена</h6>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Прага')">
+            <img src="https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                 class="img-fluid rounded mb-2"
+                 alt="Прага"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Прага</h6>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Будапешт')">
+            <img src="https://images.unsplash.com/photo-1551867633-194f125bddfa?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                 class="img-fluid rounded mb-2"
+                 alt="Будапешт"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Будапешт</h6>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Милан')">
+            <img src="https://unsplash.com/photos/5QrM3dEf5mA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYyNTUyNTg4fA&force=true"
+                 class="img-fluid rounded mb-2"
+                 alt="Милан"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Милан</h6>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Амстердам')">
+            <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                 class="img-fluid rounded mb-2"
+                 alt="Амстердам"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Амстердам</h6>
+        </div>
+    </div>
+    <div class="col-md-2 mb-3">
+        <div class="destination-card text-center"
+             style="cursor: pointer;"
+             onclick="searchByCityName('Гальштатт')">
+            <img src="https://unsplash.com/photos/BAoag1m197E/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8aGFsc3RhdHR8ZW58MHx8fHwxNzYyNTUxOTQwfDA&force=true"
+                 class="img-fluid rounded mb-2"
+                 alt="Гальштатт"
+                 style="height: 150px; width: 100%; object-fit: cover;">
+            <h6 style="color: rgba(255, 255, 255, 0.8)">Гальштатт</h6>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7)">✨ Рекомендуемые отели</h2>
+
+<div class="row" id="hotelsContainer">
+    {% for hotel in hotels %}
+    <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white hotel-card"
+             style="border: 1px solid #444; height: 480px; display: flex; flex-direction: column;">
+            {% if hotel.images.first %}
+            <img src="{{ hotel.images.first.image.url }}"
+                 class="card-img-top"
+                 alt="{{ hotel.name }}"
+                 style="height: 200px; object-fit: cover;">
+            {% else %}
+            <div class="card-img-top d-flex align-items-center justify-content-center"
+                 style="height: 200px; background: #2d2d2d;">
+                <span>🏨 Нет фото</span>
+            </div>
+            {% endif %}
+
+            <div class="card-body d-flex flex-column" style="flex: 1;">
+                <h5 class="card-title"
+                    style="height: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: rgba(255, 255, 255, 0.8)">
+                    {{ hotel.name }}
+                </h5>
+                <p class="card-text" style="color: rgba(255, 255, 255, 0.6)">
+                    <small style="color: rgba(255, 255, 255, 0.5) !important">
+                        📍 {{ hotel.city.name }}, {{ hotel.country.name }}
+                    </small>
+                </p>
+
+                <div class="mb-2">
+                    <div class="mb-1">
+                        <span class="text-warning">
+                            {% with ''|center:hotel.stars as range %}
+                            {% for _ in range %}⭐{% endfor %}
+                            {% endwith %}
+                        </span>
+                    </div>
+                    <small style="color: rgba(255, 255, 255, 0.7) !important">
+                        Рейтинг по отзывам:
+                        <strong class="text-warning">
+                            {% if hotel.reviews.count > 0 %}
+                                {{ hotel.average_rating|default:0|floatformat:1 }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </strong>
+                    </small>
+                    <br>
+                    <small style="color: rgba(255, 255, 255, 0.5) !important">
+                        ({{ hotel.reviews.count }} отзывов)
+                    </small>
+                </div>
+
+                <div class="mt-auto">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong class="text-warning">
+                            {{ hotel.price_per_night }}€ / ночь
+                        </strong>
+                        <a href="/api/hotel/{{ hotel.id }}/" class="btn btn-primary btn-sm">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="text-center mt-4">
+    <a href="/api/search/" class="btn btn-primary btn-lg">
+        Показать все отели
+    </a>
+</div>
+
+<script>
+    async function loadCountries() {
+        try {
+            const response = await fetch('/api/countries/');
+            const countries = await response.json();
+            const countrySelect = document.getElementById('countrySelect');
+
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.id;
+                option.textContent = country.name;
+                countrySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Ошибка загрузки стран:', error);
+        }
+    }
+
+    function setupEventListeners() {
+        document.getElementById('countrySelect').addEventListener('change', function() {
+            const countryId = this.value;
+            loadCities(countryId);
+        });
+
+        document.getElementById('resetFilters').addEventListener('click', function() {
+            document.getElementById('searchForm').reset();
+            document.getElementById('citySelect').disabled = true;
+            document.getElementById('citySelect').innerHTML = '<option value="">Все города</option>';
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitSearchForm();
+        });
+    }
+
+    async function loadCities(countryId) {
+        const citySelect = document.getElementById('citySelect');
+
+        if (!countryId) {
+            citySelect.disabled = true;
+            citySelect.innerHTML = '<option value="">Все города</option>';
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/cities/?country=${countryId}`);
+            const cities = await response.json();
+
+            citySelect.disabled = false;
+            citySelect.innerHTML = '<option value="">Все города</option>';
+
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city.id;
+                option.textContent = city.name;
+                citySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Ошибка загрузки городов:', error);
+        }
+    }
+
+    function submitSearchForm() {
+        const formData = new FormData(document.getElementById('searchForm'));
+        const params = new URLSearchParams();
+
+        for (let [key, value] of formData.entries()) {
+            if (value) {
+                params.append(key, value);
+            }
+        }
+
+        window.location.href = `/api/search/?${params.toString()}`;
+    }
+
+    function searchByCityName(cityName) {
+        window.location.href = `/api/search/?search=${encodeURIComponent(cityName)}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setupEventListeners();
+        loadCountries();
+    });
+</script>
+{% endblock %}

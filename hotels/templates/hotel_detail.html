@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 style="color: rgba(255, 255, 255, 0.7); display: inline;">
+                {{ hotel.name }}
+                <span class="text-warning" style="font-size: 0.3em; vertical-align: middle;">
+                    {% with ''|center:hotel.stars as range %}
+                    {% for _ in range %}⭐{% endfor %}
+                    {% endwith %}
+                </span>
+            </h1>
+            <p style="color: rgba(255, 255, 255, 0.6)">
+                📍 {{ hotel.city.name }}, {{ hotel.country.name }}
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.6)">
+                🏠 Адрес: {{ hotel.address }}
+            </p>
+            <div class="mb-3">
+                <span style="color: rgba(255, 255, 255, 0.7)">
+                    Рейтинг по отзывам:
+                    <strong class="text-warning">
+                        {% if hotel.reviews.count > 0 %}
+                            {{ hotel.average_rating|default:0|floatformat:1 }}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </strong>
+                    <small style="color: rgba(255, 255, 255, 0.5)" class="ms-2">
+                        ({{ hotel.reviews.count }} отзывов)
+                    </small>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 text-end">
+            <h3 style="color: rgba(255, 255, 255, 0.7)" class="text-warning mb-3">
+                {{ hotel.price_per_night }}€ / ночь
+            </h3>
+            <button class="btn btn-primary btn-lg">Забронировать</button>
+        </div>
+    </div>
+
+    {% if hotel.images.all %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 style="color: rgba(255, 255, 255, 0.7)" class="mb-3">Фотографии отеля</h4>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img id="mainImage"
+                         src="{{ hotel.images.first.image.url }}"
+                         class="img-fluid rounded"
+                         alt="{{ hotel.name }}"
+                         style="height: 300px; width: 100%; object-fit: cover; cursor: pointer;"
+                         data-bs-toggle="modal"
+                         data-bs-target="#imageModal">
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex flex-column h-100">
+                        {% for image in hotel.images.all|slice:"1:3" %}
+                        <img src="{{ image.image.url }}"
+                             class="img-fluid rounded mb-2"
+                             alt="{{ hotel.name }}"
+                             style="height: 144px; width: 100%; object-fit: cover; cursor: pointer;"
+                             data-image-url="{{ image.image.url }}"
+                             onclick="changeMainImage('{{ image.image.url }}')">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {% if hotel.images.all|length > 3 %}
+            <div class="row mt-3">
+                {% for image in hotel.images.all|slice:"3:" %}
+                <div class="col-md-2 mb-2">
+                    <img src="{{ image.image.url }}"
+                         class="img-fluid rounded thumb-image"
+                         alt="{{ hotel.name }}"
+                         style="height: 80px; width: 100%; object-fit: cover; cursor: pointer;"
+                         data-image-url="{{ image.image.url }}"
+                         onclick="changeMainImage('{{ image.image.url }}')">
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <button type="button"
+                            class="btn-close btn-close-white"
+                            data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage"
+                         src=""
+                         class="img-fluid"
+                         style="max-height: 70vh;"
+                         alt="{{ hotel.name }}">
+                </div>
+                <div class="modal-footer border-0 justify-content-between">
+                    <button class="btn btn-primary" onclick="prevImage()">
+                        ← Назад
+                    </button>
+                    <button class="btn btn-primary" onclick="nextImage()">
+                        Вперёд →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white mb-4">
+                <div class="card-body">
+                    <h4 style="color: rgba(255, 255, 255, 0.7)">Описание</h4>
+                    <p style="color: rgba(255, 255, 255, 0.6)">
+                        {{ hotel.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentImageIndex = 0;
+    const images = [
+        {% for image in hotel.images.all %}
+        "{{ image.image.url }}",
+        {% endfor %}
+    ];
+
+    function changeMainImage(imageUrl) {
+        document.getElementById('mainImage').src = imageUrl;
+        currentImageIndex = images.indexOf(imageUrl);
+    }
+
+    document.getElementById('mainImage').addEventListener('click', function() {
+        document.getElementById('modalImage').src = this.src;
+        currentImageIndex = images.indexOf(this.src);
+    });
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+
+    document.addEventListener('keydown', function(e) {
+        const imageModal = document.getElementById('imageModal');
+
+        if (imageModal.classList.contains('show')) {
+            if (e.key === 'ArrowRight') {
+                nextImage();
+            }
+            if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+            if (e.key === 'Escape') {
+                const modal = bootstrap.Modal.getInstance(imageModal);
+                modal.hide();
+            }
+        }
+    });
+
+    // Инициализация модального окна при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalElement = document.getElementById('imageModal');
+        if (modalElement) {
+            modalElement.addEventListener('show.bs.modal', function() {
+                document.getElementById('modalImage').src = images[currentImageIndex];
+            });
+        }
+    });
+</script>
+{% endblock %}

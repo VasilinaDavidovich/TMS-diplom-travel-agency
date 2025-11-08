@@ -1,0 +1,312 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 style="color: rgba(255, 255, 255, 0.7)">🔍 Результаты поиска</h1>
+            <p style="color: rgba(255, 255, 255, 0.6)" id="searchSummary">Загружаем результаты...</p>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h5 style="color: rgba(255, 255, 255, 0.7)">Уточните поиск</h5>
+                    <form id="searchForm">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
+                                <select class="form-select" id="countrySelect" name="country">
+                                    <option value="">Все страны</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Город</label>
+                                <select class="form-select" id="citySelect" name="city" disabled>
+                                    <option value="">Все города</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Звёзды</label>
+                                <select class="form-select" id="starsSelect" name="stars">
+                                    <option value="">Все звёзды</option>
+                                    <option value="1">⭐ (1)</option>
+                                    <option value="2">⭐⭐ (2)</option>
+                                    <option value="3">⭐⭐⭐ (3)</option>
+                                    <option value="4">⭐⭐⭐⭐ (4)</option>
+                                    <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Цена от (€)</label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="minPrice"
+                                       name="min_price"
+                                       placeholder="0"
+                                       min="0">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Цена до (€)</label>
+                                <input type="number"
+                                       class="form-control"
+                                       id="maxPrice"
+                                       name="max_price"
+                                       placeholder="1000"
+                                       min="0">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary">
+                                        🔍 Обновить поиск
+                                    </button>
+                                    <a href="/api/" class="btn btn-outline-secondary">
+                                        ← На главную
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="hotelsContainer">
+        <div class="col-12 text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Загрузка...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function loadCountries() {
+        try {
+            const response = await fetch('/api/countries/');
+            const countries = await response.json();
+            const countrySelect = document.getElementById('countrySelect');
+
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.id;
+                option.textContent = country.name;
+                countrySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Ошибка загрузки стран:', error);
+        }
+    }
+
+    function setupEventListeners() {
+        document.getElementById('countrySelect').addEventListener('change', function() {
+            const countryId = this.value;
+            loadCities(countryId);
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch();
+        });
+    }
+
+    async function loadCities(countryId) {
+        const citySelect = document.getElementById('citySelect');
+
+        if (!countryId) {
+            citySelect.disabled = true;
+            citySelect.innerHTML = '<option value="">Все города</option>';
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/cities/?country=${countryId}`);
+            const cities = await response.json();
+
+            citySelect.disabled = false;
+            citySelect.innerHTML = '<option value="">Все города</option>';
+
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city.id;
+                option.textContent = city.name;
+                citySelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Ошибка загрузки городов:', error);
+        }
+    }
+
+    async function performSearch() {
+        const formData = new FormData(document.getElementById('searchForm'));
+        const params = new URLSearchParams();
+
+        for (let [key, value] of formData.entries()) {
+            if (value) {
+                params.append(key, value);
+            }
+        }
+
+        try {
+            const response = await fetch(`/api/hotels/?${params}`);
+            const hotels = await response.json();
+            displayHotels(hotels);
+
+            const summary = document.getElementById('searchSummary');
+            if (hotels.length === 0) {
+                summary.textContent = '😔 Отелей не найдено. Попробуйте изменить параметры поиска.';
+            } else {
+                summary.textContent = `Найдено отелей: ${hotels.length}`;
+            }
+        } catch (error) {
+            console.error('Ошибка поиска отелей:', error);
+        }
+    }
+
+    function displayHotels(hotels) {
+        const container = document.getElementById('hotelsContainer');
+
+        if (hotels.length === 0) {
+            container.innerHTML = `
+                <div class="col-12 text-center">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body">
+                            <h5>😔 Отелей не найдено</h5>
+                            <p>Попробуйте изменить параметры поиска</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = hotels.map(hotel => `
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-white hotel-card"
+                     style="border: 1px solid #444; height: 480px; display: flex; flex-direction: column;">
+                    ${hotel.main_image ?
+                        `<img src="${hotel.main_image}"
+                              class="card-img-top"
+                              alt="${hotel.name}"
+                              style="height: 200px; object-fit: cover;">` :
+                        `<div class="card-img-top d-flex align-items-center justify-content-center"
+                              style="height: 200px; background: #2d2d2d;">
+                            <span>🏨 Нет фото</span>
+                         </div>`
+                    }
+
+                    <div class="card-body d-flex flex-column" style="flex: 1;">
+                        <h5 class="card-title"
+                            style="height: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; color: rgba(255, 255, 255, 0.8)">
+                            ${hotel.name}
+                        </h5>
+                        <p class="card-text" style="color: rgba(255, 255, 255, 0.6)">
+                            <small style="color: rgba(255, 255, 255, 0.5) !important">
+                                📍 ${hotel.city_name}, ${hotel.country_name}
+                            </small>
+                        </p>
+
+                        <div class="mb-2">
+                            <div class="mb-1">
+                                <span class="text-warning">
+                                    ${'⭐'.repeat(hotel.stars)}
+                                </span>
+                            </div>
+                            <small style="color: rgba(255, 255, 255, 0.7) !important">
+                                Рейтинг по отзывам:
+                                <strong class="text-warning">
+                                    ${hotel.average_rating > 0 ? hotel.average_rating.toFixed(1) : '-'}
+                                </strong>
+                            </small>
+                            <br>
+                            <small style="color: rgba(255, 255, 255, 0.5) !important">
+                                (${hotel.review_count} отзывов)
+                            </small>
+                        </div>
+
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong class="text-warning">
+                                    ${hotel.price_per_night}€ / ночь
+                                </strong>
+                                <a href="/api/hotel/${hotel.id}/" class="btn btn-primary btn-sm">
+                                    Подробнее
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function setSearchInputFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchTerm = urlParams.get('search');
+
+        if (searchTerm) {
+            const form = document.getElementById('searchForm');
+            let searchInput = form.querySelector('input[name="search"]');
+
+            if (!searchInput) {
+                searchInput = document.createElement('input');
+                searchInput.type = 'hidden';
+                searchInput.name = 'search';
+                form.appendChild(searchInput);
+            }
+
+            searchInput.value = searchTerm;
+
+            const summary = document.getElementById('searchSummary');
+            summary.textContent = `Результаты поиска: "${searchTerm}"`;
+        }
+    }
+
+    function setFormValuesFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const countrySelect = document.getElementById('countrySelect');
+        const citySelect = document.getElementById('citySelect');
+        const starsSelect = document.getElementById('starsSelect');
+        const minPrice = document.getElementById('minPrice');
+        const maxPrice = document.getElementById('maxPrice');
+
+        if (urlParams.get('country')) {
+            countrySelect.value = urlParams.get('country');
+            loadCities(urlParams.get('country'));
+        }
+
+        if (urlParams.get('city')) {
+            setTimeout(() => {
+                citySelect.value = urlParams.get('city');
+            }, 500);
+        }
+
+        if (urlParams.get('stars')) {
+            starsSelect.value = urlParams.get('stars');
+        }
+
+        if (urlParams.get('min_price')) {
+            minPrice.value = urlParams.get('min_price');
+        }
+
+        if (urlParams.get('max_price')) {
+            maxPrice.value = urlParams.get('max_price');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        setupEventListeners();
+        loadCountries().then(() => {
+            setSearchInputFromUrl();
+            setFormValuesFromUrl();
+            performSearch();
+        });
+    });
+</script>
+{% endblock %}

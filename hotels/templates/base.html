@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Travel - Космические путешествия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+                        url('https://unsplash.com/photos/hF27It_F5xY/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MjkwfHxzdGFyc3xlbnwwfHx8fDE3NjIzNzEzMDl8MA&force=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: rgba(15, 25, 45, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        footer {
+            background-color: rgba(15, 25, 45, 0.9);
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .card {
+            background-color: rgba(15, 25, 45, 0.8) !important;
+            backdrop-filter: blur(5px);
+            border: 1px solid #2a3f5f;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            border-color: #4d7cfe;
+            color: white;
+            box-shadow: 0 0 0 0.2rem rgba(77, 124, 254, 0.25);
+        }
+
+        .form-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        .form-select option {
+            background-color: #1a1a2e;
+            color: white;
+        }
+
+        .form-select:focus option {
+            background-color: #2a3f5f;
+            color: white;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/api/">
+                🚀 Star Travel
+            </a>
+
+            <!-- Поисковая строка -->
+            <div class="d-flex me-3" style="width: 300px;">
+                <input type="text"
+                       class="form-control"
+                       id="headerSearch"
+                       placeholder="Поиск отелей, городов..."
+                       style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
+            </div>
+
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Главная</a>
+                <a class="nav-link" href="/api/search/">Отели</a>
+                <a class="nav-link" href="#">Войти</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">✨ &copy; 2025 Star Travel. Открой новые миры! ✨</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerSearch = document.getElementById('headerSearch');
+
+            if (headerSearch) {
+                headerSearch.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        const searchTerm = this.value.trim();
+                        if (searchTerm) {
+                            window.location.href = `/api/search/?search=${encodeURIComponent(searchTerm)}`;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

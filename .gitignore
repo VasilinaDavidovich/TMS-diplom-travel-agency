@@ -1,0 +1,59 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# PyCharm IDE
+.idea/
+*.iws
+*.iml
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.prod
+
+# Static files
+staticfiles/
+
+# Database
+*.db
+
+# Backup files
+*.backup
+*.bak
+
+# Testing
+.coverage
+.pytest_cache/
+
+# Logs
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+htmlcov/
+.coverage
