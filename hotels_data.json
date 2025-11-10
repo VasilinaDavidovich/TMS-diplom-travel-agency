@@ -1,0 +1,227 @@
+[
+{
+  "model": "hotels.country",
+  "pk": 2,
+  "fields": {
+    "name": "Австрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 3,
+  "fields": {
+    "name": "Венгрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 4,
+  "fields": {
+    "name": "Швейцария"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 5,
+  "fields": {
+    "name": "Нидерланды"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 6,
+  "fields": {
+    "name": "Бельгия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 7,
+  "fields": {
+    "name": "Италия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 8,
+  "fields": {
+    "name": "Чехия"
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 1,
+  "fields": {
+    "name": "Вена",
+    "name_ru": "Вена",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 2,
+  "fields": {
+    "name": "Гальштатт",
+    "name_ru": "Гальштатт",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 3,
+  "fields": {
+    "name": "Зальцбург",
+    "name_ru": "Зальцбург",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 4,
+  "fields": {
+    "name": "Женева",
+    "name_ru": "Женева",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 5,
+  "fields": {
+    "name": "Берн",
+    "name_ru": "Берн",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 6,
+  "fields": {
+    "name": "Будапешт",
+    "name_ru": "Будапешт",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 7,
+  "fields": {
+    "name": "Эгер",
+    "name_ru": "Эгер",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 8,
+  "fields": {
+    "name": "Амстердам",
+    "name_ru": "Амстердам",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 9,
+  "fields": {
+    "name": "Харлем",
+    "name_ru": "Харлем",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 10,
+  "fields": {
+    "name": "Брюссель",
+    "name_ru": "Брюссель",
+    "country": 6
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 11,
+  "fields": {
+    "name": "Остенде",
+    "name_ru": "Остенде",
+    "country": 6
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 12,
+  "fields": {
+    "name": "Рим",
+    "name_ru": "Рим",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 13,
+  "fields": {
+    "name": "Флоренция",
+    "name_ru": "Флоренция",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 14,
+  "fields": {
+    "name": "Милан",
+    "name_ru": "Милан",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 15,
+  "fields": {
+    "name": "Римини",
+    "name_ru": "Римини",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 16,
+  "fields": {
+    "name": "Прага",
+    "name_ru": "Прага",
+    "country": 8
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 17,
+  "fields": {
+    "name": "Брно",
+    "name_ru": "Брно",
+    "country": 8
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "Almanac Palais Vienna",
+    "description": "Почувствуйте себя знаменитостью благодаря великолепному сервису в Almanac Palais Vienna\r\nAlmanac Palais Vienna — это отель в городе Вена, в 400 м от такой достопримечательности, как Дом музыки. К услугам гостей услуги консьержа, ресторан, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются гипоаллергенные номера. В распоряжении гостей отеля с 5 звездами — доставка еды и напитков и круглосуточная стойка регистрации. Гости могут воспользоваться оздоровительным и спа-центром с крытым бассейном, фитнес-центром и сауной, а также террасой.",
+    "country": 2,
+    "city": 1,
+    "stars": 5,
+    "address": "Внутренний город, 1010 Вена, Австрия",
+    "price_per_night": "100.00",
+    "created_at": "2025-11-03T21:38:10.131Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 2,
+  "fields": {
+    "name": "Spark by Hilton Vienna Donaustadt",
+    "description": "В номерах в Spark by Hilton Vienna Donaustadt есть телевизор с плоским экраном. В каждом номере есть собственная ванная комната с душем и феном. В распоряжении всех гостей холодильник.\r\n\r\nГостям Spark by Hilton Vienna Donaustadt предоставляется завтрак «шведский стол».\r\n\r\nГости могут в любое время обратиться за помощью к сотрудникам стойки регистрации, которые говорят на немецком и на английском.",
+    "country": 2,
+    "city": 1,
+    "stars": 4,
+    "address": 

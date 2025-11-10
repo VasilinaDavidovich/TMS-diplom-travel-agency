@@ -95,7 +95,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="/">Главная</a>
                 <a class="nav-link" href="/api/search/">Отели</a>
-                <a class="nav-link" href="#">Войти</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</a>
             </div>
         </div>
     </nav>
@@ -111,8 +111,64 @@
         </div>
     </footer>
 
+    <!-- Модальное окно входа/регистрации -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Вход в систему</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Форма входа (изначально видима) -->
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">Имя пользователя</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Пароль</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Войти</button>
+                        <div class="text-center mt-3">
+                            <small>Нет аккаунта? <a href="#" id="showRegister">Зарегистрироваться</a></small>
+                        </div>
+                    </form>
+
+                    <!-- Форма регистрации (изначально скрыта) -->
+                    <form id="registerForm" style="display: none;">
+                        <div class="mb-3">
+                            <label class="form-label">Имя пользователя</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Пароль</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Подтвердите пароль</label>
+                            <input type="password" class="form-control" name="password2" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Зарегистрироваться</button>
+                        <div class="text-center mt-3">
+                            <small>Уже есть аккаунт? <a href="#" id="showLogin">Войти</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Проверяем авторизацию при загрузке
+            checkAuthStatus();
+
             const headerSearch = document.getElementById('headerSearch');
 
             if (headerSearch) {
@@ -125,7 +181,153 @@
                     }
                 });
             }
+
+            // Переключение между формами входа и регистрации
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const showRegister = document.getElementById('showRegister');
+            const showLogin = document.getElementById('showLogin');
+
+            if (showRegister) {
+                showRegister.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loginForm.style.display = 'none';
+                    registerForm.style.display = 'block';
+                });
+            }
+
+            if (showLogin) {
+                showLogin.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    registerForm.style.display = 'none';
+                    loginForm.style.display = 'block';
+                });
+            }
+
+            // Обработка формы регистрации
+            if (registerForm) {
+                registerForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    console.log('Регистрация отправлена');
+
+                    const formData = new FormData(this);
+                    const data = {
+                        username: formData.get('username'),
+                        email: formData.get('email'),
+                        password: formData.get('password'),
+                        password2: formData.get('password2')
+                    };
+
+                    console.log('Отправляемые данные:', data);
+
+                    try {
+                        const response = await fetch('/api/auth/register/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        console.log('Статус:', response.status);
+                        console.log('Заголовки:', response.headers);
+
+                        const responseText = await response.text();
+                        console.log('Ответ:', responseText);
+
+                        // Пробуем распарсить как JSON
+                        try {
+                            const result = JSON.parse(responseText);
+                            if (response.ok) {
+                                alert('✅ Регистрация успешна! Теперь вы можете войти.');
+                                // Переключаемся на форму входа
+                                registerForm.style.display = 'none';
+                                loginForm.style.display = 'block';
+                                // Очищаем форму
+                                registerForm.reset();
+                            } else {
+                                alert('❌ Ошибка: ' + JSON.stringify(result));
+                            }
+                        } catch (e) {
+                            console.error('Не JSON ответ:', responseText);
+                            alert('❌ Сервер вернул HTML вместо JSON');
+                        }
+                    } catch (error) {
+                        console.error('Ошибка сети:', error);
+                        alert('❌ Ошибка сети: ' + error.message);
+                    }
+                });
+            }
+
+            // Обработка формы входа
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    console.log('Вход отправлен');
+
+                    const formData = new FormData(this);
+                    const data = {
+                        username: formData.get('username'),
+                        password: formData.get('password')
+                    };
+
+                    console.log('Данные для входа:', data);
+
+                    try {
+                        const response = await fetch('/api/auth/login/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        console.log('Статус ответа входа:', response.status);
+
+                        const result = await response.json();
+                        console.log('Ответ сервера входа:', result);
+
+                        if (response.ok) {
+                            alert('✅ Вход успешен!');
+                            // Сохраняем токен в localStorage
+                            localStorage.setItem('access_token', result.access);
+                            localStorage.setItem('refresh_token', result.refresh);
+                            // Закрываем модальное окно
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                            modal.hide();
+                            // Обновляем интерфейс
+                            updateAuthUI();
+                        } else {
+                            alert('❌ Ошибка входа: ' + JSON.stringify(result));
+                        }
+                    } catch (error) {
+                        console.error('Ошибка сети при входе:', error);
+                        alert('❌ Ошибка сети: ' + error.message);
+                    }
+                });
+            }
         });
+
+        // Функция для обновления интерфейса после входа
+        function updateAuthUI() {
+            const loginButton = document.querySelector('a[data-bs-target="#loginModal"]');
+            if (loginButton && localStorage.getItem('access_token')) {
+                // Меняем ссылку на профиль
+                loginButton.textContent = 'Мой профиль';
+                loginButton.href = '/api/profile/';
+                loginButton.removeAttribute('data-bs-toggle');
+                loginButton.removeAttribute('data-bs-target');
+            }
+        }
+
+        // Проверяем авторизацию при загрузке страницы
+        function checkAuthStatus() {
+            const token = localStorage.getItem('access_token');
+            if (token) {
+                updateAuthUI();
+            }
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

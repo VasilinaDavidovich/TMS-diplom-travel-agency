@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <!-- Заголовок с кнопкой удаления справа -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h3>👤 Личный кабинет</h3>
+                            <p class="text-muted mb-0" id="userInfo">Загрузка...</p>
+                        </div>
+                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                            Удалить аккаунт
+                        </button>
+                    </div>
+
+                    <!-- Вкладки -->
+                    <ul class="nav nav-tabs mb-4">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#bookings">Мои бронирования</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#favorites">Избранные отели</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#reviews">Мои отзывы</a>
+                        </li>
+                    </ul>
+
+                    <!-- Содержимое вкладок -->
+                    <div class="tab-content">
+                        <!-- Вкладка бронирований -->
+                        <div class="tab-pane fade show active" id="bookings">
+                            <h5>📅 Мои бронирования</h5>
+                            <p class="text-muted" id="bookingsSummary">Загрузка бронирований...</p>
+                            <div id="bookingsList">
+                                <!-- Бронирования будут загружаться через JavaScript -->
+                            </div>
+                        </div>
+
+                        <!-- Вкладка избранного -->
+                        <div class="tab-pane fade" id="favorites">
+                            <h5>Избранные отели</h5>
+                            <p class="text-muted">Отели, которые вы добавили в избранное</p>
+                            <div id="favoritesList">
+                                <!-- Избранные отели будут здесь -->
+                            </div>
+                        </div>
+
+                        <!-- Вкладка отзывов -->
+                        <div class="tab-pane fade" id="reviews">
+                            <h5>Мои отзывы</h5>
+                            <p class="text-muted">Отзывы, которые вы оставили</p>
+                            <div id="reviewsList">
+                                <!-- Отзывы будут здесь -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка выхода -->
+                    <div class="mt-4 text-center">
+                        <button class="btn btn-outline-secondary" onclick="logout()">
+                            Выйти из системы
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения удаления -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-danger">⚠️ Удаление аккаунта</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены что хотите удалить аккаунт?</p>
+                <p class="text-warning"><strong>Это действие нельзя отменить!</strong></p>
+                <ul class="text-muted small">
+                    <li>Все ваши данные будут удалены</li>
+                    <li>История бронирований пропадет</li>
+                    <li>Отзывы будут анонимизированы</li>
+                </ul>
+                <p>Для подтверждения введите: <code class="text-warning">УДАЛИТЬ АККАУНТ</code></p>
+                <input type="text" class="form-control mb-3" id="confirmDeleteInput" placeholder="Введите текст для подтверждения">
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn" disabled onclick="deleteAccount()">
+                    Удалить аккаунт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function logout() {
+    if (confirm('Вы уверены что хотите выйти?')) {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        alert('Вы вышли из системы');
+        window.location.href = '/api/';
+    }
+}
+
+// Загрузка данных при открытии страницы
+document.addEventListener('DOMContentLoaded', function() {
+    loadUserData();
+
+    // Включение кнопки удаления при правильном вводе
+    const confirmInput = document.getElementById('confirmDeleteInput');
+    const confirmBtn = document.getElementById('confirmDeleteBtn');
+
+    if (confirmInput && confirmBtn) {
+        confirmInput.addEventListener('input', function() {
+            confirmBtn.disabled = this.value !== 'УДАЛИТЬ АККАУНТ';
+        });
+    }
+});
+
+// Загрузка данных пользователя и бронирований
+async function loadUserData() {
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+        window.location.href = '/api/';
+        return;
+    }
+
+    try {
+        // Загружаем информацию о пользователе
+        const userResponse = await fetch('/api/auth/current-user/', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (userResponse.ok) {
+            const userData = await userResponse.json();
+            const userInfo = document.getElementById('userInfo');
+            if (userInfo) {
+                userInfo.innerHTML = `Пользователь: <strong>${userData.username}</strong>`;
+            }
+
+            // Загружаем бронирования
+            await loadUserBookings();
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+    }
+}
+
+// Загрузка бронирований пользователя
+    async function loadUserBookings() {
+        const token = localStorage.getItem('access_token');
+        if (!token) return;
+
+        try {
+            const response = await fetch('/api/my-bookings/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            if (response.ok) {
+                const bookings = await response.json();
+                displayBookings(bookings);
+            } else {
+                document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки бронирований';
+            }
+        } catch (error) {
+            document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки';
+        }
+    }
+
+// Отображение бронирований
+function displayBookings(bookings) {
+    const container = document.getElementById('bookingsList');
+    const summary = document.getElementById('bookingsSummary');
+
+    if (bookings.length === 0) {
+        summary.textContent = 'У вас пока нет бронирований';
+        container.innerHTML = `
+            <div class="text-center py-4">
+                <p class="text-muted">🎯 Начните планировать свое путешествие!</p>
+                <a href="/api/" class="btn btn-primary">Найти отели</a>
+            </div>
+        `;
+        return;
+    }
+
+    summary.textContent = `Найдено бронирований: ${bookings.length}`;
+
+    container.innerHTML = bookings.map(booking => `
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6>🏨 ${booking.hotel_name}</h6>
+                        <p class="mb-1">
+                            📅 ${new Date(booking.check_in).toLocaleDateString('ru-RU')}
+                            - ${new Date(booking.check_out).toLocaleDateString('ru-RU')}
+                        </p>
+                        <p class="mb-1">👥 Гостей: ${booking.guests}</p>
+                        <p class="mb-1">💰 Общая стоимость: <strong>${booking.total_price}€</strong></p>
+                        <small class="text-muted">
+                            📋 Забронировано: ${new Date(booking.created_at).toLocaleDateString('ru-RU')}
+                        </small>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <div class="badge bg-success mb-2">✅ Подтверждено</div>
+                        <br>
+                        <small class="text-muted">ID: #${booking.id}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function deleteAccount() {
+    const token = localStorage.getItem('access_token');
+
+    try {
+        const response = await fetch('/api/auth/delete-account/', {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            alert('✅ Аккаунт успешно удален');
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+            window.location.href = '/api/';
+        } else {
+            const error = await response.json();
+            alert('❌ Ошибка: ' + JSON.stringify(error));
+        }
+    } catch (error) {
+        alert('❌ Ошибка сети: ' + error.message);
+    }
+
+    // Закрываем модальное окно
+    const modal = bootstrap.Modal.getInstance(document.getElementById('deleteAccountModal'));
+    modal.hide();
+}
+</script>
+{% endblock %}

@@ -112,12 +112,13 @@ class BookingCreateView(generics.CreateAPIView):
     serializer_class = BookingCreateSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def perform_create(self, serializer: BookingCreateSerializer) -> None:
+    def perform_create(self, serializer):
         hotel = serializer.validated_data['hotel']
         check_in = serializer.validated_data['check_in']
         check_out = serializer.validated_data['check_out']
         nights = (check_out - check_in).days
         total_price = hotel.price_per_night * nights
+
         serializer.save(user=self.request.user, total_price=total_price)
 
 
@@ -126,7 +127,7 @@ class UserBookingsView(generics.ListAPIView):
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self) -> Any:
+    def get_queryset(self):
         return Booking.objects.filter(user=self.request.user).select_related('hotel')
 
 
@@ -163,6 +164,29 @@ def hotel_detail_page(request, hotel_id: int) -> Any:
     context: Dict[str, Any] = {'hotel': hotel}
     return render(request, 'hotel_detail.html', context)
 
-
+# страница результатов поиска
 def search_results_page(request) -> Any:
     return render(request, 'search_results.html')
+
+# профиль юзера
+def profile_page(request):
+    return render(request, 'profile.html')
+
+# удаление аккаунта
+@api_view(['DELETE'])
+@permission_classes([permissions.IsAuthenticated])
+def delete_user_account(request):
+    user = request.user
+    user.delete()
+    return Response(
+        {"message": "Аккаунт успешно удален"},
+        status=status.HTTP_200_OK
+    )
+
+# Для получения данных пользователя (вывод в личном кабинете)
+@api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
+def get_current_user(request):
+    """API для получения данных текущего пользователя."""
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data)

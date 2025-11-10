@@ -1,0 +1,2852 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add hotel",
+    "content_type": 7,
+    "codename": "add_hotel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change hotel",
+    "content_type": 7,
+    "codename": "change_hotel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete hotel",
+    "content_type": 7,
+    "codename": "delete_hotel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view hotel",
+    "content_type": 7,
+    "codename": "view_hotel"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add country",
+    "content_type": 8,
+    "codename": "add_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change country",
+    "content_type": 8,
+    "codename": "change_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete country",
+    "content_type": 8,
+    "codename": "delete_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view country",
+    "content_type": 8,
+    "codename": "view_country"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add review",
+    "content_type": 9,
+    "codename": "add_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change review",
+    "content_type": 9,
+    "codename": "change_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete review",
+    "content_type": 9,
+    "codename": "delete_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view review",
+    "content_type": 9,
+    "codename": "view_review"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add hotel image",
+    "content_type": 10,
+    "codename": "add_hotelimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change hotel image",
+    "content_type": 10,
+    "codename": "change_hotelimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete hotel image",
+    "content_type": 10,
+    "codename": "delete_hotelimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view hotel image",
+    "content_type": 10,
+    "codename": "view_hotelimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add booking",
+    "content_type": 11,
+    "codename": "add_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change booking",
+    "content_type": 11,
+    "codename": "change_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete booking",
+    "content_type": 11,
+    "codename": "delete_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view booking",
+    "content_type": 11,
+    "codename": "view_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add city",
+    "content_type": 12,
+    "codename": "add_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change city",
+    "content_type": 12,
+    "codename": "change_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete city",
+    "content_type": 12,
+    "codename": "delete_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view city",
+    "content_type": 12,
+    "codename": "view_city"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$WPax5MWtjY3MefSEUmci1w$cBYHshxke+6566O4uGl3LlXcFV2AHT7VIllfrF/ffLw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-08T15:32:11.231Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$aIgRCBaAtreDMIOuPxMbOy$sBQX9E/mW0KKknlK+ioLM7+1WjI5cAvO7dmRmiZ5vtE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "",
+    "last_name": "",
+    "email": "test2@test.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-08T15:34:27.411Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$wtENEVC4L3C5XVZJLECABq$5DOwV8Gb5JnYyFTuRGVwEMd17Ip3K3YJnttDqFp/X3M=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testsec",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@sec.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-08T15:58:21.767Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$95MvXGD5Ulg8abegP2QMkr$rvWoyfJi5NyeA+/KS22RhIxddLEL2ojFzUOdvIsAPl4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test3",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-08T16:03:39.905Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$c93HquB5lOuOVA7k4JGefc$1F1zgLMYvGTXLb5HnUpb8D/d9eQpba2kJ96xBsg13Hs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test10",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-08T16:04:24.415Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "hotels",
+    "model": "hotel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "hotels",
+    "model": "country"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "hotels",
+    "model": "review"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "hotels",
+    "model": "hotelimage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "hotels",
+    "model": "booking"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "hotels",
+    "model": "city"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6wipzwapqn4w5vcolwl4gxt4asikl647",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAURP-la9NAaS_UpXu-gdwXgpo2obAy_ruQsNDVJHPOzNsMuK3TsBVdhlnM1dTm8tsR8lPTAeSB6Z4t57QuM9lDsSctts-ir9vp_h1MWKZ9XVUjgxBpCBDAN8TKFLsWOhAXnRDUGEZpRvSuBfVMje5BJLFmj8F8vv2lOMU:1vG1Xk:nIlpQXDABhkwHbOoQNR2DLC9OS7aRyWVnIcwV5ljlz4",
+    "expire_date": "2025-11-17T20:52:48.128Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tskrf5i5ao473ugmgi8oxbb4pwr9qdbk",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAURP-la9NAaS_UpXu-gdwXgpo2obAy_ruQsNDVJHPOzNsMuK3TsBVdhlnM1dTm8tsR8lPTAeSB6Z4t57QuM9lDsSctts-ir9vp_h1MWKZ9XVUjgxBpCBDAN8TKFLsWOhAXnRDUGEZpRvSuBfVMje5BJLFmj8F8vv2lOMU:1vHTLd:GB7rCfyk0pml8EhU05i9mXucmsZXkFL4DSK-1QokXso",
+    "expire_date": "2025-11-21T20:46:17.869Z"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 2,
+  "fields": {
+    "name": "Австрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 3,
+  "fields": {
+    "name": "Венгрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 4,
+  "fields": {
+    "name": "Швейцария"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 5,
+  "fields": {
+    "name": "Нидерланды"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 6,
+  "fields": {
+    "name": "Бельгия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 7,
+  "fields": {
+    "name": "Италия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 8,
+  "fields": {
+    "name": "Чехия"
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 1,
+  "fields": {
+    "name": "Вена",
+    "name_ru": "Вена",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 2,
+  "fields": {
+    "name": "Гальштатт",
+    "name_ru": "Гальштатт",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 3,
+  "fields": {
+    "name": "Зальцбург",
+    "name_ru": "Зальцбург",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 4,
+  "fields": {
+    "name": "Женева",
+    "name_ru": "Женева",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 5,
+  "fields": {
+    "name": "Берн",
+    "name_ru": "Берн",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 6,
+  "fields": {
+    "name": "Будапешт",
+    "name_ru": "Будапешт",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 7,
+  "fields": {
+    "name": "Эгер",
+    "name_ru": "Эгер",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 8,
+  "fields": {
+    "name": "Амстердам",
+    "name_ru": "Амстердам",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 9,
+  "fields": {
+    "name": "Харлем",
+    "name_ru": "Харлем",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 10,
+  "fields": {
+    "name": "Брюссель",
+    "name_ru": "Брюссель",
+    "country": 6
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 11,
+  "fields": {
+    "name": "Остенде",
+    "name_ru": "Остенде",
+    "country": 6
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 12,
+  "fields": {
+    "name": "Рим",
+    "name_ru": "Рим",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 13,
+  "fields": {
+    "name": "Флоренция",
+    "name_ru": "Флоренция",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 14,
+  "fields": {
+    "name": "Милан",
+    "name_ru": "Милан",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 15,
+  "fields": {
+    "name": "Римини",
+    "name_ru": "Римини",
+    "country": 7
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 16,
+  "fields": {
+    "name": "Прага",
+    "name_ru": "Прага",
+    "country": 8
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 17,
+  "fields": {
+    "name": "Брно",
+    "name_ru": "Брно",
+    "country": 8
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "Almanac Palais Vienna",
+    "description": "Почувствуйте себя знаменитостью благодаря великолепному сервису в Almanac Palais Vienna\r\nAlmanac Palais Vienna — это отель в городе Вена, в 400 м от такой достопримечательности, как Дом музыки. К услугам гостей услуги консьержа, ресторан, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются гипоаллергенные номера. В распоряжении гостей отеля с 5 звездами — доставка еды и напитков и круглосуточная стойка регистрации. Гости могут воспользоваться оздоровительным и спа-центром с крытым бассейном, фитнес-центром и сауной, а также террасой.",
+    "country": 2,
+    "city": 1,
+    "stars": 5,
+    "address": "Внутренний город, 1010 Вена, Австрия",
+    "price_per_night": "100.00",
+    "created_at": "2025-11-03T21:38:10.131Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 2,
+  "fields": {
+    "name": "Spark by Hilton Vienna Donaustadt",
+    "description": "В номерах в Spark by Hilton Vienna Donaustadt есть телевизор с плоским экраном. В каждом номере есть собственная ванная комната с душем и феном. В распоряжении всех гостей холодильник.\r\n\r\nГостям Spark by Hilton Vienna Donaustadt предоставляется завтрак «шведский стол».\r\n\r\nГости могут в любое время обратиться за помощью к сотрудникам стойки регистрации, которые говорят на немецком и на английском.",
+    "country": 2,
+    "city": 1,
+    "stars": 4,
+    "address": "6 Doktor-Adolf-Schärf-Platz, 22. Донауштадт, 1220 Вена, Австрия",
+    "price_per_night": "98.12",
+    "created_at": "2025-11-03T21:39:53.823Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 3,
+  "fields": {
+    "name": "Hilton Vienna Plaza",
+    "description": "В оформлении отеля Hilton Vienna Plaza сочетаются современные элементы и элементы стиля ар-деко. Во второй половине дня гости могут отдохнуть и выпить послеобеденный чай или кофе в лобби. Кроме того, в любое время дня можно посетить сауну или фитнес-центр.\r\n\r\nНомера и люксы обставлены элегантной мебелью. Ванные комнаты отделаны мрамором. Также в номерах имеются большие открывающиеся окна.\r\n\r\nВ ресторане ÉMILE предлагают блюда австрийской и интернациональной кухни из свежих сезонных продуктов, а также представлен широкий выбор австрийских и импортных вин. Днем и до позднего вечера в баре ÉMILE подают фирменные коктейли на основе мартини, абсент и другие напитки.",
+    "country": 2,
+    "city": 1,
+    "stars": 4,
+    "address": "Schottenring 11, 01. Внутренний город, 1010 Вена, Австрия",
+    "price_per_night": "95.00",
+    "created_at": "2025-11-03T21:41:47.444Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 4,
+  "fields": {
+    "name": "Ibis budget Wien Messe",
+    "description": "Бюджетный отель Ibis Wien Messe расположен в оживленном 2-м районе Вены. К услугам гостей современные номера с телевизором с плоским экраном и спутниковыми каналами, а также бесплатный Wi-Fi. Станция метро Praterstern находится в 7 минутах ходьбы, а до центра города можно добраться за 10 минут на общественном транспорте.\r\n\r\nВ числе удобств каждого из номеров бюджетного отеля Ibis Messe кондиционер, душ и туалет. Ежедневно сервируется разнообразный завтрак «шведский стол». В распоряжении гостей также торговые автоматы.\r\n\r\nЗа 15 минут можно дойти до выставочного и конгресс-центра Messe Wien и Дунайского острова. Парк развлечений Пратер со знаменитым Гигантским колесом обозрения располагается всего в 500 метрах от отеля.",
+    "country": 2,
+    "city": 1,
+    "stars": 2,
+    "address": "Lassallestraße 7, 02. Леопольдштадт, 1020 Вена, Австрия",
+    "price_per_night": "39.00",
+    "created_at": "2025-11-03T21:44:11.112Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 5,
+  "fields": {
+    "name": "Heritage Hotel Hallstatt",
+    "description": "Отель Heritage находится в историческом центре города Халльштатт в области Зальцкаммергут, федеральная земля Верхняя Австрия. Старый город, закрытый для движения автомобильного транспорта, включен в список объектов Всемирного наследия ЮНЕСКО. В числе удобств бесплатный проводной доступ в интернет в номерах и бесплатный Wi-Fi на всей территории.\r\n\r\nОтель Heritage Hallstatt занимает 3 тщательно отреставрированных исторических здания. К услугам гостей бар с солнечной террасой со стороны озера, кафе с зимним садом рядом с лодочной пристанью Халльштатта, а также ресторан Im Kainz, где подают традиционные австрийские блюда и марочные вина.",
+    "country": 2,
+    "city": 2,
+    "stars": 4,
+    "address": "Landungsplatz 101, 4830 Халльштатт, Австрия",
+    "price_per_night": "57.00",
+    "created_at": "2025-11-03T21:51:30.693Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 6,
+  "fields": {
+    "name": "Pension Bergfried",
+    "description": "Гостевой дом Bergfried расположен в общине Халльштатт, всего в 150 метрах от берега Халльштаттского озера. К услугам гостей функционально меблированные номера. Некоторые из них выходят на балкон.\r\n\r\nВ распоряжении гостей каждого номера гостиная зона и спутниковое телевидение. В каждом установлена двуспальная кровать с отдельными матрасами.\r\n\r\nНа территории комплекса есть помещение для хранения лыж. Всего в 50 метрах от здания останавливается бесплатный лыжный автобус. Расстояние до горнолыжного курорта Дахштайн составляет менее 6 км.",
+    "country": 2,
+    "city": 1,
+    "stars": 3,
+    "address": "Echerntalweg 3, 4830 Халльштатт, Австрия",
+    "price_per_night": "40.00",
+    "created_at": "2025-11-03T21:53:04.676Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 7,
+  "fields": {
+    "name": "Dorint City-Hotel Salzburg",
+    "description": "Отель Dorint City-Hotel Salzburg расположен у подножия горы Капуцинерберг, в 15 минутах ходьбы от Старого города и главного железнодорожного вокзала. Предоставляется бесплатный Wi-Fi.\r\n\r\nВ баре Atrium гости могут заказать напитки.\r\n\r\nВ каждом номере отеля Dorint City-Hotel Salzburg есть телевизор с плоским экраном, небольшой холодильник и ванная комната с феном.",
+    "country": 2,
+    "city": 3,
+    "stars": 3,
+    "address": "Sterneckstraße 20, Шальмос, 5020 Зальцбург, Австрия",
+    "price_per_night": "65.14",
+    "created_at": "2025-11-03T21:54:33.217Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 8,
+  "fields": {
+    "name": "Altstadt Hotel Hofwirt Salzburg",
+    "description": "Отель Altstadt Hofwirt расположен в здании 1878 года постройки, рядом с пешеходной зоной Линцерuассе в центре Зальцбурга. Прогулка до конгресс-центра, дворца Мирабель и исторической улицы Гетрайдегассе занимает 10 минут. К услугам гостей бесплатный Wi-Fi.\r\n\r\nВсе номера отеля Hofwirt предназначены для некурящих гостей и оснащены кондиционером. Номера оформлены в современном стиле и оснащены телевизором с кабельными каналами. В числе удобств — ванная комнатой с душем и туалетом.",
+    "country": 2,
+    "city": 3,
+    "stars": 3,
+    "address": "Schallmooser Hauptstraße 1, 5020 Зальцбург, Австрия",
+    "price_per_night": "45.00",
+    "created_at": "2025-11-03T21:56:16.644Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 9,
+  "fields": {
+    "name": "Hôtel Métropole Genève",
+    "description": "Почувствуйте себя знаменитостью благодаря великолепному сервису в Hôtel Métropole Genève",
+    "country": 4,
+    "city": 4,
+    "stars": 5,
+    "address": "34, quai General Guisan, 1204 Женева, Швейцария",
+    "price_per_night": "178.70",
+    "created_at": "2025-11-03T21:58:16.800Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 10,
+  "fields": {
+    "name": "Hotel Rotary Geneva - MGallery",
+    "description": "The Hotel Rotary Geneva - MGallery can be found in the centre of the city, only a 5-minute walk from the Cornavin Train Station and a 3-minute walk from Lake Geneva. The 4-star superior boutique hotel offers free WiFi in all areas.\r\n\r\nThe air-conditioned rooms come with a 43\" flat-screen TV and a minibar.\r\n\r\nHomemade French dishes including fresh and seasonal products are served in the L'Artisan restaurant. Other places to relax include the hotel bar and a fireplace.",
+    "country": 4,
+    "city": 4,
+    "stars": 4,
+    "address": "18-20, rue du Cendrier, Сен-Жерве, 1201 Женева, Швейцария",
+    "price_per_night": "146.00",
+    "created_at": "2025-11-03T21:59:28.363Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 11,
+  "fields": {
+    "name": "Prize by Radisson, Bern City",
+    "description": "Prize by Radisson, Bern City — это отель в городе Берн, в 700 м от такой достопримечательности, как Беренграбен. Среди удобств — терраса, бар и частная парковка. Среди удобств отеля с 3 звездами — общий лаундж, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. Этот вариант размещения с номерами для некурящих находится в 1,4 км от следующей достопримечательности: Стадион «Стад де Сюис».\r\n\r\nВ Prize by Radisson, Bern City в номерах есть телевизор с плоским экраном, письменный стол и собственная ванная комната, а также предоставляются постельное белье и полотенца.",
+    "country": 4,
+    "city": 5,
+    "stars": 3,
+    "address": "VIKTORIASTRASSE 21, Breitenrain-Lorraine, 3013 Берн, Швейцария",
+    "price_per_night": "95.00",
+    "created_at": "2025-11-03T22:01:39.543Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 12,
+  "fields": {
+    "name": "harry's home Bern-Expo",
+    "description": "Harry's home Bern-Expo — это отель в городе Берн, расположенный в 1,5 км и 2,8 км соответственно от таких достопримечательностей, как Выставочный центр Bernexpo и Беренграбен. К услугам гостей бар. В распоряжении гостей отеля с 4 звездами — общий лаундж, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. На территории имеется частная парковка.\r\n\r\nВ harry's home Bern-Expo во всех номерах имеется телевизор с плоским экраном со спутниковыми каналами и сейф. В номерах есть чайник, а также собственная ванная комната с душем и феном. В некоторых номерах также имеется кухня с холодильником. Гостям harry's home Bern-Expo предоставляются постельное белье и полотенца.",
+    "country": 4,
+    "city": 5,
+    "stars": 4,
+    "address": "Bernstrasse 25, 3072 Берн, Швейцария",
+    "price_per_night": "149.99",
+    "created_at": "2025-11-03T22:03:02.553Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 13,
+  "fields": {
+    "name": "Los Lorentes Hotel Bern City",
+    "description": "Los Lorentes Hotel Bern City — это отель в городе Берн, в 2,9 км от такой достопримечательности, как Железнодорожный вокзал Берна. К услугам гостей экспресс-регистрация заезда и отъезда, сад, общий лаундж, а также бесплатный Wi-Fi на всей территории. Также предоставляются гипоаллергенные номера. Гости могут воспользоваться общей кухней или террасой для загара. На территории имеется частная парковка.\r\n\r\nВ Los Lorentes Hotel Bern City в номерах есть гостиная зона и собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. Также в распоряжении гостей телевизор с плоским экраном со спутниковыми каналами и сейф. В определенных номерах в Los Lorentes Hotel Bern City из окон открывается вид на город, при этом в каждом номере имеется кофемашина. Гостям Los Lorentes Hotel Bern City предоставляются постельное белье и полотенца.",
+    "country": 4,
+    "city": 5,
+    "stars": 4,
+    "address": "Murtenstrasse 147, Mattenhof-Weissenbühl, 3008 Берн, Швейцария",
+    "price_per_night": "165.00",
+    "created_at": "2025-11-03T22:04:15.076Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 14,
+  "fields": {
+    "name": "Budapest Marriott Hotel",
+    "description": "Отель Budapest Marriott удобно расположен в центре Будапешта. Это единственный в городе отель, из всех 364 номеров которого открывается великолепный вид на реку Дунай.\r\n\r\nВ изысканном интерьере номеров с деревянным полом и живописным видом на реку инновационный стиль гармонично сочетается с удобством и комфортом. Все номера были отремонтированы в 2018 году по современным стандартам дизайна отелей сети Marriott: деревянный пол, телевизор с плоским экраном и спутниковыми каналами, возможность подключения внешних устройств, USB-разъемы и потоковое видео.\r\n\r\nСовременный ресторан DNB Budapest Modern Hungarian Wine Bar Kitchen с превосходной открытой кухней и стойкой с деликатесами работает в течение всего дня. Здесь гостям подают блюда, приготовленные из лучших продуктов Венгрии. В меню представлены простые и полезные блюда из высококачественных местных ингредиентов.\r\n\r\nВ баре Liz & Chain с модной музыкальной программой гостям предложат широкий ассортимент водки, пива и высококачественную минеральную воду из разных стран мира. Этот популярный бар оформлен в необычном стиле и украшен картинами с изображением рек и озер Венгрии. В этом новом баре подают изысканные сорта фруктовых бренди и оригинальные вина.\r\nБар на крыше Liz and Chain с террасой на 10 этаже и несравненным видом на город\r\n\r\nНа цокольном этаже расположен фитнес-центр Marriott со всем оборудованием, необходимым для поддержания здоровья и физической формы.",
+    "country": 3,
+    "city": 6,
+    "stars": 5,
+    "address": "1052 Будапешт, Apaczai Csere Janos u. 4, Венгрия",
+    "price_per_night": "180.00",
+    "created_at": "2025-11-03T22:06:43.186Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 15,
+  "fields": {
+    "name": "Noble Boutique Hotel - Adults Only",
+    "description": "Boasting a bar, Noble Boutique Hotel - Adults Only is set in the centre of Budapest, 1.2 km from Blaha Lujza Square. This 4-star hotel offers a tour desk. The accommodation offers a 24-hour front desk, airport transfers, room service and free WiFi throughout the property.\r\n\r\nThe hotel will provide guests with air-conditioned rooms with a desk, a coffee machine, a minibar, a safety deposit box, a flat-screen TV and a private bathroom with a shower. At Noble Boutique Hotel - Adults Only the rooms are equipped with bed linen and towels.\r\n\r\nAn à la carte breakfast is available every morning.",
+    "country": 3,
+    "city": 6,
+    "stars": 4,
+    "address": "1052 Будапешт, 1 Városház utca, Венгрия",
+    "price_per_night": "130.00",
+    "created_at": "2025-11-03T22:08:02.694Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 16,
+  "fields": {
+    "name": "Hampton By Hilton Budapest City Centre",
+    "description": "Hampton By Hilton Budapest City Centre — это отель в центре города Будапешт, в 500 м от такой достопримечательности, как Базилика Святого Стефана. К услугам гостей общий лаундж, ресторан и бар. В распоряжении гостей отеля с 3 звездами — круглосуточная стойка регистрации и бесплатный Wi-Fi. Этот вариант размещения с номерами для некурящих находится в 400 м от следующей достопримечательности: Венгерский государственный оперный театр.\r\n\r\nВ распоряжении всех гостей кондиционер, телевизор с плоским экраном и сейф.\r\n\r\nГостям предлагается завтрак «шведский стол», вегетарианский завтрак или безглютеновый завтрак.\r\n\r\nРядом с Hampton By Hilton Budapest City Centre находятся такие популярные достопримечательности, как Большая синагога, Дом террора и Blaha Lujza Square. Международный аэропорт имени Ференца Листа находится в 14 км. Предоставляется платный трансфер от/до аэропорта.",
+    "country": 3,
+    "city": 6,
+    "stars": 3,
+    "address": "1066 Будапешт, Dessewffy utca 7-11, Венгрия",
+    "price_per_night": "95.00",
+    "created_at": "2025-11-03T22:09:21.632Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 17,
+  "fields": {
+    "name": "1552 Boutique Hotel",
+    "description": "1552 Boutique Hotel — это отель в городе Эгер, в менее чем 1 км от такой достопримечательности, как Эгерская крепость. Среди удобств — общий лаундж, терраса, бар и частная парковка. Среди удобств отеля с 4 звездами — сад, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. В распоряжении гостей доставка еды и напитков и камера хранения багажа.\r\n\r\nВ 1552 Boutique Hotel в каждом номере есть телевизор с плоским экраном, письменный стол и собственная ванная комната, а также предоставляются постельное белье и полотенца. В номерах имеется сейф.\r\n\r\nГостям 1552 Boutique Hotel предоставляется завтрак «шведский стол» или вегетарианский завтрак.\r\n\r\nВ городе Эгер и его окрестностях популярны пешие прогулки и велосипедные прогулки. Гости 1552 Boutique Hotel также могут выбрать другие варианты досуга.\r\n\r\nГости могут в любое время обратиться за помощью к сотрудникам стойки регистрации, которые говорят на немецком, на английском и на венгерском.",
+    "country": 3,
+    "city": 7,
+    "stars": 4,
+    "address": "3300 Эгер, 11 Zalár József utca, Венгрия",
+    "price_per_night": "70.00",
+    "created_at": "2025-11-03T22:10:54.067Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 18,
+  "fields": {
+    "name": "Hotel Eger & Park",
+    "description": "Отель Eger & Park расположен в историческом центре города Эгер, недалеко от городского театра им. Гезы Гардони. В распоряжении гостей ресторан и полностью оборудованный оздоровительный центр с тренажерным залом. Работает бесплатный Wi-Fi. Места на парковке предоставляются за дополнительную плату.\r\n\r\nВсе номера с ванной комнатой оснащены кондиционером, мини-баром и телевизором с кабельными каналами. В большинстве номеров есть балкон с видом на внутренний двор или улицу. В ванной комнате установлена ванна или душ.\r\n\r\nДва крыла здания отеля оформлены в разных стилях: в крыле Park размещены номера в стиле барокко, в крыле Eger — стандартные номера.\r\n\r\nК услугам гостей отеля Eger & Park оздоровительный центр с бассейнами, саунами и соляной комнатой. Желающие смогут пройти лечебные процедуры.\r\n\r\nДля гостей организуют туры с дегустацией вин. В винодельческом регионе Эгер производят белые и красные вина.",
+    "country": 3,
+    "city": 7,
+    "stars": 3,
+    "address": "3300 Эгер, Szálloda ut 1-3, Венгрия",
+    "price_per_night": "50.00",
+    "created_at": "2025-11-03T22:12:11.149Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 19,
+  "fields": {
+    "name": "Anantara Grand Hotel Krasnapolsky Amsterdam",
+    "description": "Пятизвездочный гранд-отель Anantara Krasnapolsky расположен в самом центре Амстердама, на краю знаменитой площади Дам, напротив Королевского дворца. В распоряжении гостей ресторан изысканной кухни и зимний сад. Доступен бесплатный Wi-Fi.\r\n\r\nОтель занимает здание XIX века. Номера оформлены индивидуально и имеют просторную планировку; паркетный пол выгодно дополняет стильные интерьеры. В каждом номере есть качественная кровать и все необходимые удобства. В частности, в каждом номере обустроена собственная ванная комната и предоставляются принадлежности для чая/кофе.\r\n\r\nВ ресторане Krasnapolsky подают современные интерпретации классических блюд, а также разные виды чая и десерты.\r\nВ свою очередь, в ресторане The White Room, удостоенном звезды Мишлен, представлены новаторские гурманские блюда современной кухни.\r\n\r\nЧерез площадь от гранд-отеля Anantara Krasnapolsky останавливаются трамваи нескольких маршрутов. За 15 минут можно дойти до Центрального железнодорожного вокзала. Поездка до международного аэропорта Схипхол занимает 25 минут.",
+    "country": 5,
+    "city": 8,
+    "stars": 5,
+    "address": "Dam 9, Амстердам - центр города, 1012 JS Амстердам, Нидерланды",
+    "price_per_night": "210.00",
+    "created_at": "2025-11-03T22:14:24.455Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 20,
+  "fields": {
+    "name": "Park Plaza Victoria Amsterdam",
+    "description": "Отель Park Plaza Victoria Amsterdam расположен в историческом здании напротив Центрального железнодорожного вокзала Амстердама. В отеле работает пивной бар-ресторан, специализирующийся на качественных голландских блюдах.\r\n\r\nК услугам гостей этого 4-звездочного отеля хорошо обставленные номера. Оформление номеров выдержано в теплых тонах и дополнено большими окнами. В числе удобств всех номеров — принадлежности для чая/кофе, кондиционер и собственная ванная комната с ванной или душем.\r\n\r\nВ ресторане с современным дизайном в течение всего дня предлагают блюда интернациональной кухни, приготовленные в голландском стиле. Кроме того, в отеле сервируют завтрак «шведский стол». В баре VIC'S гости могут попробовать домашнюю выпечку, выпить свежесваренный кофе и послушать джаз. Также предлагается ассортимент импортных алкогольных напитков, местного пива и блюд по меню.",
+    "country": 5,
+    "city": 8,
+    "stars": 4,
+    "address": "Damrak 1 - 5, Амстердам - центр города, 1012 LG Амстердам",
+    "price_per_night": "185.00",
+    "created_at": "2025-11-03T22:15:42.878Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 21,
+  "fields": {
+    "name": "Holiday Inn Express Amsterdam - North Riverside by IHG",
+    "description": "Holiday Inn Express Amsterdam - North Riverside by IHG — это отель в городе Амстердам, в 1,7 км от такой достопримечательности, как Смотровая площадка A'DAM. Среди удобств — терраса, ресторан, бар и частная парковка. В распоряжении гостей отеля с 3 звездами — общий лаундж, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. Этот вариант размещения с номерами для некурящих располагается в 4,5 км от следующей достопримечательности: Дом Рембрандта.\r\n\r\nВ Holiday Inn Express Amsterdam - North Riverside by IHG в каждом номере имеется телевизор с плоским экраном, платяной шкаф и собственная ванная комната, а также предоставляются постельное белье и полотенца. В Holiday Inn Express Amsterdam - North Riverside by IHG в номерах имеется гостиная зона.\r\n\r\nВ Holiday Inn Express Amsterdam - North Riverside by IHG предлагается завтрак «шведский стол» или континентальный завтрак.\r\n\r\nВ окрестностях популярно заниматься пешими прогулками и велосипедными прогулками. К услугам гостей Holiday Inn Express Amsterdam - North Riverside by IHG прокат велосипедов.",
+    "country": 5,
+    "city": 8,
+    "stars": 3,
+    "address": "Motorkade 1, Амстердам-Норд, 1021 JP Амстердам, Нидерланды",
+    "price_per_night": "95.00",
+    "created_at": "2025-11-03T22:16:56.923Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 22,
+  "fields": {
+    "name": "Brasss Hotel Suites",
+    "description": "Отель класса люкс Brasss с красивым видом на окрестности центра города Харлем располагает просторными люксами с роскошными удобствами и большой ванной комнатой. На всей территории работает бесплатный WiFi.\r\n\r\nВ каждом люксе есть телевизор с плоским экраном, кабельными каналами и DVD-плеером, а также тропический душ. В некоторых установлена гидромассажная ванна. В число дополнительных удобств входят принадлежности для чая/кофе и рабочий стол.\r\n\r\nКаждое утро в любое время в люксы подается завтрак, состоящий из блюд для завтрака голландской, английской и французской кухонь.\r\n\r\nОтель класса люкс Brasss расположен по соседству с площадью Де Харлем Гроте Маркт. До железнодорожного вокзала - 1 км.",
+    "country": 5,
+    "city": 9,
+    "stars": 5,
+    "address": "Korte Veerstraat 1, 2011 CL Харлем, Нидерланды",
+    "price_per_night": "140.00",
+    "created_at": "2025-11-03T22:18:22.408Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 23,
+  "fields": {
+    "name": "Boutique Hotel 't Vosje",
+    "description": "Situated in Haarlem, Boutique Hotel 't Vosje has a huge garden and a terrace. Built in 19th century, the property is a 19-minute walk of Frans Halsmuseum.\r\n\r\nAll guest rooms in the hotel are equipped with a coffee machine. Every room is equipped with a flat-screen TV, and certain rooms at Boutique Hotel 't Vosje have a patio. All units feature a private bathroom.\r\n\r\nFree on-side parking is available. The accommodation offers bike rental.\r\n\r\nThe area is known for biking tours. The beach is 7 km away. De Hallen is 2.1 km from Boutique Hotel 't Vosje. Schiphol Airport is 11 km away. Amsterdam is at 24 km from the property.",
+    "country": 5,
+    "city": 9,
+    "stars": 3,
+    "address": "1 Spanjaardslaan, 2012 NR Харлем, Нидерланды",
+    "price_per_night": "75.00",
+    "created_at": "2025-11-03T22:19:31.119Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 24,
+  "fields": {
+    "name": "Cardo Brussels, Autograph Collection",
+    "description": "Cardo Brussels, Autograph Collection — это отель, расположенный в городе Брюссель. К услугам гостей фитнес-центр, терраса, ресторан и бар. В распоряжении гостей отеля с 4 звездами — бесплатный Wi-Fi, доставка еды и напитков и круглосуточная стойка регистрации. Среди удобств отеля — крытый бассейн и место для хранения багажа.\r\n\r\nВ номерах в Cardo Brussels, Autograph Collection установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — платяной шкаф и кофемашина, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям Cardo Brussels, Autograph Collection предоставляются постельное белье и полотенца.\r\n\r\nГостям Cardo Brussels, Autograph Collection предоставляется завтрак «шведский стол» или континентальный завтрак.",
+    "country": 6,
+    "city": 10,
+    "stars": 4,
+    "address": "Avenue du Boulevard 14, Сен-Жосс-тен-Ноде, 1210 Брюссель, Бельгия",
+    "price_per_night": "112.76",
+    "created_at": "2025-11-04T16:38:33.906Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 25,
+  "fields": {
+    "name": "DoubleTree By Hilton Brussels City",
+    "description": "Set within 100 metres from Rue Neuve shopping street and a 15-minute walk from Grand Place, the eco-friendly modern and art déco-era styling DoubleTree By Hilton Brussels City offers free and unlimited WiFi access, an on-site restaurant and a fitness centre.\r\n\r\nThe air-conditioned rooms at the DoubleTree By Hilton Brussels City are furnished with a television, parquet floors and blackout curtains. Featuring high ceilings, each room also includes coffee and tea facilities, as well as a small fridge.\r\n\r\nThe restaurant serves traditional Belgian favourites dishes revisited with an international twist in a trendy Art Deco.\r\n\r\nAt DoubleTree By Hilton Brussels City , guests can work out in the fitness centre or relax in the sauna, which are both free of charge and opened 24 hours a day.",
+    "country": 6,
+    "city": 10,
+    "stars": 5,
+    "address": "Rue Gineste 3, Сен-Жосс-тен-Ноде, BRU 1210 Брюссель, Бельгия",
+    "price_per_night": "180.00",
+    "created_at": "2025-11-04T16:39:42.557Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 26,
+  "fields": {
+    "name": "Holiday Inn Express Brussels-Grand-Place by IHG",
+    "description": "Holiday Inn Express Brussels-Grand-Place by IHG — это отель в центре города Брюссель, в менее чем 1 км от такой достопримечательности, как Бельгийский центр комиксов. К услугам гостей бар. В распоряжении гостей отеля с 3 звездами — место для хранения багажа. На территории имеется частная парковка.\r\n\r\nВ Holiday Inn Express Brussels-Grand-Place by IHG в номерах имеется платяной шкаф. Во всех номерах в Holiday Inn Express Brussels-Grand-Place by IHG имеется собственная ванная комната с душем и бесплатными туалетно-косметическими принадлежностями, а среди прочих удобств — телевизор с плоским экраном и кондиционер. В определенных номерах имеется гостиная зона. Гостям Holiday Inn Express Brussels-Grand-Place by IHG предоставляются постельное белье и полотенца.\r\n\r\nГостям подают завтрак «шведский стол», континентальный завтрак или вегетарианский завтрак.\r\n\r\nСотрудники стойки регистрации, говорящие на арабском, на греческом, на английском и на испанском, всегда готовы помочь гостям.",
+    "country": 6,
+    "city": 10,
+    "stars": 3,
+    "address": "Rue du Cypres 6/10, 1000 Брюссель, Бельгия",
+    "price_per_night": "96.00",
+    "created_at": "2025-11-04T16:40:43.320Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 27,
+  "fields": {
+    "name": "Hotel Monarc",
+    "description": "Hotel Monarc — это отель в центре города Остенде, в 200 м от такой достопримечательности, как Пляж Остенде. К услугам гостей общий лаундж, терраса и бар. В распоряжении гостей отеля с 4 звездами — доставка еды и напитков и бесплатный Wi-Fi. Этот вариант размещения с номерами для некурящих располагается в 25 км от следующей достопримечательности: Морской парк Boudewijn.\r\n\r\nВ Hotel Monarc во всех номерах есть телевизор с плоским экраном, письменный стол и собственная ванная комната, а также предоставляются постельное белье и полотенца. Помимо собственной ванной комнаты с душем и бесплатными туалетно-косметическими принадлежностями, в определенных единицах размещения в Hotel Monarc из окон открывается вид на город. В номерах есть сейф.\r\n\r\nГостям Hotel Monarc предлагается завтрак «шведский стол».",
+    "country": 6,
+    "city": 11,
+    "stars": 4,
+    "address": "Koningsstraat 61, Остенде - центр города, 8400 Остенде, Бельгия",
+    "price_per_night": "112.00",
+    "created_at": "2025-11-04T16:42:07.585Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 28,
+  "fields": {
+    "name": "Hotel Princess",
+    "description": "Отель Princess расположен всего в 90 метрах от пляжа в Остенде. К услугам гостей номера с бесплатным Wi-Fi и обильный бесплатный завтрак \"шведский стол\", а также бар и круглосуточная стойка регистрации.\r\n\r\nВ стандартную комплектацию номеров отеля входит телевизор и собственная ванная комната. Ежедневно подается завтрак, в меню которого входит хлеб различных сортов, круассаны и горячие блюда.\r\n\r\nЗа 30 минут от отеля можно доехать на автомобиле до старинного города Брюгге, где находится пивоварня De Halve Maan и музей Гренинге. Дорога на машине от отеля Princess до Де-Хаана займет 20 минут.",
+    "country": 6,
+    "city": 11,
+    "stars": 3,
+    "address": "Boekareststraat 7, Остенде - центр города, 8400 Остенде",
+    "price_per_night": "90.00",
+    "created_at": "2025-11-04T16:43:16.299Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 29,
+  "fields": {
+    "name": "Villa Euphrosina boutique",
+    "description": "Villa Euphrosina boutique verblijf met verwarmd zwembad, sauna, vlakbij het strand van Oostende — это отель типа «постель и завтрак» в городе Остенде, расположенный на расстоянии 500 м и 25 км соответственно от следующих достопримечательностей: Пляж Остенде и Морской парк Boudewijn. Среди удобств есть сад с террасой, а также бесплатный Wi-Fi. К услугам гостей крытый бассейн и сауна.\r\n\r\nСреди удобств Villa Euphrosina boutique verblijf met verwarmd zwembad, sauna, vlakbij het strand van Oostende — гостиная зона с телевизором с плоским экраном и собственная ванная комната с бесплатными туалетно-косметическими принадлежностями, душем и феном. Также имеется холодильник и кофемашина.",
+    "country": 6,
+    "city": 11,
+    "stars": 4,
+    "address": "47 Euphrosina Beernaertstraat, Остенде - центр города, 8400 Остенде, Бельгия",
+    "price_per_night": "110.00",
+    "created_at": "2025-11-04T16:44:39.526Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 30,
+  "fields": {
+    "name": "CC Palace Hotel",
+    "description": "CC Palace Hotel — это отель в центре города Рим, в менее чем 1 км от такой достопримечательности, как Церковь Санта-Мария-Маджоре. К услугам гостей бар. В распоряжении гостей отеля с 4 звездами — терраса, а также номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. В распоряжении гостей доставка еды и напитков, услуги консьержа и организация экскурсий.\r\n\r\nВ CC Palace Hotel в каждом номере имеется письменный стол и телевизор с плоским экраном. Во всех номерах имеется собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. Во всех номерах есть сейф.\r\n\r\nГостям подают континентальный завтрак, итальянский завтрак или американский завтрак.\r\n\r\nСотрудники круглосуточной стойки регистрации говорят на английском, на испанском, на французском и на итальянском.",
+    "country": 7,
+    "city": 12,
+    "stars": 4,
+    "address": "37 Via delle Quattro Fontane, Рионе Монти, 00184 Рим, Италия",
+    "price_per_night": "110.00",
+    "created_at": "2025-11-04T16:46:50.969Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 31,
+  "fields": {
+    "name": "Room Mate Collection Filippo, Rome-Fontana di Trevi",
+    "description": "Элегантный отель Room Mate Collection Filippo, Rome-Fontana di Trevi расположен в 200 м от станции метро Barberini и в 500 м от Испанской лестницы. В числе удобств терраса, фитнес-центр и бесплатный Wi-Fi.\r\n\r\nПросторные номера оснащены кондиционером, мини-баром и телевизором с плоским экраном. Собственная ванная комната укомплектована феном и бесплатными туалетно-косметическими принадлежностями.\r\n\r\nПо утрам для гостей накрывают завтрак «шведский стол».\r\n\r\nОтель расположен в 3 остановках метро от железнодорожного вокзала Термини. Пешая прогулка до фонтана Треви занимает 10 минут.",
+    "country": 7,
+    "city": 12,
+    "stars": 4,
+    "address": "Via Della Purificazione 31, Виа Венето, 00187 Рим, Италия",
+    "price_per_night": "114.96",
+    "created_at": "2025-11-04T16:47:54.694Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 32,
+  "fields": {
+    "name": "Radisson Collection Hotel, Roma Antica",
+    "description": "Radisson Collection Hotel, Roma Antica — это отель, расположенный в городе Рим. К услугам гостей сад, терраса, ресторан и бар. В распоряжении гостей отеля с 5 звездами — доставка еды и напитков, круглосуточная стойка регистрации и бесплатный Wi-Fi. Этот вариант размещения находится в 400 м от центра города и в 500 м от такой достопримечательности, как Площадь Венеции.\r\n\r\nВ номерах в Radisson Collection Hotel, Roma Antica установлен кондиционер, телевизор с плоским экраном и сейф. Среди прочих удобств — письменный стол, кофемашина и мини-бар, а также собственная ванная комната с биде. Помимо собственной ванной комнаты с душем и бесплатными туалетно-косметическими принадлежностями, в определенных единицах размещения в Radisson Collection Hotel, Roma Antica из окон открывается вид на город. Гостям Radisson Collection Hotel, Roma Antica предоставляются постельное белье и полотенца.",
+    "country": 7,
+    "city": 12,
+    "stars": 5,
+    "address": "Via Delle Botteghe Oscure 46, Пантеон, 00186 Рим, Италия",
+    "price_per_night": "198.00",
+    "created_at": "2025-11-04T16:49:00.928Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 33,
+  "fields": {
+    "name": "Colosseo Modern Apartment",
+    "description": "Colosseo Modern Apartment — это апартаменты в центре города Рим, расположенные на расстоянии 1,1 км и 1,1 км соответственно от следующих достопримечательностей: Станция метро San Giovanni и Церковь Санта-Мария-Маджоре. На территории работает бесплатный Wi-Fi. Палатин и Станция метро Cavour находятся в 1 км и 1,1 км соответственно от этих апартаментов.\r\n\r\nВ распоряжении гостей этих апартаментов с кондиционером спальня (1), гостиная, полностью оборудованная кухня с холодильником и чайником, а также ванная комната (1) с биде и душем. Гостям этих апартаментов предоставляются полотенца и постельное белье.\r\n\r\nРядом с Colosseo Modern Apartment находятся такие популярные достопримечательности, как Станция метро Vittorio Emanuele, Золотой дом Нерона и Колизей. Аэропорт Рим-Чампино находится в 13 км.",
+    "country": 7,
+    "city": 12,
+    "stars": 3,
+    "address": "130 Via di San Giovanni in Laterano, Рионе Монти, 00184 Рим, Италия",
+    "price_per_night": "95.00",
+    "created_at": "2025-11-04T16:50:30.865Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 34,
+  "fields": {
+    "name": "Hotel Calimala Florence",
+    "description": "Hotel Calimala Florence — это отель, расположенный в городе Флоренция. К услугам гостей фитнес-центр, терраса, ресторан и бар. В распоряжении гостей отеля с 4 звездами — круглосуточная стойка регистрации, услуги консьержа и бесплатный Wi-Fi. Этот вариант размещения находится в 200 м от центра города и в 1,1 км от такой достопримечательности, как Палаццо Веккьо.\r\n\r\nВ номерах Hotel Calimala Florence установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — письменный стол, кофемашина и мини-бар, а также собственная ванная комната с биде. Помимо собственной ванной комнаты с душем и бесплатными туалетно-косметическими принадлежностями, в определенных номерах в Hotel Calimala Florence из окон открывается вид на город. Гостям Hotel Calimala Florence предоставляются постельное белье и полотенца.",
+    "country": 7,
+    "city": 13,
+    "stars": 4,
+    "address": "Via Lamberti 5, Уффици, 50123 Флоренция, Италия",
+    "price_per_night": "123.00",
+    "created_at": "2025-11-04T16:51:49.490Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 35,
+  "fields": {
+    "name": "Arte' Boutique Hotel",
+    "description": "Бутик-отель Arte' расположен во Флоренции, в 200 м от Галереи Академии изящных искусств. Гости могут отдохнуть в общем лаундже и воспользоваться услугами консьержа. Отель находится в 400 м от центрального железнодорожного вокзала Меркато и в 300 м от кафедрального собора Флоренции.\r\n\r\nНомера оснащены телевизором с плоским экраном и спутниковыми каналами, бесплатным сервисом Netflix и смартфоном. В собственной ванной комнате установлено биде и предоставляются бесплатные туалетно-косметические принадлежности. В некоторых номерах бутик-отеля Arte' обустроена гостиная зона. В числе удобств номеров письменный стол, кофемашина и принадлежности для чая.\r\n\r\nДля гостей сервируется завтрак «шведский стол».",
+    "country": 7,
+    "city": 13,
+    "stars": 4,
+    "address": "Via Camillo Cavour, numero 14 , Сан-Марко - Сантиссима-Аннунциата, 50129 Флоренция, Италия",
+    "price_per_night": "130.00",
+    "created_at": "2025-11-04T16:52:47.951Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 36,
+  "fields": {
+    "name": "Floren Hotel",
+    "description": "Отель класса люкс Floren находится в типичном флорентийском здании в центре города, всего в 2 минутах ходьбы от вокзала.\r\n\r\nВ этом отеле, занимающем здание XVI века, принимают международных гостей с начала XVIII века.\r\n\r\nОтель класса люкс Floren удобно расположен всего в нескольких минутах ходьбы от конференц-центра, собора Санта-Мария-дель-Фьоре и всех главных памятников и галерей.\r\n\r\nНачните свой день с обильного завтрака «шведский стол», который сервируется с 07:00 до 10:30, а затем отправляйтесь на прогулку по Флоренции.\r\n\r\nВ отеле работают ресторан, бар и кафе-мороженое.",
+    "country": 7,
+    "city": 13,
+    "stars": 5,
+    "address": "Via Panzani 17, Санта-Мария-Новелла, 50123 Флоренция, Италия",
+    "price_per_night": "210.00",
+    "created_at": "2025-11-04T16:53:55.788Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 37,
+  "fields": {
+    "name": "Hotel The Square Milano Duomo",
+    "description": "Отель Square Milano Duomo расположен в историческом здании, в 5 минутах ходьбы от Миланского собора, оперного театра Ла Скала и торгового района Витторио Эмануэле. К услугам гостей ресторан, бар и бесплатный Wi-Fi на всей территории.\r\n\r\nНомера оформлены в современном стиле и оборудованы кондиционером и мини-баром. Собственная ванная комната укомплектована феном и бесплатными туалетно-косметическими принадлежностями.\r\n\r\nПрогулка до парка Семпионе занимает 15 минут. Расстояние до станции метро Missori составляет 100 метров.",
+    "country": 7,
+    "city": 14,
+    "stars": 4,
+    "address": "Via Albricci 2-4, Милан - центр города, 20122 Милан, Италия",
+    "price_per_night": "180.84",
+    "created_at": "2025-11-04T16:55:23.816Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 38,
+  "fields": {
+    "name": "Palazzo Cordusio Gran Melia",
+    "description": "Palazzo Cordusio Gran Melia - The Leading Hotels of the World — это отель, расположенный в городе Милан. К услугам гостей фитнес-центр, терраса, ресторан и бар. Этот вариант размещения располагается в 400 м и 300 м соответственно от таких достопримечательностей, как Оперный театр «Ла Скала» и Галерея Виктора Эммануила II. Montenapoleone Metro Station — в менее чем 1 км. Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или доставкой еды и напитков, а также подключиться к бесплатному Wi-Fi на всей территории.\r\n\r\nГостям Palazzo Cordusio Gran Melia - The Leading Hotels of the World предоставляется завтрак «шведский стол».\r\n\r\nГости отеля с 5 звездами Palazzo Cordusio Gran Melia - The Leading Hotels of the World могут воспользоваться сауной и гидромассажной ванной.\r\n\r\nРядом с Palazzo Cordusio Gran Melia - The Leading Hotels of the World находятся такие популярные достопримечательности, как Церковь Сан-Маурицио-аль-Монастеро-Маджоре, Музей Новеченто и Замок Сфорца. Аэропорт Милан Линате находится в 9 км.",
+    "country": 7,
+    "city": 14,
+    "stars": 5,
+    "address": "2 Piazza Cordusio, Милан - центр города, 20123 Милан, Италия",
+    "price_per_night": "265.00",
+    "created_at": "2025-11-04T16:56:31.997Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 39,
+  "fields": {
+    "name": "The Glamore Milano Duomo",
+    "description": "Отель The Glamore Milano Duomo расположен прямо на площади Пьяцца-дель-Дуомо и занимает историческое здание с видом на величественный Миланский собор. До оперного театра «Ла Скала» и станции метро Duomo — всего несколько шагов.\r\n\r\nВ отеле предоставляется бесплатный Wi-Fi. Во всех номерах установлены кондиционер и телевизор с плоским экраном и спутниковыми каналами. В числе удобств собственная ванная комната с феном, бесплатными туалетно-косметическими принадлежностями и тапочками.\r\n\r\nРасстояние до международного аэропорта Милан Линате составляет 9 км.",
+    "country": 7,
+    "city": 14,
+    "stars": 5,
+    "address": "Via Silvio Pellico 2, Милан - центр города, 20121 Милан, Италия",
+    "price_per_night": "240.00",
+    "created_at": "2025-11-04T16:58:22.716Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 40,
+  "fields": {
+    "name": "Hotel Cristoforo Colombo",
+    "description": "Hotel Cristoforo Colombo - Preferred Hotels & Resorts — это отель в центре города Милан, в 700 м от такой достопримечательности, как GAM Milano. К услугам гостей фитнес-центр, ресторан и бар. В распоряжении гостей отеля с 4 звездами — бесплатный Wi-Fi, доставка еды и напитков и круглосуточная стойка регистрации. В снэк-баре можно заказать напитки.\r\n\r\nВ номерах в Hotel Cristoforo Colombo - Preferred Hotels & Resorts установлен кондиционер, телевизор с плоским экраном и сейф. Среди прочих удобств — письменный стол, чайник и мини-бар, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям Hotel Cristoforo Colombo - Preferred Hotels & Resorts предоставляются постельное белье и полотенца.\r\n\r\nГостям подают завтрак «шведский стол», континентальный завтрак или итальянский завтрак.",
+    "country": 7,
+    "city": 14,
+    "stars": 4,
+    "address": "Corso Buenos Aires 3, Милан - центр города, 20124 Милан, Италия",
+    "price_per_night": "170.00",
+    "created_at": "2025-11-04T16:59:28.126Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 41,
+  "fields": {
+    "name": "Hotel Milu Milano",
+    "description": "Hotel Milu Milano — это отель в городе Милан, в 700 м от такой достопримечательности, как GAM Milano. К услугам гостей услуги консьержа, ресторан, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются номера для некурящих. В распоряжении гостей отеля с 4 звездами — доставка еды и напитков и круглосуточная стойка регистрации. Станция метро San Babila — в 1,2 км, а центр — в 1,7 км.\r\n\r\nВ номерах в Hotel Milu Milano установлен кондиционер, телевизор с плоским экраном и сейф. Среди прочих удобств — платяной шкаф, кофемашина и мини-бар, а также собственная ванная комната с биде. Помимо собственной ванной комнаты с душем и бесплатными туалетно-косметическими принадлежностями, в некоторых единицах размещения в Hotel Milu Milano из окон открывается вид на город. Гостям Hotel Milu Milano предоставляются постельное белье и полотенца.\r\n\r\nГостям предлагается завтрак «шведский стол», континентальный завтрак или итальянский завтрак.",
+    "country": 7,
+    "city": 14,
+    "stars": 4,
+    "address": "Piazza Guglielmo Oberdan, 12, Милан - центр города, 20129 Милан, Италия",
+    "price_per_night": "176.35",
+    "created_at": "2025-11-04T17:00:56.592Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 42,
+  "fields": {
+    "name": "Armani Hotel Milano",
+    "description": "Отель Armani Milano находится в фешенебельном миланском Квартале моды в 50 метрах от станции метро Montenapoleone. Персональный консьерж провожает гостей в современные изысканно оформленные номера.\r\n\r\nОтель занимает здание 1930-х годов, построенное по проекту архитектора Энрико Гриффини. Номера с кофемашиной Nespresso обставлены мебелью Armani Casa, ванная комната с душем и ванной отделана природным камнем или мрамором. \r\n\r\nПо утрам в отеле Armani Milano сервируется завтрак «шведский стол». В ресторане подают блюда интернациональной кухни и традиционные блюда региона Ломбардия.\r\n\r\nВ отеле работает фитнес-центр, сауна и турецкая баня.",
+    "country": 7,
+    "city": 14,
+    "stars": 5,
+    "address": "Via Manzoni 31, Милан - центр города, 20121 Милан, Италия",
+    "price_per_night": "237.60",
+    "created_at": "2025-11-04T17:01:56.229Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 43,
+  "fields": {
+    "name": "Grand Hotel Rimini",
+    "description": "Grand Hotel Rimini has been welcoming guests since 1908, it is set right on the seafront in Marina Centro, and offers luxury rooms, swimming pools, sports facilities, and a private beach. WiFi is free.\r\n\r\nAll air-conditioned, rooms are spacious and elegant. They come with satellite TV channels, a minibar and a private bathroom with a hairdryer, slippers and toiletries. .\r\n\r\nAn American breakfast is served each morning, while La Dolce Vita restaurant serves Mediterranean specialities. There is a second restaurant on the beach, where you will find a swimming pool.\r\n\r\nGrand Hotel Rimini  is surrounded by a large park. It is located a 10-minute walk from Rimini Train Station.\r\n\r\nThere is a second restaurant on the beach, where you will find also a swimming pool for children.",
+    "country": 7,
+    "city": 15,
+    "stars": 5,
+    "address": "Parco Fellini 1, Римини - центр города, 47900 Римини, Италия",
+    "price_per_night": "165.50",
+    "created_at": "2025-11-04T17:03:54.665Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 44,
+  "fields": {
+    "name": "Hotel Regina Elena 57 & Oro Bianco SPA",
+    "description": "line from the seafront, we are 50 meters away from the first beach. The historic centre of Rimini is a few minutes' walk away.\r\n\r\nAir-conditioned rooms of the Hotel Regina Elena come with an LCD TV. Each has a private bathroom with a hairdryer and free toiletries.\r\n\r\nThe on-site Oro Bianco Spa provides relaxing treatments such as a hydromassage salt-water pool, Turkish bath, Finnish sauna, salt cave and more. During summer, the Regina Elena also features a solarium zone and swimming pool.\r\n\r\nAll Oro Bianco Spa services are not included in the room rate.\r\n\r\nThe spa is open every day from the afternoon until 8 pm, but reservation is required.\r\nThe spa is open every day but reservation is required.\r\nParking is subject to a supplement and reservation is required as we have limited places.\r\nThe restaurant is only open in the summer months and some public holidays.",
+    "country": 7,
+    "city": 15,
+    "stars": 4,
+    "address": "Viale Regina Elena 57, Римини - центр города, 47900 Римини, Италия",
+    "price_per_night": "110.00",
+    "created_at": "2025-11-04T17:04:53.786Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 45,
+  "fields": {
+    "name": "Hotel Villa Rosa Riviera",
+    "description": "Set in the Marina Centro area of Rimini, Hotel Villa Rosa Riviera is located on the elegant seaside promenade. It features a gym with personal trainers, and air-conditioned rooms with free Wi-Fi.\r\n\r\nRooms of Villa Rosa Riviera have a modern design or simple décor. Each room offers a LED TV with Mediaset Premium channels. The rooms on the top floor offer unique views of the Adriatic Sea.\r\n\r\nBreakfast is buffet style, and the Marlin restaurant specialises in seafood, pasta, and traditional Emilia-Romagna dishes. Meals can be served out on the panoramic terrace.\r\n\r\nThe hotel was refurbished in 2011 and is 100 metres from the beach. The historic centre is a 15-minute walk away, and bus number 11 will take you to Rimini Train Station.",
+    "country": 7,
+    "city": 15,
+    "stars": 4,
+    "address": "Viale Vespucci 71, Римини - центр города, 47900 Римини, Италия",
+    "price_per_night": "114.30",
+    "created_at": "2025-11-04T17:06:01.953Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 46,
+  "fields": {
+    "name": "Hotel Cenisio",
+    "description": "Отель Cenisio расположен в Римини, в 2,9 км от района Римини/Мирамаре. К услугам гостей бар, общий лаундж и терраса. К услугам гостей этого 3-звездочного отеля сад и номера с кондиционером, бесплатным Wi-Fi и собственной ванной комнатой. В отеле запрещено курение. Расстояние до стадиона Римини составляет 3,2 км.\r\n\r\nВ номерах отеля установлен шкаф для одежды. В номерах отеля Cenisio установлен письменный стол и телевизор с плоским экраном.\r\n\r\nКаждое утро в отеле сервируется континентальный завтрак и завтрак «шведский стол».\r\n\r\nПарк аттракционов Fiabilandia находится в 3,7 км от отеля Cenisio. Расстояние до международного аэропорта имени Федерико Феллини составляет 5 км.",
+    "country": 7,
+    "city": 15,
+    "stars": 3,
+    "address": "Via Giacomo Villani 1, Римини - центр города, 47900 Римини, Италия",
+    "price_per_night": "89.50",
+    "created_at": "2025-11-04T17:07:47.328Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 47,
+  "fields": {
+    "name": "The Julius Prague",
+    "description": "В номерах в The Julius Prague установлен кондиционер, телевизор с плоским экраном и сейф. Среди прочих удобств — платяной шкаф, кофемашина и холодильник, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям The Julius Prague предоставляются постельное белье и полотенца.\r\n\r\nГостям предлагается завтрак «шведский стол», континентальный завтрак или полный английский/ирландский завтрак.\r\n\r\nРядом с The Julius Prague находятся такие популярные достопримечательности, как Здание муниципалитета, Пражские куранты и Староместская площадь. Аэропорт имени Вацлава Гавела/Прага находится в 15 км.",
+    "country": 8,
+    "city": 16,
+    "stars": 5,
+    "address": "3 Senovážné náměstí, Прага, 110 00, Чехия",
+    "price_per_night": "195.00",
+    "created_at": "2025-11-04T17:09:07.877Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 48,
+  "fields": {
+    "name": "Almanac X Alcron Prague",
+    "description": "Этот роскошный отель открылся в Праге в 1932 году. Он расположен в нескольких шагах от Вацлавской площади, в историческом центре Праги, на Староместской площади. Отель был полностью отремонтирован в 2023 году и сочетает в себе оригинальные элементы в стиле ар-деко с современными тенденциями и произведениями искусства местных авторов.\r\n\r\nГурманы оценят ресторан Alcron с его уникальной концепцией, ориентированной на использование в основном свежих сезонных продуктов растительного происхождения от местных поставщиков. Гости могут начать свой день в кафе, оформленном в деревенском стиле, а продолжить вечер в баре Alcron с дизайном в стиле ар-деко, заказав фирменные коктейли.\r\n\r\nСбалансировать ваше состояние поможет фитнес-центр с саунами.\r\n\r\nНа всей территории отеля предоставляется бесплатный Wi-Fi. Гости могут воспользоваться охраняемой парковкой в подземном гараже с услугой парковщика и зарядным устройством для электромобилей.",
+    "country": 8,
+    "city": 16,
+    "stars": 5,
+    "address": "Stepanska 40, Прага, 110 00, Чехия",
+    "price_per_night": "211.00",
+    "created_at": "2025-11-04T17:10:05.680Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 49,
+  "fields": {
+    "name": "THE MANES Boutique Hotel Prague",
+    "description": "Бутик-отель THE Mánes Prague с современными интерьерами расположен в центре Праги рядом с набережной реки Влтава и в пределах 1 км от Вацлавской площади и Староместской площади. К услугам гостей бесплатный Wi-Fi на всей территории и изысканные номера. На всей территории отеля можно пользоваться бесплатным Wi-Fi.\r\n\r\nВ распоряжении гостей просторные номера с телефоном, спутниковым телевидением, мини-баром и сейфом. В каждом номере и люксе есть ванная комната с душем и/или ванной.\r\n\r\nРядом с бутик-отелем THE MANES Prague налажено хорошее транспортное сообщение. До большинства основных достопримечательностей Праги можно дойти пешком. За дополнительную плату гости могут пользоваться близлежащей парковкой в гараже.",
+    "country": 8,
+    "city": 16,
+    "stars": 4,
+    "address": "Myslíkova 20, Прага, 110 00, Чехия",
+    "price_per_night": "165.00",
+    "created_at": "2025-11-04T17:11:00.883Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 50,
+  "fields": {
+    "name": "The Grand Mark Prague - The Leading Hotels of the World",
+    "description": "Традиционное оформление отеля The Grand Mark Prague - The Leading Hotels of the World гармонично сочетается с современными декоративными элементами. Просторные номера обставлены красивой мебелью, в большинстве из них имеется отдельная гостиная с полностью оборудованной мини-кухней и мягким уголком. В большой ванной комнате постелен пол с подогревом, а из окон открывается живописный вид на сад или улицу.\r\n\r\nПо утрам в отеле сервируется сытный завтрак «шведский стол» с блюдами домашней кухни, приготовленными из местных экологически чистых продуктов. В ресторане Le Grill готовят блюда интернациональной и чешской кухни. Кроме того, в отеле работает бар Two Step и ресторан Garden с непринужденной обстановкой и безупречным обслуживанием. Гостям выдают ваучер на приветственный напиток.\r\n\r\nВ стоимость проживания включен доступ в фитнес-центр, открытый круглосуточно и без выходных.\r\n\r\nБлагодаря своему удачному расположению отель Grand Mark Prague идеально подходит для медового месяца, романтического отдыха и незабываемых выходных. Великолепный собственный сад отеля с внутренним двором площадью 1 800 кв. м является одним из самых популярных мест в Праге для проведения значимых мероприятий и торжеств.",
+    "country": 8,
+    "city": 16,
+    "stars": 4,
+    "address": "Hybernská 12, Прага, 110 00, Чехия",
+    "price_per_night": "120.00",
+    "created_at": "2025-11-04T17:12:06.985Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 51,
+  "fields": {
+    "name": "Courtyard by Marriott Brno",
+    "description": "Set within green environs of Brno’s premiere business area, 1.5 km from Špilberk Castle, Courtyard by Marriott Brno features air-conditioned rooms and private parking. Guests can enjoy the on-site bar and complimentary WiFi throughout the hotel.\r\nEach room includes a flat-screen TV, kettle, free toiletries and a hairdryer. Certain units feature a seating area for your convenience.\r\n\r\nAdditional features of the property include a 24/7 rooftop fitness centre, 10 meeting rooms, a ballroom with the capacity of 400 people, a 24-hour front desk, as well as a shared lounge, 24/7 shop with snacks, refreshment and toiletries.\r\n\r\nJazzmin Bar & Dining serves international cuisine alongside local specialties. The restaurant is open for breakfast, lunch and dinner. The hotel also offers car hire.",
+    "country": 8,
+    "city": 17,
+    "stars": 4,
+    "address": "Holandska Street 12, Брно, 639 00, Чехия",
+    "price_per_night": "90.00",
+    "created_at": "2025-11-04T17:13:26.968Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 52,
+  "fields": {
+    "name": "Luxury Oasis",
+    "description": "В распоряжении гостей этих апартаментов с кондиционером спальня (1), гостиная, полностью оборудованная кухня с холодильником и кофемашиной, а также ванная комната (1) с ванной или душем и бесплатными туалетно-косметическими принадлежностями. В этих апартаментах с 5 звездами есть бесплатная частная парковка, а также работает бесплатный Wi-Fi.\r\n\r\nРядом с Luxury Oasis, Sauna, AC and Free Parking находятся такие популярные достопримечательности, как Замок Шпильберк, Villa Tugendhat и Петропавловский собор. Аэропорт Брно-Туржаны находится в 9 км.",
+    "country": 8,
+    "city": 17,
+    "stars": 5,
+    "address": "21 Koliště, Брно, 602 00, Чехия",
+    "price_per_night": "125.00",
+    "created_at": "2025-11-04T17:14:29.323Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 53,
+  "fields": {
+    "name": "Maximus Resort",
+    "description": "Opened in June 2012, Maximus Resort features the Infinit Maximus Wellness and Spa Centre with an aquatic and sauna world including massages, a swimming pool, a hot tub, a steam bath, Kneipp bath and an outdoor cooling pool, all available at a surcharge.\r\n\r\nStylishly decorated, most units have a terrace or balcony with views of the surrounding landscape. Each en-suite room comes with a flat-screen TV and a minibar. Some also have a seating area or a separate living room. The property contains only a 4-star area.\r\n\r\nA buffet breakfast is served each morning in Maximus Resort. The property’s restaurant serves international cuisine, and also has a garden with barbecue facilities.\r\n\r\nBoat trips are available at Brno Dam, 200 metres away. There is also the hotel's beach bar Hribek, open from April to September. The Kaskáda Golf Course, a zoo, and the Přístaviště Bus Stop are all with 2 km.",
+    "country": 8,
+    "city": 17,
+    "stars": 4,
+    "address": "Hrázní 4a, Брно, 63500, Чехия",
+    "price_per_night": "100.00",
+    "created_at": "2025-11-04T17:15:27.822Z"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 1,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/627325287.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 2,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/627335071.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 3,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/631161797.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 4,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/655997589.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 5,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/655997592.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 6,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/655997593.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 7,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/487859106.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 8,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/487859086.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 9,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/767482265.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 10,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/750398637.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 11,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/750398616.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 12,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/750398580.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 13,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/706447402.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 14,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/302277178.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 15,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/332472070.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 16,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/300490819.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 17,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/301602734.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 18,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/335018265.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 19,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/438964770.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 20,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/356913190.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 21,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/534134830.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 22,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/763929010.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 23,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/604087887.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 24,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/641869356.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 25,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/268450283.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 26,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/624810342.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 27,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/627405110.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 28,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/763722847.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 29,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/763722891.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 30,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/763603766.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 31,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/311388380.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 32,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/672272741.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 33,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/665033888.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 34,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/360214086.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 35,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/360217103.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 36,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/371596111.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 37,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/346156423.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 38,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/420027956.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 39,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/539352947.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 40,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/612648172.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 41,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/607871988.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 42,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/607779222.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 43,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/226067552.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 44,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/232845846.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 45,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/232851483.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 46,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/509219345.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 47,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/509219433.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 48,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/509219376.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 49,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/636101744.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 50,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/319095693.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 51,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/683864419.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 52,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/397921809.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 53,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/397922055.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 54,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/397921775.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 55,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/470251896.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 56,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/632165051.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 57,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/632165046.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 58,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/730636311.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 59,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/730636315.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 60,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/730636317.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 61,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/269462087.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 62,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/266118252.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 63,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/275687299.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 64,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/177309834.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 65,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/252843309.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 66,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/252845339.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 67,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/289699269.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 68,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/289699577.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 69,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/289699556.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 70,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/596626119.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 71,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/640397170.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 72,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/640373449.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 73,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/484088091.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 74,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/484088050.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 75,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/484088037.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 76,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/577882128.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 77,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/363385136.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 78,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/363385005.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 79,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/211071972.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 80,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/211594500.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 81,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/211595859.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 82,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/68017289.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 83,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/70317829.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 84,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/70317888.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 85,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/617404560.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 86,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/617404725.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 87,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/756706064.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 88,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/415443910.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 89,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/548335927.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 90,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/548336071.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 91,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/288821508.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 92,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/245558379.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 93,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/244554665.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 94,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/724570154.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 95,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/534335882.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 96,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/724570176.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 97,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/255571123.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 98,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/255571165.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 99,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/255571127.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 100,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/224175974.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 101,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/501485651.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 102,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/216040329.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 103,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/252941038.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 104,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/182889762.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 105,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/252916303.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 106,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/569765039.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 107,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/572789608.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 108,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/570746250.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 109,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/708761014.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 110,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/484845724.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 111,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/488116631.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 112,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/692515919.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 113,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/555173581.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 114,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/520748438.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 115,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/43023656.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 116,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/692735997.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 117,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/435828025.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 118,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/464022164.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 119,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/507391787.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 120,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/464020075.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 121,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/706342197.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 122,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/706355347.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 123,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/706345192.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 124,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/13457149.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 125,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/13456973.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 126,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/358357787.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 127,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/284152745.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 128,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/187951882.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 129,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/188220347.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 130,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/564458328.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 131,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/29533537.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 132,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/264332333.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 133,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/532559999.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 134,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/501555806.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 135,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/382866337.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 136,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/491480375.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 137,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/369960180.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 138,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/369961757.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 139,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/416319201.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 140,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/689505010.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 141,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/689497727.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 142,
+  "fields": {
+    "hotel": 48,
+    "image": "hotel_images/431127386.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 143,
+  "fields": {
+    "hotel": 48,
+    "image": "hotel_images/262162829.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 144,
+  "fields": {
+    "hotel": 48,
+    "image": "hotel_images/462175537.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 145,
+  "fields": {
+    "hotel": 49,
+    "image": "hotel_images/437169071.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 146,
+  "fields": {
+    "hotel": 49,
+    "image": "hotel_images/437219174.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 147,
+  "fields": {
+    "hotel": 49,
+    "image": "hotel_images/422843310.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 148,
+  "fields": {
+    "hotel": 50,
+    "image": "hotel_images/25477162.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 149,
+  "fields": {
+    "hotel": 50,
+    "image": "hotel_images/268308126.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 150,
+  "fields": {
+    "hotel": 50,
+    "image": "hotel_images/733557625.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 151,
+  "fields": {
+    "hotel": 51,
+    "image": "hotel_images/644783710.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 152,
+  "fields": {
+    "hotel": 51,
+    "image": "hotel_images/644783661.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 153,
+  "fields": {
+    "hotel": 51,
+    "image": "hotel_images/644783652.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 154,
+  "fields": {
+    "hotel": 52,
+    "image": "hotel_images/320883261.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 155,
+  "fields": {
+    "hotel": 52,
+    "image": "hotel_images/385254690.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 156,
+  "fields": {
+    "hotel": 52,
+    "image": "hotel_images/257025060.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 157,
+  "fields": {
+    "hotel": 53,
+    "image": "hotel_images/63375739.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 158,
+  "fields": {
+    "hotel": 53,
+    "image": "hotel_images/432079626.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 159,
+  "fields": {
+    "hotel": 53,
+    "image": "hotel_images/432079598.jpg"
+  }
+}
+]

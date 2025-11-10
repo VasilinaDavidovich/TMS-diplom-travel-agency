@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-uw_k6b#bwo386%yw#8n8+i6^+-csr-1pj5^q1p71@v+w7_o0zf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 CORS_ALLOWED_ORIGINS = [
@@ -80,6 +80,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
 }
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -88,13 +91,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hoteldb',
+        'USER': 'hoteluser',
+        'PASSWORD': 'hotelpassword',
+        'HOST': 'db',  # ← ИЗМЕНИТЕ 'localhost' на 'db'
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -19,7 +19,10 @@ urlpatterns = [
     path('auth/register/', views.register_user, name='register'),
     path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('auth/profile/', views.get_user_profile, name='profile'),
+    path('profile/', views.profile_page, name='profile-page'),
+    path('auth/delete-account/', views.delete_user_account, name='delete-account'),
+    path('auth/current-user/', views.get_current_user, name='current-user'),
+
 
     # Frontend страницы
     path('', home_page, name='home'),
