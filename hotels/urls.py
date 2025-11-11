@@ -12,6 +12,11 @@ from .views import (
     home_page,
     hotel_detail_page,
     search_results_page,
+    FavoriteListView,
+    FavoriteCreateView,
+    FavoriteDeleteView,
+    UserReviewsView,
+    delete_review,
 )
 
 urlpatterns = [
@@ -35,6 +40,8 @@ urlpatterns = [
 
     # Отзывы
     path('reviews/', ReviewCreateView.as_view(), name='review-create'),
+    path('my-reviews/', UserReviewsView.as_view(), name='user-reviews'),
+    path('reviews/delete/<int:review_id>/', delete_review, name='review-delete'),
 
     # Бронирования
     path('bookings/', BookingCreateView.as_view(), name='booking-create'),
@@ -43,4 +50,9 @@ urlpatterns = [
     # Справочники
     path('countries/', CountryListView.as_view(), name='country-list'),
     path('cities/', CityListView.as_view(), name='city-list'),
+
+    # Избранное
+    path('favorites/', FavoriteListView.as_view(), name='favorite-list'),
+    path('favorites/add/', FavoriteCreateView.as_view(), name='favorite-add'),
+    path('favorites/remove/<int:pk>/', FavoriteDeleteView.as_view(), name='favorite-remove'),
 ]

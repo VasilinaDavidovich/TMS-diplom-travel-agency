@@ -26,7 +26,7 @@
                             <a class="nav-link" data-bs-toggle="tab" href="#favorites">Избранные отели</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#reviews">Мои отзывы</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#reviews">📝 Мои отзывы</a>
                         </li>
                     </ul>
 
@@ -43,8 +43,8 @@
 
                         <!-- Вкладка избранного -->
                         <div class="tab-pane fade" id="favorites">
-                            <h5>Избранные отели</h5>
-                            <p class="text-muted">Отели, которые вы добавили в избранное</p>
+                            <h5>❤️ Избранные отели</h5>
+                            <p class="text-muted" id="favoritesSummary">Загрузка избранных отелей...</p>
                             <div id="favoritesList">
                                 <!-- Избранные отели будут здесь -->
                             </div>
@@ -52,8 +52,8 @@
 
                         <!-- Вкладка отзывов -->
                         <div class="tab-pane fade" id="reviews">
-                            <h5>Мои отзывы</h5>
-                            <p class="text-muted">Отзывы, которые вы оставили</p>
+                            <h5>📝 Мои отзывы</h5>
+                            <p class="text-muted" id="reviewsSummary">Загрузка отзывов...</p>
                             <div id="reviewsList">
                                 <!-- Отзывы будут здесь -->
                             </div>
@@ -100,6 +100,29 @@
         </div>
     </div>
 </div>
+
+<style>
+.rating-trophies-small {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.rating-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.rating-value {
+    background: rgba(255, 215, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.review-item {
+    border-left: 4px solid #4d7cfe;
+}
+</style>
 
 <script>
 function logout() {
@@ -153,6 +176,12 @@ async function loadUserData() {
 
             // Загружаем бронирования
             await loadUserBookings();
+
+            // Загружаем избранные отели
+            await loadUserFavorites();
+
+            // Загружаем отзывы
+            await loadUserReviews();
         }
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
@@ -160,29 +189,30 @@ async function loadUserData() {
 }
 
 // Загрузка бронирований пользователя
-    async function loadUserBookings() {
-        const token = localStorage.getItem('access_token');
-        if (!token) return;
+async function loadUserBookings() {
+    const token = localStorage.getItem('access_token');
+    if (!token) return;
 
-        try {
-            const response = await fetch('/api/my-bookings/', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                }
-            });
-
-            if (response.ok) {
-                const bookings = await response.json();
-                displayBookings(bookings);
-            } else {
-                document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки бронирований';
+    try {
+        const response = await fetch('/api/my-bookings/', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
             }
-        } catch (error) {
-            document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки';
+        });
+
+        if (response.ok) {
+            const bookings = await response.json();
+            displayBookings(bookings);
+        } else {
+            document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки бронирований';
         }
+    } catch (error) {
+        console.error('Ошибка загрузки бронирований:', error);
+        document.getElementById('bookingsSummary').textContent = 'Ошибка загрузки';
     }
+}
 
 // Отображение бронирований
 function displayBookings(bookings) {
@@ -227,6 +257,224 @@ function displayBookings(bookings) {
             </div>
         </div>
     `).join('');
+}
+
+// Загрузка избранных отелей
+async function loadUserFavorites() {
+    const token = localStorage.getItem('access_token');
+    if (!token) return;
+
+    try {
+        const response = await fetch('/api/favorites/', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            const favorites = await response.json();
+            displayFavorites(favorites);
+        } else {
+            document.getElementById('favoritesSummary').textContent = 'Ошибка загрузки избранных отелей';
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки избранных отелей:', error);
+        document.getElementById('favoritesSummary').textContent = 'Ошибка загрузки';
+    }
+}
+
+// Отображение избранных отелей
+function displayFavorites(favorites) {
+    const container = document.getElementById('favoritesList');
+    const summary = document.getElementById('favoritesSummary');
+
+    if (favorites.length === 0) {
+        summary.textContent = 'У вас пока нет избранных отелей';
+        container.innerHTML = `
+            <div class="text-center py-4">
+                <p class="text-muted">❤️ Добавляйте отели в избранное, чтобы не потерять!</p>
+                <a href="/api/" class="btn btn-primary">Найти отели</a>
+            </div>
+        `;
+        return;
+    }
+
+    summary.textContent = `Избранных отелей: ${favorites.length}`;
+
+    container.innerHTML = favorites.map(fav => `
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6>🏨 ${fav.hotel_name}</h6>
+                        <p class="mb-1">📍 ${fav.hotel_city}, ${fav.hotel_country}</p>
+                        <p class="mb-1">💰 Цена: <strong class="text-warning">${fav.hotel_price}€ / ночь</strong></p>
+                        <small class="text-muted">
+                            📋 Добавлено: ${new Date(fav.created_at).toLocaleDateString('ru-RU')}
+                        </small>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <div class="mb-2">
+                            <a href="/api/hotel/${fav.hotel}/" class="btn btn-primary btn-sm me-2">Подробнее</a>
+                            <button class="btn btn-outline-danger btn-sm" onclick="removeFromFavorites(${fav.id})">
+                                Удалить
+                            </button>
+                        </div>
+                        ${fav.hotel_image ?
+                            `<img src="${fav.hotel_image}" class="img-fluid rounded" style="height: 80px; width: 100%; object-fit: cover;" alt="${fav.hotel_name}">` :
+                            '<div class="text-muted small">Нет изображения</div>'
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Загрузка отзывов пользователя
+async function loadUserReviews() {
+    const token = localStorage.getItem('access_token');
+    if (!token) return;
+
+    try {
+        const response = await fetch('/api/my-reviews/', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            const reviews = await response.json();
+            displayUserReviews(reviews);
+        } else {
+            document.getElementById('reviewsSummary').textContent = 'Ошибка загрузки отзывов';
+        }
+    } catch (error) {
+        console.error('Ошибка загрузки отзывов:', error);
+        document.getElementById('reviewsSummary').textContent = 'Ошибка загрузки';
+    }
+}
+
+// Отображение отзывов пользователя
+function displayUserReviews(reviews) {
+    const container = document.getElementById('reviewsList');
+    const summary = document.getElementById('reviewsSummary');
+
+    if (reviews.length === 0) {
+        summary.textContent = 'У вас пока нет отзывов';
+        container.innerHTML = `
+            <div class="text-center py-4">
+                <p class="text-muted">💬 Поделитесь своим мнением об отелях!</p>
+                <a href="/api/" class="btn btn-primary">Найти отели</a>
+            </div>
+        `;
+        return;
+    }
+
+    summary.textContent = `Найдено отзывов: ${reviews.length}`;
+
+    container.innerHTML = reviews.map(review => `
+        <div class="card bg-dark text-white mb-3 review-item">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6>🏨 ${review.hotel_name || 'Отель'}</h6>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="rating-trophies-small">
+                                ${'🏆'.repeat(review.rating)}
+                            </div>
+                            <small class="text-muted ms-2">
+                                ${new Date(review.created_at).toLocaleDateString('ru-RU')}
+                            </small>
+                        </div>
+                        <p class="mb-1">${review.comment}</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <div class="rating-display mb-2">
+                            <span class="rating-value">${review.rating}/5</span>
+                        </div>
+                        <div class="mb-2">
+                            <a href="/api/hotel/${review.hotel}/"
+                               class="btn btn-primary btn-sm me-2">
+                                К отелю
+                            </a>
+                            <button class="btn btn-outline-danger btn-sm"
+                                    onclick="deleteReview(${review.id})">
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Удаление из избранного
+async function removeFromFavorites(favoriteId) {
+    const token = localStorage.getItem('access_token');
+    if (!token) return;
+
+    if (!confirm('Удалить отель из избранного?')) {
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/favorites/remove/${favoriteId}/`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            alert('❌ Отель удален из избранного');
+            // Перезагружаем список
+            await loadUserFavorites();
+        } else {
+            alert('❌ Ошибка при удалении из избранного');
+        }
+    } catch (error) {
+        console.error('Ошибка удаления из избранного:', error);
+        alert('❌ Ошибка при удалении из избранного');
+    }
+}
+
+// Удаление отзыва
+async function deleteReview(reviewId) {
+    const token = localStorage.getItem('access_token');
+    if (!token) return;
+
+    if (!confirm('Вы уверены, что хотите удалить этот отзыв?')) {
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/reviews/delete/${reviewId}/`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (response.ok) {
+            alert('✅ Отзыв успешно удален');
+            // Перезагружаем список отзывов
+            await loadUserReviews();
+        } else {
+            const error = await response.json();
+            alert('❌ Ошибка при удалении отзыва: ' + JSON.stringify(error));
+        }
+    } catch (error) {
+        console.error('Ошибка удаления отзыва:', error);
+        alert('❌ Ошибка при удалении отзыва');
+    }
 }
 
 async function deleteAccount() {

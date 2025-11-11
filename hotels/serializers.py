@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from django.utils import timezone
 from typing import Any, Dict, Optional
-from .models import Country, City, Hotel, HotelImage, Review, Booking
+from .models import Country, City, Hotel, HotelImage, Review, Booking, Favorite
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -33,7 +33,6 @@ class HotelImageSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
-
     user_name = serializers.CharField(
         source='user.username',
         read_only=True
@@ -56,6 +55,18 @@ class ReviewSerializer(serializers.ModelSerializer):
             'created_at',
         )
         read_only_fields = ('user', 'created_at')
+
+    def validate(self, attrs: Dict[str, Any]) -> Dict[str, Any]:
+        """Проверка, что пользователь не оставлял уже отзыв на этот отель"""
+        user = self.context['request'].user
+        hotel = attrs.get('hotel')
+
+        if Review.objects.filter(user=user, hotel=hotel).exists():
+            raise serializers.ValidationError(
+                "Вы уже оставляли отзыв на этот отель"
+            )
+
+        return attrs
 
 
 class HotelListSerializer(serializers.ModelSerializer):
@@ -102,7 +113,6 @@ class HotelListSerializer(serializers.ModelSerializer):
 
 
 class HotelDetailSerializer(serializers.ModelSerializer):
-
     country_name = serializers.CharField(
         source='country.name',
         read_only=True
@@ -113,18 +123,12 @@ class HotelDetailSerializer(serializers.ModelSerializer):
     )
     images = HotelImageSerializer(many=True, read_only=True)
     reviews = ReviewSerializer(many=True, read_only=True)
-    average_rating = serializers.SerializerMethodField()
+    average_rating = serializers.ReadOnlyField()
+    review_count = serializers.ReadOnlyField()
 
     class Meta:
         model = Hotel
         fields = '__all__'
-
-    def get_average_rating(self, obj: Hotel) -> float:
-        reviews = obj.reviews.all()
-        return (
-            round(sum(review.rating for review in reviews) / len(reviews), 1)
-            if reviews else 0
-        )
 
 
 class BookingSerializer(serializers.ModelSerializer):
@@ -214,3 +218,34 @@ class BookingCreateSerializer(serializers.ModelSerializer):
             )
 
         return data
+
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    hotel_name = serializers.CharField(source='hotel.name', read_only=True)
+    hotel_price = serializers.DecimalField(
+        source='hotel.price_per_night',
+        read_only=True,
+        max_digits=10,
+        decimal_places=2
+    )
+    hotel_city = serializers.CharField(source='hotel.city.name', read_only=True)
+    hotel_country = serializers.CharField(source='hotel.country.name', read_only=True)
+    hotel_image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Favorite
+        fields = (
+            'id',
+            'hotel',
+            'hotel_name',
+            'hotel_price',
+            'hotel_city',
+            'hotel_country',
+            'hotel_image',
+            'created_at'
+        )
+        read_only_fields = ('user', 'created_at')
+
+    def get_hotel_image(self, obj):
+        first_image = obj.hotel.images.first()
+        return first_image.image.url if first_image else None

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from decimal import Decimal
@@ -102,6 +103,17 @@ class Hotel(models.Model):
         verbose_name: str = 'Отель'
         verbose_name_plural: str = 'Отели'
         ordering: List[str] = ['-created_at']
+
+    @property
+    def average_rating(self) -> float:
+        """Вычисляем средний рейтинг отеля"""
+        avg = self.reviews.aggregate(Avg('rating'))['rating__avg']
+        return round(avg, 1) if avg else 0.0
+
+    @property
+    def review_count(self) -> int:
+        """Количество отзывов"""
+        return self.reviews.count()
 
 
 class HotelImage(models.Model):
@@ -217,3 +229,28 @@ class Booking(models.Model):
         verbose_name: str = 'Бронирование'
         verbose_name_plural: str = 'Бронирования'
         ordering: List[str] = ['-created_at']
+
+
+class Favorite(models.Model):
+    user: models.ForeignKey = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name='Пользователь'
+    )
+    hotel: models.ForeignKey = models.ForeignKey(
+        Hotel,
+        on_delete=models.CASCADE,
+        verbose_name='Отель'
+    )
+    created_at: models.DateTimeField = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата добавления'
+    )
+
+    def __str__(self) -> str:
+        return f"{self.user.username} - {self.hotel.name}"
+
+    class Meta:
+        verbose_name: str = 'Избранный отель'
+        verbose_name_plural: str = 'Избранные отели'
+        unique_together: List[str] = ['user', 'hotel']

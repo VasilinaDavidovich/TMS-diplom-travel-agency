@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from typing import Any, Dict
 
-from .models import Hotel, Country, City, Review, Booking
+from .models import Hotel, Country, City, Review, Booking, Favorite
 from .serializers import (
     UserSerializer,
     HotelListSerializer,
@@ -17,6 +17,7 @@ from .serializers import (
     CitySerializer,
     UserRegisterSerializer,
     BookingCreateSerializer,
+    FavoriteSerializer,
 )
 
 
@@ -190,3 +191,65 @@ def get_current_user(request):
     """API для получения данных текущего пользователя."""
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
+
+
+# Список избранных отелей (для личного кабинета)
+class FavoriteListView(generics.ListAPIView):
+    serializer_class = FavoriteSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Favorite.objects.filter(user=self.request.user).select_related('hotel')
+
+
+# Добавить отель в избранное
+class FavoriteCreateView(generics.CreateAPIView):
+    queryset = Favorite.objects.all()
+    serializer_class = FavoriteSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        hotel_id = self.request.data.get('hotel')
+        hotel = Hotel.objects.get(id=hotel_id)
+
+        # Проверяем нет ли уже в избранном
+        if Favorite.objects.filter(user=self.request.user, hotel=hotel).exists():
+            raise serializers.ValidationError("Отель уже в избранном")
+
+        serializer.save(user=self.request.user, hotel=hotel)
+
+
+# Удалить из избранного
+class FavoriteDeleteView(generics.DestroyAPIView):
+    serializer_class = FavoriteSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Favorite.objects.filter(user=self.request.user)
+
+
+# Список отзывов пользователя
+class UserReviewsView(generics.ListAPIView):
+    """Список отзывов текущего пользователя"""
+    serializer_class = ReviewSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return Review.objects.filter(user=self.request.user).select_related('hotel')
+
+@api_view(['DELETE'])
+@permission_classes([permissions.IsAuthenticated])
+def delete_review(request, review_id):
+    """Удаление отзыва пользователем"""
+    try:
+        review = Review.objects.get(id=review_id, user=request.user)
+        review.delete()
+        return Response(
+            {"message": "Отзыв успешно удален"},
+            status=status.HTTP_200_OK
+        )
+    except Review.DoesNotExist:
+        return Response(
+            {"error": "Отзыв не найден или у вас нет прав для его удаления"},
+            status=status.HTTP_404_NOT_FOUND
+        )

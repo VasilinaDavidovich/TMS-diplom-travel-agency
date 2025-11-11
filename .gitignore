@@ -57,3 +57,8 @@ logs/
 # Coverage reports
 htmlcov/
 .coverage
+
+# Временные файлы миграции данных
+*_data.json
+*_data_*.json
+backup.json
