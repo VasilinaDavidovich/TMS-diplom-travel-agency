@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.shortcuts import render, get_object_or_404
 from typing import Any, Dict
 
@@ -84,9 +84,26 @@ class HotelListView(generics.ListAPIView):
             queryset = queryset.filter(
                 Q(name__icontains=search) |
                 Q(description__icontains=search) |
-                Q(city__name__iexact=search) |
-                Q(city__name_ru__iexact=search)
+                Q(city__name__iexact=search)
             )
+            print(f"Результатов после поиска: {queryset.count()}")
+
+        # СОРТИРОВКА
+        sort_by = self.request.query_params.get('sort_by')
+
+        if sort_by == 'price_asc':
+            queryset = queryset.order_by('price_per_night')
+        elif sort_by == 'price_desc':
+            queryset = queryset.order_by('-price_per_night')
+        elif sort_by == 'stars_asc':
+            queryset = queryset.order_by('stars')
+        elif sort_by == 'stars_desc':
+            queryset = queryset.order_by('-stars')
+        elif sort_by == 'rating_desc':
+            queryset = queryset.annotate(
+                avg_rating=Avg('reviews__rating')
+            ).order_by('-avg_rating', 'name')
+
         return queryset
 
 
@@ -152,6 +169,7 @@ class CityListView(generics.ListAPIView):
         return queryset
 
 
+# главная страница
 def home_page(request) -> Any:
     # Выводится 6 рандомных отелей из базы данных
     hotels = Hotel.objects.all().order_by('?')[:6]

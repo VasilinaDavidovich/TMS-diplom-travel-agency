@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hotels',
-    'accounts',
-    'api',
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
@@ -98,7 +96,7 @@ DATABASES = {
         'NAME': 'hoteldb',
         'USER': 'hoteluser',
         'PASSWORD': 'hotelpassword',
-        'HOST': 'db',  # ← ИЗМЕНИТЕ 'localhost' на 'db'
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
@@ -152,3 +150,12 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
+
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

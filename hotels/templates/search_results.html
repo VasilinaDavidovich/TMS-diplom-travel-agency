@@ -14,7 +14,7 @@
             <div class="card bg-dark text-white">
                 <div class="card-body">
                     <h5 style="color: rgba(255, 255, 255, 0.7)">Уточните поиск</h5>
-                    <form id="searchForm">
+                    <form id="searchForm" method="get" action="/api/search/">
                         <div class="row g-3">
                             <div class="col-md-3">
                                 <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
@@ -58,6 +58,30 @@
                                        min="0">
                             </div>
                         </div>
+
+                        <!-- Блок сортировки ВНУТРИ формы -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4">
+                                        <h6 class="mb-0" style="color: rgba(255, 255, 255, 0.7)">
+                                            🔄 Сортировка отелей
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-select" id="sortSelect" name="sort_by" onchange="this.form.submit()">
+                                            <option value="name">По умолчанию</option>
+                                            <option value="price_asc">💰 Цена (по возрастанию)</option>
+                                            <option value="price_desc">💰 Цена (по убыванию)</option>
+                                            <option value="stars_asc">⭐ Звёзды (по возрастанию)</option>
+                                            <option value="stars_desc">⭐ Звёзды (по убыванию)</option>
+                                            <option value="rating_desc">🏆 Рейтинг (высокий сначала)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="d-flex gap-2">
@@ -103,18 +127,6 @@
         }
     }
 
-    function setupEventListeners() {
-        document.getElementById('countrySelect').addEventListener('change', function() {
-            const countryId = this.value;
-            loadCities(countryId);
-        });
-
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            performSearch();
-        });
-    }
-
     async function loadCities(countryId) {
         const citySelect = document.getElementById('citySelect');
 
@@ -139,32 +151,6 @@
             });
         } catch (error) {
             console.error('Ошибка загрузки городов:', error);
-        }
-    }
-
-    async function performSearch() {
-        const formData = new FormData(document.getElementById('searchForm'));
-        const params = new URLSearchParams();
-
-        for (let [key, value] of formData.entries()) {
-            if (value) {
-                params.append(key, value);
-            }
-        }
-
-        try {
-            const response = await fetch(`/api/hotels/?${params}`);
-            const hotels = await response.json();
-            displayHotels(hotels);
-
-            const summary = document.getElementById('searchSummary');
-            if (hotels.length === 0) {
-                summary.textContent = '😔 Отелей не найдено. Попробуйте изменить параметры поиска.';
-            } else {
-                summary.textContent = `Найдено отелей: ${hotels.length}`;
-            }
-        } catch (error) {
-            console.error('Ошибка поиска отелей:', error);
         }
     }
 
@@ -245,28 +231,7 @@
         `).join('');
     }
 
-    function setSearchInputFromUrl() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchTerm = urlParams.get('search');
-
-        if (searchTerm) {
-            const form = document.getElementById('searchForm');
-            let searchInput = form.querySelector('input[name="search"]');
-
-            if (!searchInput) {
-                searchInput = document.createElement('input');
-                searchInput.type = 'hidden';
-                searchInput.name = 'search';
-                form.appendChild(searchInput);
-            }
-
-            searchInput.value = searchTerm;
-
-            const summary = document.getElementById('searchSummary');
-            summary.textContent = `Результаты поиска: "${searchTerm}"`;
-        }
-    }
-
+    // Установка значений формы из URL
     function setFormValuesFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
 
@@ -275,16 +240,34 @@
         const starsSelect = document.getElementById('starsSelect');
         const minPrice = document.getElementById('minPrice');
         const maxPrice = document.getElementById('maxPrice');
+        const sortSelect = document.getElementById('sortSelect');
 
+        // Устанавливаем значения из URL
         if (urlParams.get('country')) {
             countrySelect.value = urlParams.get('country');
-            loadCities(urlParams.get('country'));
+            loadCities(urlParams.get('country')).then(() => {
+                if (urlParams.get('city')) {
+                    citySelect.value = urlParams.get('city');
+                }
+            });
         }
 
-        if (urlParams.get('city')) {
-            setTimeout(() => {
-                citySelect.value = urlParams.get('city');
-            }, 500);
+        // ЕСЛИ ЕСТЬ ПОИСКОВЫЙ ЗАПРОС - НАЙДЕМ ГОРОД И СТРАНУ
+        const search = urlParams.get('search');
+        if (search) {
+            // Найдем город по названию и установим фильтры
+            fetch('/api/cities/')
+                .then(response => response.json())
+                .then(cities => {
+                    const city = cities.find(c => c.name === search);
+                    if (city) {
+                        // Устанавливаем страну и город
+                        countrySelect.value = city.country;
+                        loadCities(city.country).then(() => {
+                            citySelect.value = city.id;
+                        });
+                    }
+                });
         }
 
         if (urlParams.get('stars')) {
@@ -298,14 +281,44 @@
         if (urlParams.get('max_price')) {
             maxPrice.value = urlParams.get('max_price');
         }
+
+        if (urlParams.get('sort_by')) {
+            sortSelect.value = urlParams.get('sort_by');
+        }
     }
 
+    // Загрузка отелей при открытии страницы
+    async function loadInitialHotels() {
+        try {
+            // Убираем первый ? из window.location.search чтобы избежать ??
+            const queryString = window.location.search.substring(1);
+            const response = await fetch(`/api/hotels/?${queryString}`);
+            const hotels = await response.json();
+            displayHotels(hotels);
+
+            const summary = document.getElementById('searchSummary');
+            if (hotels.length === 0) {
+                summary.textContent = '😔 Отелей не найдено. Попробуйте изменить параметры поиска.';
+            } else {
+                summary.textContent = `Найдено отелей: ${hotels.length}`;
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки отелей:', error);
+        }
+    }
+
+    // Инициализация
     document.addEventListener('DOMContentLoaded', function() {
-        setupEventListeners();
+        // Настройка слушателей
+        document.getElementById('countrySelect').addEventListener('change', function() {
+            const countryId = this.value;
+            loadCities(countryId);
+        });
+
+        // Загрузка данных
         loadCountries().then(() => {
-            setSearchInputFromUrl();
             setFormValuesFromUrl();
-            performSearch();
+            loadInitialHotels();
         });
     });
 </script>

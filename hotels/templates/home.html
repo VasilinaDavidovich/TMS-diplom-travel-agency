@@ -36,7 +36,7 @@
 <div class="card bg-dark text-white mb-5">
     <div class="card-body">
         <h4 class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7)">🔍 Найти идеальный отель</h4>
-        <form id="searchForm">
+        <form id="searchForm" method="get" action="/api/search/">
             <div class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
@@ -100,70 +100,76 @@
 
 <div class="row mb-5">
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Вена')">
-            <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
-                 class="img-fluid rounded mb-2"
-                 alt="Вена"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Вена</h6>
-        </div>
+        <a href="/api/search/?search=Вена" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                     class="img-fluid rounded mb-2"
+                     alt="Вена"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Вена</h6>
+            </div>
+        </a>
     </div>
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Прага')">
-            <img src="https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
-                 class="img-fluid rounded mb-2"
-                 alt="Прага"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Прага</h6>
-        </div>
+        <a href="/api/search/?search=Прага" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                     class="img-fluid rounded mb-2"
+                     alt="Прага"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Прага</h6>
+            </div>
+        </a>
     </div>
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Будапешт')">
-            <img src="https://images.unsplash.com/photo-1551867633-194f125bddfa?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
-                 class="img-fluid rounded mb-2"
-                 alt="Будапешт"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Будапешт</h6>
-        </div>
+        <a href="/api/search/?search=Будапешт" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1551867633-194f125bddfa?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                     class="img-fluid rounded mb-2"
+                     alt="Будапешт"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Будапешт</h6>
+            </div>
+        </a>
     </div>
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Милан')">
-            <img src="https://unsplash.com/photos/5QrM3dEf5mA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYyNTUyNTg4fA&force=true"
-                 class="img-fluid rounded mb-2"
-                 alt="Милан"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Милан</h6>
-        </div>
+        <a href="/api/search/?search=Милан" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://unsplash.com/photos/5QrM3dEf5mA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYyNTUyNTg4fA&force=true"
+                     class="img-fluid rounded mb-2"
+                     alt="Милан"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Милан</h6>
+            </div>
+        </a>
     </div>
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Амстердам')">
-            <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
-                 class="img-fluid rounded mb-2"
-                 alt="Амстердам"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Амстердам</h6>
-        </div>
+        <a href="/api/search/?search=Амстердам" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
+                     class="img-fluid rounded mb-2"
+                     alt="Амстердам"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Амстердам</h6>
+            </div>
+        </a>
     </div>
     <div class="col-md-2 mb-3">
-        <div class="destination-card text-center"
-             style="cursor: pointer;"
-             onclick="searchByCityName('Гальштатт')">
-            <img src="https://unsplash.com/photos/BAoag1m197E/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8aGFsc3RhdHR8ZW58MHx8fHwxNzYyNTUxOTQwfDA&force=true"
-                 class="img-fluid rounded mb-2"
-                 alt="Гальштатт"
-                 style="height: 150px; width: 100%; object-fit: cover;">
-            <h6 style="color: rgba(255, 255, 255, 0.8)">Гальштатт</h6>
-        </div>
+        <a href="/api/search/?search=Гальштатт" style="text-decoration: none; color: inherit;">
+            <div class="destination-card text-center"
+                 style="cursor: pointer;">
+                <img src="https://unsplash.com/photos/BAoag1m197E/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8aGFsc3RhdHR8ZW58MHx8fHwxNzYyNTUxOTQwfDA&force=true"
+                     class="img-fluid rounded mb-2"
+                     alt="Гальштатт"
+                     style="height: 150px; width: 100%; object-fit: cover;">
+                <h6 style="color: rgba(255, 255, 255, 0.8)">Гальштатт</h6>
+            </div>
+        </a>
     </div>
 </div>
 
@@ -274,8 +280,7 @@
         });
 
         document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            submitSearchForm();
+            // Форма отправится автоматически благодаря method="get" и action="/api/search/"
         });
     }
 
@@ -304,23 +309,6 @@
         } catch (error) {
             console.error('Ошибка загрузки городов:', error);
         }
-    }
-
-    function submitSearchForm() {
-        const formData = new FormData(document.getElementById('searchForm'));
-        const params = new URLSearchParams();
-
-        for (let [key, value] of formData.entries()) {
-            if (value) {
-                params.append(key, value);
-            }
-        }
-
-        window.location.href = `/api/search/?${params.toString()}`;
-    }
-
-    function searchByCityName(cityName) {
-        window.location.href = `/api/search/?search=${encodeURIComponent(cityName)}`;
     }
 
     document.addEventListener('DOMContentLoaded', function() {

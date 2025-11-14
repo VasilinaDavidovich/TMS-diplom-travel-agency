@@ -2,6 +2,20 @@ from django.contrib import admin
 from .models import Country, City, Hotel, HotelImage, Review, Booking
 
 
+class CityFilter(admin.SimpleListFilter):
+    title = 'Город'
+    parameter_name = 'city'
+
+    def lookups(self, request, model_admin):
+        cities = City.objects.all().order_by('name')
+        return [(city.id, city.name) for city in cities]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(city_id=self.value())
+        return queryset
+
+
 class CityInline(admin.TabularInline):
     """Inline для отображения городов внутри страны"""
 
@@ -49,7 +63,7 @@ class HotelAdmin(admin.ModelAdmin):
         'created_at',
     ]
     list_display_links = ['name']
-    list_filter = ['country', 'stars', 'created_at']
+    list_filter = ['country', 'city', 'stars', 'created_at']
     search_fields = ['name', 'description', 'address']
     readonly_fields = ['created_at']
     inlines = [HotelImageInline]

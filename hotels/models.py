@@ -23,15 +23,9 @@ class Country(models.Model):
 
 
 class City(models.Model):
-
     name: models.CharField = models.CharField(
         max_length=100,
-        verbose_name='Английское название'
-    )
-    name_ru: models.CharField = models.CharField(
-        max_length=100,
-        blank=True,
-        verbose_name='Русское название'
+        verbose_name='Название города'
     )
     country: models.ForeignKey = models.ForeignKey(
         Country,
@@ -40,13 +34,12 @@ class City(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.country.name}"
+        return str(self.name)
 
     class Meta:
         verbose_name: str = 'Город'
         verbose_name_plural: str = 'Города'
         ordering: List[str] = ['name']
-
 
 class Hotel(models.Model):
 
