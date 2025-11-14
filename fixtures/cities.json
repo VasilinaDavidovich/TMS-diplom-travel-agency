@@ -1,0 +1,106 @@
+[
+{
+  "model": "hotels.city",
+  "pk": 1,
+  "fields": {
+    "name": "Вена",
+    "country": 1
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 2,
+  "fields": {
+    "name": "Гальштатт",
+    "country": 1
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 3,
+  "fields": {
+    "name": "Женева",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 4,
+  "fields": {
+    "name": "Берн",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 5,
+  "fields": {
+    "name": "Цюрих",
+    "country": 2
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 6,
+  "fields": {
+    "name": "Будапешт",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 7,
+  "fields": {
+    "name": "Эгер",
+    "country": 3
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 8,
+  "fields": {
+    "name": "Прага",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 9,
+  "fields": {
+    "name": "Брно",
+    "country": 4
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 10,
+  "fields": {
+    "name": "Милан",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 11,
+  "fields": {
+    "name": "Рим",
+    "country": 5
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 12,
+  "fields": {
+    "name": "Амстердам",
+    "country": 6
+  }
+},
+{
+  "model": "hotels.city",
+  "pk": 13,
+  "fields": {
+    "name": "Харлем",
+    "country": 6
+  }
+}
+]

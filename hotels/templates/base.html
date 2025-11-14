@@ -315,7 +315,7 @@
             if (loginButton && localStorage.getItem('access_token')) {
                 // Меняем ссылку на профиль
                 loginButton.textContent = 'Мой профиль';
-                loginButton.href = '/api/profile/';
+                loginButton.href = '/api/auth/profile/';
                 loginButton.removeAttribute('data-bs-toggle');
                 loginButton.removeAttribute('data-bs-target');
             }

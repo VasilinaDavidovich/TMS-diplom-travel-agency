@@ -1,50 +1,21 @@
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework_simplejwt.tokens import RefreshToken
 from django.db.models import Q, Avg
 from django.shortcuts import render, get_object_or_404
 from typing import Any, Dict
 
 from .models import Hotel, Country, City, Review, Booking, Favorite
 from .serializers import (
-    UserSerializer,
     HotelListSerializer,
     HotelDetailSerializer,
     ReviewSerializer,
     BookingSerializer,
     CountrySerializer,
     CitySerializer,
-    UserRegisterSerializer,
     BookingCreateSerializer,
     FavoriteSerializer,
 )
-
-
-# регистрация пользователя
-@api_view(['POST'])
-@permission_classes([permissions.AllowAny])
-def register_user(request) -> Response:
-    serializer = UserRegisterSerializer(data=request.data)
-    if serializer.is_valid():
-        user = serializer.save()
-        refresh = RefreshToken.for_user(user)
-        return Response(
-            {
-                'user': UserSerializer(user).data,
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
-            },
-            status=status.HTTP_201_CREATED
-        )
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-# получение профиля юзера
-@api_view(['GET'])
-def get_user_profile(request) -> Response:
-    serializer = UserSerializer(request.user)
-    return Response(serializer.data)
 
 
 # список отелей с фильтрацией
@@ -187,20 +158,6 @@ def hotel_detail_page(request, hotel_id: int) -> Any:
 def search_results_page(request) -> Any:
     return render(request, 'search_results.html')
 
-# профиль юзера
-def profile_page(request):
-    return render(request, 'profile.html')
-
-# удаление аккаунта
-@api_view(['DELETE'])
-@permission_classes([permissions.IsAuthenticated])
-def delete_user_account(request):
-    user = request.user
-    user.delete()
-    return Response(
-        {"message": "Аккаунт успешно удален"},
-        status=status.HTTP_200_OK
-    )
 
 # Для получения данных пользователя (вывод в личном кабинете)
 @api_view(['GET'])

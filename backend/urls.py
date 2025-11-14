@@ -14,6 +14,7 @@ from typing import List
 
 urlpatterns: List[path] = [
     path('admin/', admin.site.urls),
+    path('api/auth/', include('accounts.urls')),
     path('api/', include('hotels.urls')),
     path('', RedirectView.as_view(url='/api/', permanent=True)),
 ]

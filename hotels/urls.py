@@ -20,15 +20,6 @@ from .views import (
 )
 
 urlpatterns = [
-    # Аутентификация
-    path('auth/register/', views.register_user, name='register'),
-    path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('profile/', views.profile_page, name='profile-page'),
-    path('auth/delete-account/', views.delete_user_account, name='delete-account'),
-    path('auth/current-user/', views.get_current_user, name='current-user'),
-
-
     # Frontend страницы
     path('', home_page, name='home'),
     path('hotel/<int:hotel_id>/', hotel_detail_page, name='hotel-detail-page'),

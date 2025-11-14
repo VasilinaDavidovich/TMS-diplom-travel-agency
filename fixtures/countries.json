@@ -1,0 +1,44 @@
+[
+{
+  "model": "hotels.country",
+  "pk": 1,
+  "fields": {
+    "name": "Австрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 2,
+  "fields": {
+    "name": "Швейцария"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 3,
+  "fields": {
+    "name": "Венгрия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 4,
+  "fields": {
+    "name": "Чехия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 5,
+  "fields": {
+    "name": "Италия"
+  }
+},
+{
+  "model": "hotels.country",
+  "pk": 6,
+  "fields": {
+    "name": "Нидерланды"
+  }
+}
+]

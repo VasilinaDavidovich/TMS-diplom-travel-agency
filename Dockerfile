@@ -24,6 +24,9 @@ RUN pip install -r requirements.txt
 # Копируем весь проект
 COPY . .
 
+# Копируем фикстуры
+COPY fixtures/ /app/fixtures/
+
 # Создаем папки для статических файлов и медиа
 RUN mkdir -p /app/static
 RUN mkdir -p /app/media

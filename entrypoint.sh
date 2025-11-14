@@ -11,6 +11,15 @@ echo "Database started"
 echo "Applying migrations..."
 python manage.py migrate
 
+# Загружаем фикстуры (если база пустая)
+echo "Checking if database is empty..."
+if python manage.py shell -c "from hotels.models import Hotel; print('Database has data' if Hotel.objects.exists() else 'Database is empty')" | grep -q "Database is empty"; then
+    echo "Loading fixtures..."
+    python manage.py loaddata countries.json cities.json users.json hotels.json hotel_images.json reviews.json bookings.json favorites.json
+else
+    echo "Database already has data, skipping fixtures"
+fi
+
 # Собираем статические файлы
 echo "Collecting static files..."
 python manage.py collectstatic --noinput

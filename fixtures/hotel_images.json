@@ -1,0 +1,1138 @@
+[
+{
+  "model": "hotels.hotelimage",
+  "pk": 1,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/627335071_8Gcb9yH.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 2,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/627325287_eYI8X6P.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 3,
+  "fields": {
+    "hotel": 1,
+    "image": "hotel_images/655997589_8sqBmTD.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 4,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/399787854.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 5,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/478275774.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 6,
+  "fields": {
+    "hotel": 2,
+    "image": "hotel_images/397141626.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 7,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/750398580_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 8,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/750398594.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 9,
+  "fields": {
+    "hotel": 3,
+    "image": "hotel_images/770287840.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 10,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/66466121.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 11,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/66466096.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 12,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/66466089.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 13,
+  "fields": {
+    "hotel": 4,
+    "image": "hotel_images/66466137.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 14,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/312579758.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 15,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/312573260.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 16,
+  "fields": {
+    "hotel": 5,
+    "image": "hotel_images/312580068.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 17,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/723913287.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 18,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/362535390.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 19,
+  "fields": {
+    "hotel": 6,
+    "image": "hotel_images/723913272.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 20,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/186170293.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 21,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/386260141.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 22,
+  "fields": {
+    "hotel": 7,
+    "image": "hotel_images/186766752.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 23,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/770810596.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 24,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/758906866.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 25,
+  "fields": {
+    "hotel": 8,
+    "image": "hotel_images/758906872.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 26,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/705691879.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 27,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/705689375.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 28,
+  "fields": {
+    "hotel": 9,
+    "image": "hotel_images/705692773.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 29,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/535491054.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 30,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/201215220.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 31,
+  "fields": {
+    "hotel": 10,
+    "image": "hotel_images/15621840.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 32,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/148206730.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 33,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/148212860.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 34,
+  "fields": {
+    "hotel": 11,
+    "image": "hotel_images/21143051.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 35,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/213161871.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 36,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/213161850.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 37,
+  "fields": {
+    "hotel": 12,
+    "image": "hotel_images/213163253.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 38,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/698504361.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 39,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/698504385.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 40,
+  "fields": {
+    "hotel": 13,
+    "image": "hotel_images/698504485.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 41,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/18607666.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 42,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/155590152.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 43,
+  "fields": {
+    "hotel": 14,
+    "image": "hotel_images/160329880.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 44,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/683668106.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 45,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/683668128.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 46,
+  "fields": {
+    "hotel": 15,
+    "image": "hotel_images/576755781.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 47,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/28216357.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 48,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/247871368.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 49,
+  "fields": {
+    "hotel": 16,
+    "image": "hotel_images/8017131.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 50,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/730475055.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 51,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/730475050.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 52,
+  "fields": {
+    "hotel": 17,
+    "image": "hotel_images/13318766.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 53,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/299745433_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 54,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/327990026.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 55,
+  "fields": {
+    "hotel": 18,
+    "image": "hotel_images/730475055_c4w0xVd.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 56,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/476186438.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 57,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/410500237.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 58,
+  "fields": {
+    "hotel": 19,
+    "image": "hotel_images/476188482.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 59,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/660442560.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 60,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/660444038.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 61,
+  "fields": {
+    "hotel": 20,
+    "image": "hotel_images/660444041.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 62,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/540586342.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 63,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/607777840.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 64,
+  "fields": {
+    "hotel": 21,
+    "image": "hotel_images/607792418.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 65,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/568866831.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 66,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/560963115.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 67,
+  "fields": {
+    "hotel": 22,
+    "image": "hotel_images/560963066.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 68,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/589736759.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 69,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/682982474.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 70,
+  "fields": {
+    "hotel": 23,
+    "image": "hotel_images/682982457.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 71,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/185096503.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 72,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/607679473.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 73,
+  "fields": {
+    "hotel": 24,
+    "image": "hotel_images/607681060.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 74,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/25477162_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 75,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/25477158.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 76,
+  "fields": {
+    "hotel": 25,
+    "image": "hotel_images/733557625_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 77,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/91336255.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 78,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/82174883.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 79,
+  "fields": {
+    "hotel": 26,
+    "image": "hotel_images/562816811.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 80,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/42865028.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 81,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/406343497.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 82,
+  "fields": {
+    "hotel": 27,
+    "image": "hotel_images/402109796.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 83,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/437169071_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 84,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/422843310_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 85,
+  "fields": {
+    "hotel": 28,
+    "image": "hotel_images/437219174_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 86,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/505148182.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 87,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/373762790.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 88,
+  "fields": {
+    "hotel": 29,
+    "image": "hotel_images/373765599.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 89,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/246346123.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 90,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/775115369.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 91,
+  "fields": {
+    "hotel": 30,
+    "image": "hotel_images/775115253.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 92,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/644783710_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 93,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/644783652_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 94,
+  "fields": {
+    "hotel": 31,
+    "image": "hotel_images/652028769.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 95,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/330571144.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 96,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/330620230.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 97,
+  "fields": {
+    "hotel": 32,
+    "image": "hotel_images/330580898.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 98,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/464022164_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 99,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/464020075_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 100,
+  "fields": {
+    "hotel": 33,
+    "image": "hotel_images/507391939.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 101,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/708761014_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 102,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/488116631_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 103,
+  "fields": {
+    "hotel": 34,
+    "image": "hotel_images/484845724_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 104,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/132452895.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 105,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/358357787_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 106,
+  "fields": {
+    "hotel": 35,
+    "image": "hotel_images/358551403.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 107,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/776456184.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 108,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/520748438_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 109,
+  "fields": {
+    "hotel": 36,
+    "image": "hotel_images/555173581_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 110,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/774408602.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 111,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/551917238.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 112,
+  "fields": {
+    "hotel": 37,
+    "image": "hotel_images/431524327.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 113,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/581808655.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 114,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/674840554.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 115,
+  "fields": {
+    "hotel": 38,
+    "image": "hotel_images/581808703.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 116,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/648585660.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 117,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/334389897.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 118,
+  "fields": {
+    "hotel": 39,
+    "image": "hotel_images/334389907.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 119,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/505741249.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 120,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/331527678.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 121,
+  "fields": {
+    "hotel": 40,
+    "image": "hotel_images/321863968.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 122,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/133061405.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 123,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/548070805.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 124,
+  "fields": {
+    "hotel": 41,
+    "image": "hotel_images/181114061.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 125,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/643015568.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 126,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/643015600.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 127,
+  "fields": {
+    "hotel": 42,
+    "image": "hotel_images/643015663.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 128,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/42197895.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 129,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/747824780.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 130,
+  "fields": {
+    "hotel": 43,
+    "image": "hotel_images/632520183.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 131,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/603845744.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 132,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/603846227.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 133,
+  "fields": {
+    "hotel": 44,
+    "image": "hotel_images/603846260.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 134,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/177309834_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 135,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/252843309_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 136,
+  "fields": {
+    "hotel": 45,
+    "image": "hotel_images/252845339_1.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 137,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/470595940.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 138,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/470596001.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 139,
+  "fields": {
+    "hotel": 46,
+    "image": "hotel_images/470595996.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 140,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/309524843.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 141,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/309524846.jpg"
+  }
+},
+{
+  "model": "hotels.hotelimage",
+  "pk": 142,
+  "fields": {
+    "hotel": 47,
+    "image": "hotel_images/309525877.jpg"
+  }
+}
+]

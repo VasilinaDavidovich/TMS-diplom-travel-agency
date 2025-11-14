@@ -1,0 +1,660 @@
+[
+{
+  "model": "hotels.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "Almanac Palais Vienna",
+    "description": "Almanac Palais Vienna — это отель в городе Вена, в 400 м от такой достопримечательности, как Дом музыки. К услугам гостей услуги консьержа, ресторан, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются гипоаллергенные номера. В распоряжении гостей отеля с 5 звездами — доставка еды и напитков и круглосуточная стойка регистрации. Гости могут воспользоваться оздоровительным и спа-центром с крытым бассейном, фитнес-центром и сауной, а также террасой.\r\n\r\nВ распоряжении гостей Almanac Palais Vienna — гостиная зона и собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. Также среди удобств есть кондиционер, телевизор с плоским экраном со спутниковыми каналами и сейф. В определенных единицах размещения в Almanac Palais Vienna из окон открывается вид на город, при этом в каждом номере имеется кофемашина. Гостям Almanac Palais Vienna предоставляются постельное белье и полотенца.\r\n\r\nГостям подают завтрак по меню, вегетарианский завтрак или веганский завтрак.",
+    "country": 1,
+    "city": 1,
+    "stars": 5,
+    "address": "Parkring 14-16, , 01. Внутренний город, 1010 Вена, Австрия",
+    "price_per_night": "170.00",
+    "created_at": "2025-11-08T20:11:11.853Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 2,
+  "fields": {
+    "name": "O11 Boutique Hotel Vienna",
+    "description": "Бутик-отель «O11 Vienna» расположен напротив всемирно известной Венской государственной оперы, недалеко от кольцевой дороги, ведущей к воротам Вены. До большинства основных достопримечательностей и торговых улиц можно дойти за несколько минут.\r\n\r\nПоблизости находятся пешеходная улица Кернтнерштрассе, Музейный квартал, торговая улица Марияхильфер и рынок Нашмаркт. Ближайшая станция метро находится всего в нескольких шагах.\r\n\r\nВ нескольких минутах от отеля расположены такие достопримечательности, как церковь Святого Стефана, Хофбург, церковь Святого Карла, гробница императоров, Музей искусства и естественной истории, Музей этнологии, галерея «Альбертина», Испанская школа верховой езды, а также Арт-холл, Венская филармония и Дом художников.",
+    "country": 1,
+    "city": 1,
+    "stars": 4,
+    "address": "Opernring 11, 01. Внутренний город, 1010 Вена, Австрия",
+    "price_per_night": "140.00",
+    "created_at": "2025-11-11T21:40:57.014Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 3,
+  "fields": {
+    "name": "Ibis budget Wien Messe",
+    "description": "Бюджетный отель Ibis Wien Messe расположен в оживленном 2-м районе Вены. К услугам гостей современные номера с телевизором с плоским экраном и спутниковыми каналами, а также бесплатный Wi-Fi. Станция метро Praterstern находится в 7 минутах ходьбы, а до центра города можно добраться за 10 минут на общественном транспорте.\r\n\r\nВ числе удобств каждого из номеров бюджетного отеля Ibis Messe кондиционер, душ и туалет. Ежедневно сервируется разнообразный завтрак «шведский стол». В распоряжении гостей также торговые автоматы.\r\n\r\nЗа 15 минут можно дойти до выставочного и конгресс-центра Messe Wien и Дунайского острова. Парк развлечений Пратер со знаменитым Гигантским колесом обозрения располагается всего в 500 метрах от отеля.\r\n\r\nГостям предоставляются скидки на общественную крытую парковку рядом с бюджетным отелем Ibis Wien Messe.",
+    "country": 1,
+    "city": 1,
+    "stars": 2,
+    "address": "Lassallestraße 7, 02. Леопольдштадт, 1020 Вена, Австрия",
+    "price_per_night": "65.00",
+    "created_at": "2025-11-11T21:42:43.624Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 4,
+  "fields": {
+    "name": "Pension Stadthalle",
+    "description": "Гостевой дом Stadthalle расположен рядом с железнодорожным вокзалом Вестбанхоф, дворцом Шёнбрунн, улицей Мариахильферштрассе, а также крупнейшим крытым многоцелевым стадионом Винер Штадтхалле города Вены.\r\n\r\nВо всех современных номерах гостевого дома Stadthalle имеются телевизор с плоским экраном и ванная комната. Доступен бесплатный Wi-Fi.\r\n\r\nГости могут гулять по саду отеля Boutiquehotel Stadthalle (2 минуты ходьбы от гостевого дома) и заказывать в баре напитки. В этом же отеле сервируют завтрак.\r\n\r\nВ нескольких минутах ходьбы расположена главная торговая улица Вены — Мариахильферштрассе. За несколько минут можно дойти пешком до Музейного квартала и многочисленных ресторанов района Шпиттельберг. Всего в 3 остановках метро находятся центр города и дворец Шёнбрунн.",
+    "country": 1,
+    "city": 1,
+    "stars": 2,
+    "address": "Hackengasse 33, 15. Рудольфсхайм-Фюнфхаус, 1150 Вена, Австрия",
+    "price_per_night": "59.14",
+    "created_at": "2025-11-11T21:44:09.112Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 5,
+  "fields": {
+    "name": "Boutiquehotel Strand Hallstatt - Adults only",
+    "description": "Boutiquehotel Strand Hallstatt - Adults only — это отель в городе Халльштатт, в 1,1 км от такой достопримечательности, как Museum Hallstatt. Среди удобств — сад, частный пляж, терраса и бесплатная частная парковка. Kaiservilla — примерно в 22 км, а Лыжный трамплин \"Кульм\" и Горнолыжный курорт Лозер — в 35 км и 36 км соответственно. В распоряжении гостей общая кухня и бесплатный Wi-Fi на всей территории.\r\n\r\nВ Boutiquehotel Strand Hallstatt - Adults only во всех номерах имеется телевизор с плоским экраном со спутниковыми каналами и сейф. В собственной ванной комнате есть душ, бесплатные туалетно-косметические принадлежности и фен. В Boutiquehotel Strand Hallstatt - Adults only в номерах есть собственная ванная комната и установлен кондиционер.",
+    "country": 1,
+    "city": 2,
+    "stars": 5,
+    "address": "102 Seelände, 4830 Халльштатт, Австрия",
+    "price_per_night": "124.00",
+    "created_at": "2025-11-11T21:47:38.541Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 6,
+  "fields": {
+    "name": "Radisson RED Hotel",
+    "description": "Radisson RED Hotel, Vienna — это отель в городе Вена, в 1,2 км от такой достопримечательности, как Церковь Святого Петра. Среди удобств — фитнес-центр, сад, терраса и частная парковка. В распоряжении гостей отеля с 4 звездами — круглосуточная стойка регистрации, услуги консьержа и бесплатный Wi-Fi. К услугам гостей бар.\r\n\r\nВ номерах в Radisson RED Hotel, Vienna установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — платяной шкаф, кофемашина, холодильник и мини-бар, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям Radisson RED Hotel, Vienna предоставляются постельное белье и полотенца.\r\n\r\nДля гостей сервируется завтрак «шведский стол», вегетарианский завтрак и веганский завтрак. При Radisson RED Hotel, Vienna работает ресторан, где подают блюда средиземноморской кухни, пиццу и блюда международной кухни. Гости могут попросить приготовить вегетарианские, безлактозные и веганские блюда.\r\n\r\nРядом с Radisson RED Hotel, Vienna находятся такие популярные достопримечательности, как Венский городской парк, Венская ратуша и Дворцовый комплекс Хофбург. Международный аэропорт Вена-Швехат находится в 19 км.",
+    "country": 1,
+    "city": 1,
+    "stars": 4,
+    "address": "OBERE DONAUSTRASSE 61, 02. Леопольдштадт, 1020 Вена, Австрия",
+    "price_per_night": "174.12",
+    "created_at": "2025-11-13T19:59:53.131Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 7,
+  "fields": {
+    "name": "Weisses Lamm",
+    "description": "Weisses Lamm — это мини-гостиница в городе Халльштатт, расположенная в 21 км и 35 км соответственно от таких достопримечательностей, как Kaiservilla и Горнолыжный курорт Лозер. Мини-гостиница находится в 39 км и 48 км соответственно от таких достопримечательностей, как Лыжный трамплин \"Кульм\" и Замок Траутенфельса. К услугам гостей помещение для хранения лыж. Этот вариант размещения с гипоаллергенными номерами располагается в 100 м от следующей достопримечательности: Museum Hallstatt.\r\n\r\nВ Weisses Lamm в номерах есть телевизор с плоским экраном со спутниковыми каналами и сейф. В номерах Weisses Lamm установлен бесплатный Wi-Fi. Также в распоряжении гостей собственная ванная комната с душем и бесплатными туалетно-косметическими принадлежностями. Из окон некоторых номеров открывается вид на город. Гостям Weisses Lamm предоставляются постельное белье и полотенца.\r\n\r\nГостям Weisses Lamm предоставляется завтрак «шведский стол». При Weisses Lamm работает ресторан, где подают блюда австрийской кухни.\r\n\r\nВ городе Халльштатт и его окрестностях популярны различные виды досуга, например лыжный спорт. Гости Weisses Lamm также могут выбрать другие занятия по душе.",
+    "country": 1,
+    "city": 2,
+    "stars": 4,
+    "address": "Dr. F. Mortonweg 166, 4830 Халльштатт, Австрия",
+    "price_per_night": "120.00",
+    "created_at": "2025-11-13T20:01:28.155Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 8,
+  "fields": {
+    "name": "Haus Franziska",
+    "description": "Haus Franziska — это апартаменты в городе Халльштатт, расположенные на расстоянии 400 м и 23 км соответственно от следующих достопримечательностей: Museum Hallstatt и Kaiservilla. Гостям предоставляется бесплатный Wi-Fi, а из окон открывается вид на горы.\r\n\r\nВ каждой единице размещения установлен телевизор с плоским экраном, а также имеется собственная ванная комната с душем и феном. На кухне есть холодильник, посудомоечная машина и духовка. Также есть микроволновая печь и плита. Кроме того, среди удобств есть кофемашина и чайник.\r\n\r\nУ желающих осмотреть окрестности есть возможность прогуляться, заняться лыжным спортом или отправиться на велосипедную прогулку.\r\n\r\nHaus Franziska располагается на расстоянии 36 км и 37 км соответственно от таких достопримечательностей, как Лыжный трамплин \"Кульм\" и Горнолыжный курорт Лозер. Аэропорт Зальцбург имени Моцарта находится в 80 км.",
+    "country": 1,
+    "city": 2,
+    "stars": 3,
+    "address": "Gosaumühlstraße 71, 4830 Халльштатт, Австрия",
+    "price_per_night": "86.00",
+    "created_at": "2025-11-13T20:03:00.947Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 9,
+  "fields": {
+    "name": "Marmont Hotel",
+    "description": "Marmont Hotel — это отель в городе Женева, в менее чем 1 км от такой достопримечательности, как Фонтан «Же-До». К услугам гостей услуги консьержа, ресторан, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются номера для некурящих. Из окон отеля с 4 звездами открывается вид на город. Гости могут воспользоваться террасой для загара. Железнодорожный вокзал Корнавин — в 1,3 км, а центр — в менее чем 1 км.\r\n\r\nВ Marmont Hotel в каждом номере есть телевизор с плоским экраном, письменный стол и собственная ванная комната, а также предоставляются постельное белье и полотенца. В собственной ванной комнате есть душ, бесплатные туалетно-косметические принадлежности и фен. В номерах имеется сейф.\r\n\r\nГостям Marmont Hotel предлагается завтрак «шведский стол».\r\n\r\nГости могут в любое время обратиться за помощью к сотрудникам стойки регистрации, которые говорят на арабском, на немецком, на греческом и на английском.\r\n\r\nMarmont Hotel располагается на расстоянии 500 м и 3,1 км соответственно от таких достопримечательностей, как Собор Святого Петра и Штаб-квартира ООН в Женеве. Международный аэропорт Женевы находится в 6 км.",
+    "country": 2,
+    "city": 3,
+    "stars": 4,
+    "address": "5 Rue du Prince, 1204 Женева, Швейцария",
+    "price_per_night": "245.00",
+    "created_at": "2025-11-13T20:06:56.363Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 10,
+  "fields": {
+    "name": "Hôtel Tiffany by Fassbind",
+    "description": "Отель Tiffany расположен на тихой улице в самом сердце Богемного квартала Женевы рядом с Большим театром, всего в нескольких минутах ходьбы от Женевского озера. К услугам гостей оздоровительный центр и библиотека. Предоставляется бесплатный Wi-Fi.\r\n\r\nОтель Tiffany оформлен в стиле ар-нуво и предлагает номера с индивидуальным кондиционером, окнами с двойным остеклением и интерактивным телевизором с плоским экраном. По запросу предоставляются удобства для приготовления чая и кофе.\r\n\r\nВ оригинальном маленьком ресторанчике Tiffany подают креативные блюда из свежих продуктов. В баре, оформленном в стиле традиционного английского клуба, имеется широкий ассортимент тщательно подобранных вин.\r\n\r\nКроме того, гости могут посетить оздоровительный центр отеля Tiffany с тренажерным залом, сауной и хаммамом.\r\n\r\nРядом с отелем находятся многочисленные магазины и бутики. Железнодорожный вокзал Корнавен расположен в 1,5 км от отеля, а добраться до него можно на трамвае, который останавливается всего в нескольких шагах от отеля.",
+    "country": 2,
+    "city": 3,
+    "stars": 4,
+    "address": "Rue de l'Arquebuse 20, Jonction, 1204 Женева, Швейцария",
+    "price_per_night": "230.00",
+    "created_at": "2025-11-13T20:08:10.853Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 11,
+  "fields": {
+    "name": "Hotel de Geneve",
+    "description": "Отель Hotel de Geneve расположен всего в 3 минутах ходьбы от железнодорожного вокзала и в 5 минутах от центра города и побережья Женевского озера. К услугам гостей бесплатный Wi-Fi на всей территории.\r\n\r\nВ числе удобств всех номеров отеля Hotel de Geneve — собственная ванная комната и антикварная мебель. \r\n\r\nНа стойке регистрации можно бесплатно воспользоваться компьютером с доступом в интернет.\r\n\r\nРядом с отелем Hotel de Geneve находится платная общественная парковка.",
+    "country": 2,
+    "city": 3,
+    "stars": 2,
+    "address": "1, place Isaac-Mercier, Сен-Жерве, 1201 Женева, Швейцария",
+    "price_per_night": "115.00",
+    "created_at": "2025-11-13T20:10:31.848Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 12,
+  "fields": {
+    "name": "Boutique Hotel Belle Epoque",
+    "description": "This 3-star hotel occupies a 500-year-old building in the Old Town of Bern, just steps away from the Aare River. Attractions such as the famous Zytgloggen Tower, the Bärengraben, the Dählhölzli Animal Park or the Old Town Shopping are in the immediate vicinity. Stade de Suisse and the Exhibition Centre are also 12 minutes away by public transport.\r\n\r\nBern's Main Train Station can be reached by bus in 5 minutes. Nydegg Bus Stop is just 50 metres away. Guests benefit from free public transport in Bern.\r\n\r\nOn the ground floor is a cafe & bar area as well as the beautiful boulevard terrace.The cafe and bar area offers a large selection of fine wines, coffee specialties and other drinks as well as snacks.\r\n\r\nThe spacious, individually furnished rooms at the Boutique Hotel Belle Epoque features cable TV and a safe. Free mineral water as well as WiFi is available in the rooms.",
+    "country": 2,
+    "city": 4,
+    "stars": 3,
+    "address": "Gerechtigkeitsgasse 18, Old City of Bern, 3011 Берн, Швейцария",
+    "price_per_night": "156.00",
+    "created_at": "2025-11-13T20:11:39.893Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 13,
+  "fields": {
+    "name": "Hotel Bellevue Palace Bern",
+    "description": "This traditional 5-star palace hotel occupies an elegant Art Nouveau building dating from 1913, located in the heart of Bern next to the Federal Parliament. The Bellevue Palace with is amazing views to the Bernese Alps and the river Aare includes 2 bars, 2 restaurants, a sauna and fitness centre.Free WiFi is available.\r\n\r\nHotel Bellevue Palace Bern is the official guesthouse of the Swiss government. Over the years, it has hosted famous guests such as Charlie Chaplin, the Queen of England, Jacques Chirac, Nelson Mandela, Sophia Loren, Bruce Springsteen, and Fidel Castro.\r\n\r\nThe spacious, luxuriously furnished rooms include controllable air conditioning, a flat-screen TV, a minibar, and elegant parquet floors. Some offer views of Bern’s historical Old Town or the distant Alpine peaks, while others face the quiet inner courtyard or the Parliament.\r\n\r\nThe Brasserie VUE & terrace serves French and international cuisine (15 GaultMillau points) and the daily breakfast buffet is available every morning until 10:30. For late risers, a continental breakfast can be served in the room, and room service is available daily until midnight. The terrace offers panoramic views over the Aare River or the Alps.\r\n\r\nGuests benefit from free public transport in Bern and the hotel is conveniently located for daytrips to Interlaken and Lake Thunersee, which is 56 km from the property.",
+    "country": 2,
+    "city": 4,
+    "stars": 5,
+    "address": "Kochergasse 3-5, Old City of Bern, 3011 Берн, Швейцария",
+    "price_per_night": "315.00",
+    "created_at": "2025-11-13T20:13:10.998Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 14,
+  "fields": {
+    "name": "Hotel Schweizerhof Bern & Spa",
+    "description": "The Hotel Schweizerhof Bern & Spa is a historic five-star hotel located in the heart of Bern, Switzerland. It offers luxurious rooms and suites, a spa, the famous Jack's Brasserie, Sky Terrace, Cigar Lounge and the Lobby Lounge Bar.\r\n\r\nThe accommodation features elegant decor, high-end amenities and some rooms with a beautiful view over Bern. Guests enjoy a luxurious stay that seamlessly blends past elegance with future comforts.\r\n\r\nThe hotel’s spa invites guests to unwind in a peaceful atmosphere. Facilities include a sauna, steam bath, warmed vitality pool, a calming room with aqueous beds, and a fully equipped fitness space featuring techno gym gear.\r\n\r\nJack's Brasserie, the hotel’s award-winning restaurant, serves refined brasserie cuisine with a focus on local and seasonal ingredients. Guests dine in a stylish, contemporary setting with a curated wine list and attentive service. \r\n\r\nWith a panoramic view over the Federal Parliament, the Swiss Alps and other landmarks of Bern, the Sky Terrace is the place to be in summer. More casual dining is available in the Lobby Lounge Bar and the Cigar Lounge.\r\n\r\nBreakfast is served at Jack’s Brasserie from 6:30 to 10:30. The Schweizerhof Breakfast includes a rich buffet and à la carte options – all freshly prepared and included.\r\n\r\nThe hotel offers valet parking at a surcharge with the possibility to charge electric cars for free.",
+    "country": 2,
+    "city": 4,
+    "stars": 5,
+    "address": "Bahnhofplatz 11, Rotes Quartier, 3011 Берн, Швейцария",
+    "price_per_night": "311.90",
+    "created_at": "2025-11-13T20:15:52.119Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 15,
+  "fields": {
+    "name": "Kempinski Hotel Corvinus Budapest",
+    "description": "Отель Kempinski Corvinus Budapest расположен в 700 метрах от Цепного моста и базилики Святого Стефана. К услугам гостей несколько ресторанов, крытый бассейн и номера с кондиционером.\r\n\r\nВ общей сложности в отеле насчитывается 307 номеров и 43 люкса, оформленных в оригинальном современном стиле и обеспеченных всеми необходимыми удобствами для путешественников. \r\n\r\nФирменная концепция Gastronomic Quarter Downtown Budapest включает в себя венгерско-венский ресторан ÉS Bisztró с летней/зимней террасой на улице Фэшн-стрит, кафе ÉS Deli, новый японский ресторан Nobu, кафе The Living Room и бар Blue Fox, входящий в 500 лучших баров мира благодаря своим креативным коктейлям и выступлениями диджеев и групп по пятницам и субботам. В превосходном спа-центре Kempinski The Spa предлагаются уникальная грязевая процедура hungarymud®, а также роскошные средства VOYA и другие процедуры. В галерее Promenade выставлено современное венгерское искусство.\r\n\r\nСотрудники стойки регистрации, которые говорят на немецком, английском, французском и венгерском языках, всегда готовы оказать необходимую помощь.\r\n\r\nРядом с отелем Kempinski Corvinus Budapest находятся такие популярные достопримечательности, как Большая синагога на улице Дохань, Венгерская государственная опера и базилика Святого Стефана. Расстояние до международного аэропорта Будапешта им. Ференца Листа составляет 14 км, а до выставочного центра Hungexpo — 6,5 км.",
+    "country": 3,
+    "city": 6,
+    "stars": 4,
+    "address": "1051 Будапешт, Erzsébet tér 7-8., Венгрия",
+    "price_per_night": "178.00",
+    "created_at": "2025-11-13T20:59:01.423Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 16,
+  "fields": {
+    "name": "Hotel Ködmön",
+    "description": "Новейший отель в городе Эгер расположен в так называемой Долине красавиц — одной из самых известных туристических достопримечательностей этого города.\r\n\r\nДолина, где производятся знаменитые вина Эгера, славится своей кухней и культурными достопримечательностями, благодаря чему привлекает туристов круглый год. Гости могут воспользоваться качественными велнес-услугами, в том числе посетить крытый бассейн, сауну и паровую баню. Кроме того, в этом отеле гостям предлагают вкуснейшие блюда венгерской кухни и индивидуальное обслуживание.\r\n\r\nНомера с балконом оборудованы кондиционером, мини-баром, телевизором и сейфом. В собственных ванных комнатах имеется душ или ванна. В некоторых номерах установлена гидромассажная ванна.\r\n\r\nГости могут отдохнуть в саду или заказать напитки в баре отеля. Посещение солярия и сеансы массажа оплачиваются отдельно.",
+    "country": 3,
+    "city": 7,
+    "stars": 4,
+    "address": "3300 Эгер, Szépasszonyvölgy, Венгрия",
+    "price_per_night": "110.00",
+    "created_at": "2025-11-13T21:00:04.190Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 17,
+  "fields": {
+    "name": "Boutique Hotel Victoria Budapest",
+    "description": "Set by the foot of the Buda Castle, directly on the Danube River bank, this boutique hotel enjoys an elevated location in the heart of Budapest. It offers rooms with free WiFi and views of the Danube and the Parliament.\r\n\r\nThe modern rooms are fitted with air conditioning, an LCD TV and satellite channels and a private bathroom. The facilities also include a safety box.\r\n\r\nYou can relax in the sauna and enjoy massage services on request. The front desk at Boutique Hotel Victoria Budapest is at your service 24-hours a day. Breakfast is served in the main building.\r\n\r\nYou can cross the Danube on the Chain Bridge 250 metres away. Margaret Island and the Mathias Church are both reachable within a few minutes’ walk. The Batthyányi Square metro station on line M2 is 500 metres from Boutique Hotel Victoria Budapest. Private parking is possible at a location nearby at an additional fee.",
+    "country": 3,
+    "city": 6,
+    "stars": 4,
+    "address": "1011 Будапешт, Bem rakpart 11., Венгрия",
+    "price_per_night": "170.00",
+    "created_at": "2025-11-13T21:19:07.514Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 18,
+  "fields": {
+    "name": "Kozmo Hotel Suites & Spa",
+    "description": "Kozmo Hotel Suites & Spa - Small Luxury Hotels of the World — это отель в городе Будапешт, в 1,2 км от такой достопримечательности, как Национальный музей Венгрии. Среди удобств — фитнес-центр, терраса, ресторан и частная парковка. Неподалеку от отеля с баром находятся некоторые известные достопримечательности, такие как Станция метро Keleti Pályaudvar (в 1,6 км), Blaha Lujza Square (в менее чем 1 км) и Большая синагога (в 1,7 км). Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или доставкой еды и напитков, а также подключиться к бесплатному Wi-Fi на всей территории.\r\n\r\nВ номерах Kozmo Hotel Suites & Spa - Small Luxury Hotels of the World установлен кондиционер, сейф и телевизор с плоским экраном. Среди прочих удобств — письменный стол, кофемашина, а также собственная ванная комната с душем. В собственной ванной комнате есть ванна, бесплатные туалетно-косметические принадлежности и фен. Гостям Kozmo Hotel Suites & Spa - Small Luxury Hotels of the World предоставляются постельное белье и полотенца.\r\n\r\nГостям предлагается завтрак «шведский стол», континентальный завтрак или американский завтрак.\r\n\r\nНа территории отеля с 5 звездами можно поиграть в бильярд. К услугам гостей аренда автомобилей.",
+    "country": 3,
+    "city": 6,
+    "stars": 5,
+    "address": "1082 Будапешт, 17 Horváth Mihály tér, Венгрия",
+    "price_per_night": "167.00",
+    "created_at": "2025-11-13T21:20:33.754Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 19,
+  "fields": {
+    "name": "K+K Hotel Opera",
+    "description": "Отель K+K Opera с рестораном, баром, бесплатной сауной и фитнес-центром расположен в центре Будапешта рядом с оперным театром и в 100 метрах от исторического проспекта Андраши. Во всех зонах отеля можно воспользоваться бесплатным Wi-Fi.\r\n\r\nВсе номера оснащены кондиционером, телефоном и телевизором с плоским экраном и спутниковыми каналами. В них есть рабочий стол и принадлежности для чая/кофе. Собственная ванная комната с ванной или душем укомплектована феном и бесплатными туалетно-косметическими принадлежностями.\r\n\r\nКаждое утро для гостей сервируют сытный завтрак «шведский стол».\r\n\r\nГости могут воспользоваться помещениями для совещаний за отдельную плату.\r\n\r\nОтель расположен в 450 метрах от Базилики Святого Стефана и в 1 км от Цепного моста. В 100 метрах от отеля расположена ближайшая к нему станция метро Opera линии M1.",
+    "country": 3,
+    "city": 6,
+    "stars": 4,
+    "address": "1065 Будапешт, Révay utca 24., Венгрия",
+    "price_per_night": "123.00",
+    "created_at": "2025-11-13T21:21:35.414Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 20,
+  "fields": {
+    "name": "Maison 45 - Luxury Boutique Hotel",
+    "description": "Maison 45 - Luxury Boutique Hotel — это отель в городе Будапешт, в 300 м от такой достопримечательности, как Венгерский государственный оперный театр. К услугам гостей услуги консьержа, сад, бар, а также бесплатный Wi-Fi на всей территории. Также предоставляются номера для некурящих. В распоряжении гостей отеля с 4 звездами — доставка еды и напитков и круглосуточная стойка регистрации. За дополнительную плату может быть предоставлено место на частной парковке.\r\n\r\nВ распоряжении гостей Maison 45 - Luxury Boutique Hotel — гостиная зона и собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. Также среди удобств есть кондиционер, телевизор с плоским экраном со спутниковыми каналами и сейф. В номерах есть кофемашина, а в некоторых номерах также есть кухня с посудомоечной машиной, духовкой и плитой. Гостям Maison 45 - Luxury Boutique Hotel предоставляются постельное белье и полотенца.\r\n\r\nГостям предлагается завтрак по меню, континентальный завтрак или вегетарианский завтрак.",
+    "country": 3,
+    "city": 6,
+    "stars": 4,
+    "address": "1061 Будапешт, Paulay Ede utca 45, Венгрия",
+    "price_per_night": "140.00",
+    "created_at": "2025-11-13T21:22:33.794Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 21,
+  "fields": {
+    "name": "Budapest Marriott Hotel",
+    "description": "Отель Budapest Marriott удобно расположен в центре Будапешта. Это единственный в городе отель, из всех 364 номеров которого открывается великолепный вид на реку Дунай.\r\n\r\nВ изысканном интерьере номеров с деревянным полом и живописным видом на реку инновационный стиль гармонично сочетается с удобством и комфортом. Все номера были отремонтированы в 2018 году по современным стандартам дизайна отелей сети Marriott: деревянный пол, телевизор с плоским экраном и спутниковыми каналами, возможность подключения внешних устройств, USB-разъемы и потоковое видео.\r\n\r\nСовременный ресторан DNB Budapest Modern Hungarian Wine Bar Kitchen с превосходной открытой кухней и стойкой с деликатесами работает в течение всего дня. Здесь гостям подают блюда, приготовленные из лучших продуктов Венгрии. В меню представлены простые и полезные блюда из высококачественных местных ингредиентов.\r\n\r\nВ баре Liz & Chain с модной музыкальной программой гостям предложат широкий ассортимент водки, пива и высококачественную минеральную воду из разных стран мира. Этот популярный бар оформлен в необычном стиле и украшен картинами с изображением рек и озер Венгрии. В этом новом баре подают изысканные сорта фруктовых бренди и оригинальные вина.\r\nБар на крыше Liz and Chain с террасой на 10 этаже и несравненным видом на город\r\n\r\nНа цокольном этаже расположен фитнес-центр Marriott со всем оборудованием, необходимым для поддержания здоровья и физической формы.",
+    "country": 3,
+    "city": 6,
+    "stars": 5,
+    "address": "1052 Будапешт, Apaczai Csere Janos u. 4, Венгрия",
+    "price_per_night": "190.00",
+    "created_at": "2025-11-13T21:29:27.800Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 22,
+  "fields": {
+    "name": "Mandarin Oriental Savoy",
+    "description": "Mandarin Oriental Savoy, Zurich — это отель, расположенный в городе Цюрих. К услугам гостей сад, терраса, ресторан и бар. В распоряжении гостей отеля с 5 звездами — услуги консьержа. Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или доставкой еды и напитков, а также подключиться к бесплатному Wi-Fi на всей территории.\r\n\r\nГостям Mandarin Oriental Savoy, Zurich предлагается континентальный завтрак.\r\n\r\nРядом с Mandarin Oriental Savoy, Zurich находятся такие популярные достопримечательности, как Фраумюнстер, Церковь Гроссмюнстер и Площадь Парадеплац. Аэропорт Цюрих находится в 12 км.",
+    "country": 2,
+    "city": 5,
+    "stars": 5,
+    "address": "12 Poststrasse, Старый город Цюриха - Центр города, 8001 Цюрих, Швейцария",
+    "price_per_night": "350.00",
+    "created_at": "2025-11-13T21:32:53.392Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 23,
+  "fields": {
+    "name": "Storchen Zürich - Lifestyle Boutique Hotel",
+    "description": "Отель Storchen, известный своим гостеприимством на протяжении более 650 лет, расположен в уникальном месте в центре Цюриха. В отеле есть собственный лодочный причал прямо на берегу реки Лиммат. Отель находится в нескольких минутах ходьбы от всех культурных достопримечательностей.\r\n\r\nИз номеров и люксов открывается уникальный вид на реку и живописный Старый город. В номерах установлена классическая мебель в теплых тонах, имеются современные удобства, кондиционер, а также высокоскоростной проводной и беспроводной доступ в интернет.\r\n\r\nШвейцарский завтрак «шведский стол» сервируют в ресторане Rôtisserie, а в летний период — на живописной террасе с видом на реку Лиммат и церковь Гроссмюнстер. В отеле Storchen есть сигарный бар с прекрасным выбором сигар, а также модный лаундж-бар Barchetta - Piazza. Из бара на крыше THE NEST открывается уникальный вид на крыши Цюриха.\r\n\r\nУслуги консьержа предоставляются круглосуточно.",
+    "country": 2,
+    "city": 5,
+    "stars": 5,
+    "address": "Weinplatz 2, Старый город Цюриха - Центр города, 8001 Цюрих, Швейцария",
+    "price_per_night": "355.00",
+    "created_at": "2025-11-13T21:35:26.975Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 24,
+  "fields": {
+    "name": "Baur au Lac",
+    "description": "Uniquely situated in its own private park in the heart of Zurich with views over Lake Zurich and the Alps, the 5-star Baur au Lac offers elegant and luxurious rooms and suites with free minibar use. Guests benefit from an award-winning restaurant, free WiFi, and a top-floor fitness centre.\r\n\r\nMedical massages and physiotherapy are available on request, and there is a hair and beauty salon on site.\r\n\r\nValet parking, a limousine service, maid service twice a day, and a concierge service around the clock are also offered at the Baur au Lac. You can also have your car repaired and washed in the hotel's garage, buy flowers, or browse through the offer of the wine boutique.\r\n\r\nThe banking centre at the Parade Square and the famous Bahnhofstrasse shopping street are only a few minutes' walk away.",
+    "country": 2,
+    "city": 5,
+    "stars": 5,
+    "address": "Talstrasse 1, Старый город Цюриха - Центр города, 8001 Цюрих, Швейцария",
+    "price_per_night": "390.00",
+    "created_at": "2025-11-13T21:36:53.766Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 25,
+  "fields": {
+    "name": "The Grand Mark Prague",
+    "description": "Отель The Grand Mark Prague - The Leading Hotels of the World расположен в здании бывшего дворца постройки XVII века в центре Праги. Гости могут полюбоваться изысканным дизайном интерьера, великолепно сохранившимся до наших дней.\r\n\r\nТрадиционное оформление отеля The Grand Mark Prague - The Leading Hotels of the World гармонично сочетается с современными декоративными элементами. Просторные номера обставлены красивой мебелью, в большинстве из них имеется отдельная гостиная с полностью оборудованной мини-кухней и мягким уголком. В большой ванной комнате постелен пол с подогревом, а из окон открывается живописный вид на сад или улицу.\r\n\r\nПо утрам в отеле сервируется сытный завтрак «шведский стол» с блюдами домашней кухни, приготовленными из местных экологически чистых продуктов. В ресторане Le Grill готовят блюда интернациональной и чешской кухни. Кроме того, в отеле работает бар Two Step и ресторан Garden с непринужденной обстановкой и безупречным обслуживанием. Гостям выдают ваучер на приветственный напиток.\r\n\r\nВ стоимость проживания включен доступ в фитнес-центр, открытый круглосуточно и без выходных.\r\n\r\nБлагодаря своему удачному расположению отель Grand Mark Prague идеально подходит для медового месяца, романтического отдыха и незабываемых выходных. Великолепный собственный сад отеля с внутренним двором площадью 1 800 кв. м является одним из самых популярных мест в Праге для проведения значимых мероприятий и торжеств.",
+    "country": 4,
+    "city": 8,
+    "stars": 5,
+    "address": "Hybernská 12, Прага, 110 00, Чехия",
+    "price_per_night": "210.00",
+    "created_at": "2025-11-13T21:43:37.890Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 26,
+  "fields": {
+    "name": "COSMOPOLITAN Hotel Prague",
+    "description": "Отель COSMOPOLITAN Prague расположен на тихой улице в центре Праги, в 900 метрах от Староместской площади и в 2 минутах ходьбы от торгового центра Palladium. Современный роскошный бутик-отель занимает здание отреставрированного таунхауса постройки 1889 года. В оформлении отеля исторические элементы сочетаются с современным дизайном.\r\n\r\nВсе номера с бесплатным Wi-Fi оборудованы телевизором, совместимым с мобильными устройствами, с очень большим экраном и интерактивной технологией Smart TV с доступом в интернет. Номера с принадлежностями для чая/кофе украшены элементами Swarovski. В собственной ванной комнате с халатами и тапочками установлена ванна. Гости могут бесплатно посещать тренажерный зал и сауну отеля. В отеле не разрешено курить.\r\n\r\nСтойка регистрации работает круглосуточно. Рестораном Next Door с потолочными фресками 1889 года руководит знаменитый шеф-повар Зденек Польрайх. Дизайн ресторана был разработан итальянским архитектором Лучано Белькапо. В этом модном ресторане в стиле бистро с открытой кухней подают блюда современной чешской кухни.\r\n\r\nРасстояние от отеля Cosmopolitan Prague до Пражских курантов составляет 900 метров, а до Вацлавской площади — 1 км. До площади Республики с Общественным домом и Пороховой башней — 250 метров. До ближайшего аэропорта Праги имени Вацлава Гавела — 12 км, а до станции метро Náměstí Republiky — всего 100 метров.",
+    "country": 4,
+    "city": 8,
+    "stars": 5,
+    "address": "3 Zlatnická, Прага, 110 00, Чехия",
+    "price_per_night": "270.00",
+    "created_at": "2025-11-13T21:44:45.993Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 27,
+  "fields": {
+    "name": "Mamaison Hotel Riverside Prague",
+    "description": "Пятизвездочный отель Mamaison Riverside Prague расположен в центре города на левом берегу реки Влтавы, всего в нескольких шагах от Карлова моста и Старого города.\r\n\r\nК услугам гостей комплекса Mamaison Riverside Prague в стиле модерн просторные и элегантные номера с кондиционером с индивидуальной системой контроля и бесплатным доступом в интернет (беспроводным и проводным). В числе удобств сейф для ноутбука и розетки.\r\n\r\nПо утрам подается богатый завтрак в номер или в ресторане Riverside.\r\n\r\nКроме того, гостям отеля Mamaison Riverside Prague предлагается трансфер на лимузине из аэропорта до комплекса за дополнительную плату.",
+    "country": 4,
+    "city": 8,
+    "stars": 5,
+    "address": "Janackovo nab. 15, Прага, 150 00, Чехия",
+    "price_per_night": "214.80",
+    "created_at": "2025-11-13T21:45:44.881Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 28,
+  "fields": {
+    "name": "THE MANES Boutique Hotel Prague",
+    "description": "Бутик-отель THE Mánes Prague с современными интерьерами расположен в центре Праги рядом с набережной реки Влтава и в пределах 1 км от Вацлавской площади и Староместской площади. К услугам гостей бесплатный Wi-Fi на всей территории и изысканные номера. На всей территории отеля можно пользоваться бесплатным Wi-Fi.\r\n\r\nВ распоряжении гостей просторные номера с телефоном, спутниковым телевидением, мини-баром и сейфом. В каждом номере и люксе есть ванная комната с душем и/или ванной.\r\n\r\nРядом с бутик-отелем THE MANES Prague налажено хорошее транспортное сообщение. До большинства основных достопримечательностей Праги можно дойти пешком. За дополнительную плату гости могут пользоваться близлежащей парковкой в гараже.",
+    "country": 4,
+    "city": 8,
+    "stars": 4,
+    "address": "Myslíkova 20, Прага, 110 00, Чехия",
+    "price_per_night": "180.00",
+    "created_at": "2025-11-13T21:46:47.367Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 29,
+  "fields": {
+    "name": "The Charles",
+    "description": "The Charles hotel enjoys a central location in Lesser Town, 100 metres from Charles Bridge and a 15-minute walk from Prague Castle. Free WiFi in all areas and paid street parking are offered.\r\n\r\nThis historic building with Baroque-style furniture and wooden beamed ceilings dates back to 1857 and is fully air-conditioned.\r\n\r\nAll rooms are provided with a minibar, satellite flat-screen TV, a safety deposit box, and a bathroom with a bath or a shower and a hairdryer.\r\n\r\nBuffet breakfast is served every morning at the restaurant on the ground floor. Guests can also have a drink in a bar.\r\n\r\nThe Malostranská Metro Station is 650 metres away. Old Town Square with the Orloj Astronomical Clock can be reached within 1.3 km and Wenceslas Square is 1.7 km away.",
+    "country": 4,
+    "city": 8,
+    "stars": 4,
+    "address": "Josefska 1, Прага, 118 00, Чехия",
+    "price_per_night": "164.00",
+    "created_at": "2025-11-13T21:47:57.618Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 30,
+  "fields": {
+    "name": "Royal Road Residence",
+    "description": "Royal Road Residence — это апартаменты в 200 м от центра города Прага. К услугам гостей кухня с холодильником, посудомоечной машиной и духовкой, а также бесплатный Wi-Fi.\r\n\r\nТакже есть микроволновая печь, плита и чайник.\r\n\r\nВ Royal Road Residence предлагается завтрак по меню или континентальный завтрак.\r\n\r\nРядом с Royal Road Residence находятся такие популярные достопримечательности, как Карлов мост, Пражские куранты и Староместская площадь. Аэропорт имени Вацлава Гавела/Прага находится в 12 км.",
+    "country": 4,
+    "city": 8,
+    "stars": 3,
+    "address": "Karlova 20, Прага, 110 00, Чехия",
+    "price_per_night": "125.00",
+    "created_at": "2025-11-13T21:49:24.055Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 31,
+  "fields": {
+    "name": "Courtyard by Marriott Brno",
+    "description": "Set within green environs of Brno’s premiere business area, 1.5 km from Špilberk Castle, Courtyard by Marriott Brno features air-conditioned rooms and private parking. Guests can enjoy the on-site bar and complimentary WiFi throughout the hotel.\r\nEach room includes a flat-screen TV, kettle, free toiletries and a hairdryer. Certain units feature a seating area for your convenience.\r\n\r\nAdditional features of the property include a 24/7 rooftop fitness centre, 10 meeting rooms, a ballroom with the capacity of 400 people, a 24-hour front desk, as well as a shared lounge, 24/7 shop with snacks, refreshment and toiletries.\r\n\r\nJazzmin Bar & Dining serves international cuisine alongside local specialties. The restaurant is open for breakfast, lunch and dinner. The hotel also offers car hire.\r\n\r\nThe property is surrounded by jogging and cycling paths running along the river outside the hotel. The property also provides an easy access to the city’s historical and cultural sights including Svoboda square and Brno Zoo. Trade Fairs Brno is 1.8 km from Courtyard by Marriott Brno, while St. Peter and Paul Cathedral is 1 km away. The nearest airport is Brno–Turany Airport, 7 km from Courtyard by Marriott Brno.",
+    "country": 4,
+    "city": 9,
+    "stars": 4,
+    "address": "Holandska Street 12, Брно, 639 00, Чехия",
+    "price_per_night": "105.00",
+    "created_at": "2025-11-13T21:54:15.393Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 32,
+  "fields": {
+    "name": "Hotel JeštěBrno",
+    "description": "Hotel JeštěBrno — это отель в городе Брно, в 6,1 км от такой достопримечательности, как Замок Шпильберк. Среди удобств — терраса, бар, сеансы массажа и бесплатная частная парковка. В распоряжении гостей отеля с 4 звездами — бесплатный Wi-Fi и доставка еды и напитков. В этом отеле есть семейные номера.\r\n\r\nВ распоряжении гостей Hotel JeštěBrno — гостиная зона и собственная ванная комната с душем, бесплатными туалетно-косметическими принадлежностями и феном. Также среди удобств есть кондиционер, телевизор с плоским экраном со спутниковыми каналами и сейф. Гостям Hotel JeštěBrno предоставляются постельное белье и полотенца.\r\n\r\nHotel JeštěBrno располагается на расстоянии 8,1 км и 4,3 км соответственно от таких достопримечательностей, как Выставочный центр Брно и Villa Tugendhat. Аэропорт Брно-Туржаны находится в 12 км.",
+    "country": 4,
+    "city": 9,
+    "stars": 4,
+    "address": "10 Majdalenky 885/10, Брно, 638 00, Чехия",
+    "price_per_night": "130.00",
+    "created_at": "2025-11-13T21:55:52.713Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 33,
+  "fields": {
+    "name": "Hotel Cristoforo Colombo",
+    "description": "Hotel Cristoforo Colombo - Preferred Hotels & Resorts — это отель в центре города Милан, в 700 м от такой достопримечательности, как GAM Milano. К услугам гостей фитнес-центр, ресторан и бар. В распоряжении гостей отеля с 4 звездами — бесплатный Wi-Fi, доставка еды и напитков и круглосуточная стойка регистрации. В снэк-баре можно заказать напитки.\r\n\r\nВ номерах в Hotel Cristoforo Colombo - Preferred Hotels & Resorts установлен кондиционер, телевизор с плоским экраном и сейф. Среди прочих удобств — письменный стол, чайник и мини-бар, а также собственная ванная комната с душем. В собственной ванной комнате есть бесплатные туалетно-косметические принадлежности. Гостям Hotel Cristoforo Colombo - Preferred Hotels & Resorts предоставляются постельное белье и полотенца.\r\n\r\nГостям подают завтрак «шведский стол», континентальный завтрак или итальянский завтрак.\r\n\r\nРядом с Hotel Cristoforo Colombo - Preferred Hotels & Resorts находятся такие популярные достопримечательности, как Станция метро San Babila, Milano Dateo Metro Station и Вилла Некки-Кампильо. Аэропорт Милан Линате находится в 7 км.",
+    "country": 5,
+    "city": 10,
+    "stars": 4,
+    "address": "Corso Buenos Aires 3, Милан - центр города, 20124 Милан, Италия",
+    "price_per_night": "240.00",
+    "created_at": "2025-11-13T22:04:14.311Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 34,
+  "fields": {
+    "name": "Hotel The Square Milano Duomo",
+    "description": "Отель Square Milano Duomo расположен в историческом здании, в 5 минутах ходьбы от Миланского собора, оперного театра Ла Скала и торгового района Витторио Эмануэле. К услугам гостей ресторан, бар и бесплатный Wi-Fi на всей территории.\r\n\r\nНомера оформлены в современном стиле и оборудованы кондиционером и мини-баром. Собственная ванная комната укомплектована феном и бесплатными туалетно-косметическими принадлежностями.\r\n\r\nПрогулка до парка Семпионе занимает 15 минут. Расстояние до станции метро Missori составляет 100 метров.",
+    "country": 5,
+    "city": 10,
+    "stars": 4,
+    "address": "Via Albricci 2-4, Милан - центр города, 20122 Милан, Италия",
+    "price_per_night": "235.50",
+    "created_at": "2025-11-13T22:05:19.265Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 35,
+  "fields": {
+    "name": "Armani Hotel Milano",
+    "description": "Отель Armani Milano находится в фешенебельном миланском Квартале моды в 50 метрах от станции метро Montenapoleone. Персональный консьерж провожает гостей в современные изысканно оформленные номера.\r\n\r\nОтель занимает здание 1930-х годов, построенное по проекту архитектора Энрико Гриффини. Номера с кофемашиной Nespresso обставлены мебелью Armani Casa, ванная комната с душем и ванной отделана природным камнем или мрамором. \r\n\r\nПо утрам в отеле Armani Milano сервируется завтрак «шведский стол». В ресторане подают блюда интернациональной кухни и традиционные блюда региона Ломбардия.\r\n\r\nВ отеле работает фитнес-центр, сауна и турецкая баня. \r\n\r\nПрогулка до театра Ла Скала и Миланского кафедрального собора занимает не более 10 минут. Расстояние до пейзажного парка Семпионе составляет 1 км.",
+    "country": 5,
+    "city": 10,
+    "stars": 5,
+    "address": "Via Manzoni 31, Милан - центр города, 20121 Милан, Италия",
+    "price_per_night": "270.00",
+    "created_at": "2025-11-13T22:07:07.796Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 36,
+  "fields": {
+    "name": "Palazzo Cordusio Gran Melia",
+    "description": "Palazzo Cordusio Gran Melia - The Leading Hotels of the World — это отель, расположенный в городе Милан. К услугам гостей фитнес-центр, терраса, ресторан и бар. Этот вариант размещения располагается в 400 м и 300 м соответственно от таких достопримечательностей, как Оперный театр «Ла Скала» и Галерея Виктора Эммануила II. Montenapoleone Metro Station — в менее чем 1 км. Гости могут обратиться к сотрудникам круглосуточной стойки регистрации, воспользоваться трансфером от/до аэропорта или доставкой еды и напитков, а также подключиться к бесплатному Wi-Fi на всей территории.\r\n\r\nГостям Palazzo Cordusio Gran Melia - The Leading Hotels of the World предоставляется завтрак «шведский стол».\r\n\r\nГости отеля с 5 звездами Palazzo Cordusio Gran Melia - The Leading Hotels of the World могут воспользоваться сауной и гидромассажной ванной.\r\n\r\nРядом с Palazzo Cordusio Gran Melia - The Leading Hotels of the World находятся такие популярные достопримечательности, как Церковь Сан-Маурицио-аль-Монастеро-Маджоре, Музей Новеченто и Замок Сфорца. Аэропорт Милан Линате находится в 9 км.",
+    "country": 5,
+    "city": 10,
+    "stars": 5,
+    "address": "2 Piazza Cordusio, Милан - центр города, 20123 Милан, Италия",
+    "price_per_night": "310.00",
+    "created_at": "2025-11-13T22:08:02.307Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 37,
+  "fields": {
+    "name": "The Westin Palace",
+    "description": "Отель Westin Palace Milan — известное место встречи миланцев и путешественников. Отель был недавно отремонтирован после полной модернизации мест общего пользования и залов для проведения совещаний. Отель расположен в районе Порта-Нуова. Фасад отеля отделан красным мрамором. С террасы на крыше открывается вид на город.\r\n\r\nВ оформлении номеров использовано сочетание классической архитектуры с современным дизайном. Все номера оборудованы ЖК-телевизором. К услугам гостей фирменная кровать Heavenly и ванна Heavenly.\r\n\r\nНа всей территории предоставляется бесплатный Wi-Fi. Гости отеля могут посетить оздоровительный центр и тренажерный зал Westin Workout.\r\n\r\nПо утрам для гостей сервируют сытный завтрак «шведский стол» с закусками, сладостями и горячими блюдами. В ресторане PanEVO отеля Westin на ужин подают блюда традиционной и региональной кухни. Лаундж-бар оформлен с использованием ценной древесины и тканей.\r\n\r\nОт железнодорожного вокзала и станции метро Repubblica можно легко добраться до выставочного центра Ро Фиера. Поездка на автомобиле до международного аэропорта Милан-Линате занимает 20 минут.",
+    "country": 5,
+    "city": 10,
+    "stars": 5,
+    "address": "Piazza della Repubblica 20, Центральный вокзал, 20124 Милан, Италия",
+    "price_per_night": "270.00",
+    "created_at": "2025-11-13T22:11:04.552Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 38,
+  "fields": {
+    "name": "Mandarin Oriental",
+    "description": "Роскошный отель Mandarin Oriental Milan расположен всего в нескольких минутах ходьбы от бутиков Квартала моды Милана. При отеле работает бесплатный оздоровительный центр с крытым бассейном и фитнес-залом. К услугам гостей помещения для проведения конференций и ресторан Seta, удостоенный 2 звезд Мишлен.\r\n\r\nОтель представляет собой комплекс из 4 смежных зданий XVIII века. Гостей размещают в современных номерах и люксах с паркетным полом, кондиционерами и мебелью, выполненной по проектам известного дизайнера Антонио Читтерио. Из окон открывается вид во внутренний двор или на улицу. Из некоторых номеров можно полюбоваться Миланским собором.\r\n\r\nВ отделанных мрамором ванных комнатах приготовлены тапочки и мягкие купальные халаты. Все номера оснащены кофемашиной Nespresso и телевизором с плоским экраном, который гости могут подключить к собственному ноутбуку через кабель HDMI.\r\n\r\nВ ресторане Seta отеля Mandarin, отмеченном Красным гидом «Мишлен», подают блюда итальянской кухни с современными нотками. В хорошую погоду гости могут пообедать во внутреннем дворе. По запросу предоставляется отдельная столовая. В ресторане Mandarin Garden можно заказать коктейли и поужинать в неформальной обстановке.\r\n\r\nВ оздоровительном центре площадью более 900 кв. метров имеется крытый бассейн, сауна и фитнес-центр. Здесь можно заказать массаж, косметические процедуры и услуги парикмахера.",
+    "country": 5,
+    "city": 10,
+    "stars": 5,
+    "address": "Via Andegari 9, Милан - центр города, 20121 Милан, Италия",
+    "price_per_night": "268.40",
+    "created_at": "2025-11-13T22:12:19.156Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 39,
+  "fields": {
+    "name": "U-Visionary Roma Hotel",
+    "description": "U-Visionary Roma Hotel — это отель в центре города Рим, в 400 м от такой достопримечательности, как Станция метро Barberini. К услугам гостей терраса, ресторан и бар. В распоряжении гостей отеля с 5 звездами — доставка еды и напитков, круглосуточная стойка регистрации и бесплатный Wi-Fi. Этот вариант размещения с гипоаллергенными номерами находится в 300 м от следующей достопримечательности: Площадь Пьяцца Барберини.\r\n\r\nВо всех номерах имеется платяной шкаф, мини-бар и кофемашина, а также биде и бесплатные туалетно-косметические принадлежности. Среди прочих удобств — кондиционер и телевизор с плоским экраном со спутниковыми каналами. Из окон номеров U-Visionary Roma Hotel открывается вид на город. К услугам гостей собственная ванная комната с душем и феном.\r\n\r\nДля гостей сервируется завтрак «шведский стол», завтрак по меню и континентальный завтрак.",
+    "country": 5,
+    "city": 11,
+    "stars": 5,
+    "address": "Via dei Maroniti, 12, Треви, 00187 Рим, Италия",
+    "price_per_night": "310.00",
+    "created_at": "2025-11-13T22:17:06.791Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 40,
+  "fields": {
+    "name": "Hotel Eden - Dorchester Collection",
+    "description": "Boasting a rooftop terrace and set in one of Rome's most exclusive areas, near Via Veneto street, Hotel Eden - Dorchester Collection offers luxury rooms, A Fine Dining restaurant with breathtaking view, and free WiFi throughout. The Spanish Steps are 550 metres away.\r\n\r\nWith classic Italian furnishings,  each room here includes a satellite LED TV, a minibar, and air conditioning. Most rooms have city views.\r\n\r\nThe award-winning La Terrazza restaurant with panoramic views serves gourmet Mediterranean cuisine for dinner, matched with the finest of wines. Il Giardino Ristorante, is open for both lunch and dinner. Breakfast is an extensive buffet.\r\n\r\nThe Villa Borghese park is 350 metres away, while the Trevi Fountain can be reached on foot in 15 minutes.",
+    "country": 5,
+    "city": 11,
+    "stars": 5,
+    "address": "Via Ludovisi 49, Виа Венето, 00187 Рим, Италия",
+    "price_per_night": "380.00",
+    "created_at": "2025-11-13T22:24:08.569Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 41,
+  "fields": {
+    "name": "Penthouse Suite Rome - Private Suites",
+    "description": "Комплекс Penthouse Suite с бесплатным Wi-Fi на всей территории расположен в Риме, на площади Барберини, в 5 минутах ходьбы от фонтана Треви. К услугам гостей роскошные номера и апартаменты с собственной кухней.\r\n\r\nВо всех номерах есть кондиционер, телевизор с плоским экраном и спутниковыми каналами и собственная ванная комната с душем, биде и бесплатными туалетно-косметическими принадлежностями. В апартаментах также обустроена мини-кухня с электрическим чайником и кофемашиной.\r\n\r\nЗа 8 минут можно дойти от комплекса Penthouse Suite Rome - Private Suites до площади Испании. До ближайшей станции метро Barberini — 80 метров.",
+    "country": 5,
+    "city": 11,
+    "stars": 5,
+    "address": "Piazza Barberini 45 , Треви, 00187 Рим, Италия",
+    "price_per_night": "450.00",
+    "created_at": "2025-11-13T22:25:08.107Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 42,
+  "fields": {
+    "name": "Ruby Emma Hotel Amsterdam",
+    "description": "Отель Ruby Emma Amsterdam расположен на берегу реки Амстел в Амстердаме. В отеле гармонично сочетаются роскошь, технологии и экологичность, объединившись в этом жилом здании, созданном под вдохновением от природы. На всей территории отеля действует бесплатный Wi-Fi.\r\n\r\nГостям предлагаются номера с французскими окнами, телевизором с плоским экраном и поддержкой AirPlay, а также планшетом iPad для управления освещением и отоплением. Собственная ванная комната укомплектована набором туалетно-косметических принадлежностей Ruby Care.\r\n\r\nВесь отель был спроектирован так, чтобы снизить негативное воздействие на окружающую среду.\r\n\r\nОтель Ruby Emma Amsterdam находится в 10 минутах от стадиона «Йохан Кройф Арена» (ранее «Амстердам Арена») и в 2,9 км от Музея пива Heineken Experience. Расстояние от отеля Ruby Emma Amsterdam до аэропорта Схипхол составляет 11 км.",
+    "country": 6,
+    "city": 12,
+    "stars": 4,
+    "address": "Amstelvlietstraat 4, Ост, 1096 GG Амстердам, Нидерланды",
+    "price_per_night": "170.00",
+    "created_at": "2025-11-13T22:30:05.953Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 43,
+  "fields": {
+    "name": "De L’Europe Amsterdam – The Leading Hotels of the World",
+    "description": "Отель De L'Europe Amsterdam, возведенный на руинах крепости позднего средневековья, расположен в самом сердце города на берегу реки Амстел и предлагает гостям роскошные номера. К услугам гостей этого 5-звездочного отеля фитнес-центр, оздоровительный и спа-центр, а также терраса у воды. За дополнительную плату предлагаются услуги парковщика.\r\n\r\nВ номерах и люксах классический дизайн, включая отделанную каррарским мрамором ванную комнату, отлично сочетается с современными удобствами, такими как Apple TV, система объемного звучания Bose и подсветка пола с датчиком движения. Кроме того, в распоряжении гостей кофемашина Nespresso и международные адаптеры. Некоторые номера и люксы выходят на балкон с видом на реку Амстел и исторический центр Амстердама. В рамках партнерства с художественным музеем Рейксмюсеум все номера украшены репликами произведений знаменитых голландских художников.",
+    "country": 6,
+    "city": 12,
+    "stars": 5,
+    "address": "Nieuwe Doelenstraat 2 - 14 , Амстердам - центр города, 1012 CP Амстердам, Нидерланды",
+    "price_per_night": "240.00",
+    "created_at": "2025-11-13T22:31:16.806Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 44,
+  "fields": {
+    "name": "Hotel V Nesplein",
+    "description": "Этот 4-звездочный дизайн-отель расположен в историческом центре Амстердама. К услугам гостей отеля V Nesplein стильные номера с бесплатным Wi-Fi и ресторан. До Центрального железнодорожного вокзала — 850 метров.\r\n\r\nВсе номера оформлены в загородном стиле и оснащены кондиционером с центральной системой управления. Также в числе удобств телевизор с плоским экраном, рабочий стол и сейф. В современных ванных комнатах установлена ванна или душ.\r\n\r\nРесторан The Lobby с обслуживанием по меню открыт ежедневно на завтрак, обед и ужин. Желающие могут посетить бар. По соседству с отелем V Nesplein расположились многочисленные кафе и рестораны.\r\n\r\nВ отеле работает круглосуточная стойка регистрации и осуществляется доставка еды и напитков в номер. Гости могут отдохнуть на террасе с газетой, взятой в отеле Nesplein. Также на территории имеется библиотека.",
+    "country": 6,
+    "city": 12,
+    "stars": 4,
+    "address": "Nes 49, Амстердам - центр города, 1012 KD Амстердам, Нидерланды",
+    "price_per_night": "187.00",
+    "created_at": "2025-11-13T22:32:24.751Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 45,
+  "fields": {
+    "name": "Brasss Hotel Suites",
+    "description": "Отель класса люкс Brasss с красивым видом на окрестности центра города Харлем располагает просторными люксами с роскошными удобствами и большой ванной комнатой. На всей территории работает бесплатный WiFi.\r\n\r\nВ каждом люксе есть телевизор с плоским экраном, кабельными каналами и DVD-плеером, а также тропический душ. В некоторых установлена гидромассажная ванна. В число дополнительных удобств входят принадлежности для чая/кофе и рабочий стол.\r\n\r\nКаждое утро в любое время в люксы подается завтрак, состоящий из блюд для завтрака голландской, английской и французской кухонь.\r\n\r\nОтель класса люкс Brasss расположен по соседству с площадью Де Харлем Гроте Маркт. До железнодорожного вокзала - 1 км.",
+    "country": 6,
+    "city": 13,
+    "stars": 5,
+    "address": "Korte Veerstraat 1, 2011 CL Харлем, Нидерланды",
+    "price_per_night": "200.00",
+    "created_at": "2025-11-13T22:33:44.781Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 46,
+  "fields": {
+    "name": "Appartement met tuin in Haarlem centrum",
+    "description": "Appartement met tuin in Haarlem centrum(Vijfhoek) — это апартаменты в городе Харлем, расположенные в 16 км и 20 км соответственно от таких достопримечательностей, как Парк цветов Кекенхоф и Дом-музей Анны Франк. Парк Вондела — в 23 км. К услугам гостей сад, терраса и бесплатный Wi-Fi на всей территории. Из окон открывается вид на сад.\r\n\r\nВ этих апартаментах есть спальня (1). Установлен телевизор с плоским экраном. Гостям этих апартаментов предоставляются полотенца и постельное белье.\r\n\r\nAppartement met tuin in Haarlem centrum(Vijfhoek) располагается на расстоянии 24 км и 24 км соответственно от таких достопримечательностей, как Музей Ван Гога и Музей Моко. Аэропорт Схипхол находится в 13 км.",
+    "country": 6,
+    "city": 13,
+    "stars": 4,
+    "address": "10 Lange Bogaardstraat, 2011 WT Харлем, Нидерланды",
+    "price_per_night": "160.00",
+    "created_at": "2025-11-13T22:34:46.093Z"
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 47,
+  "fields": {
+    "name": "Haarlem Apart Hotel",
+    "description": "Haarlem Apart Hotel — это апарт-отель в городе Харлем, расположенный на расстоянии 16 км и 20 км соответственно от следующих достопримечательностей: Парк цветов Кекенхоф и Дом-музей Анны Франк. Гостям предоставляется бесплатный Wi-Fi, а из окон открывается вид на город.\r\n\r\nВ каждой единице размещения есть собственная ванная комната и душ, а также установлены кондиционер, холодильник и телевизор с плоским экраном. В некоторых единицах размещения обустроена мини-кухня с духовкой, микроволновой печью и плитой.\r\n\r\nHaarlem Apart Hotel располагается на расстоянии 23 км и 24 км соответственно от таких достопримечательностей, как Парк Вондела и Музей Ван Гога. Аэропорт Схипхол находится в 13 км.",
+    "country": 6,
+    "city": 13,
+    "stars": 3,
+    "address": "Grote Houtstraat 24, 2011 SN Харлем, Нидерланды",
+    "price_per_night": "140.00",
+    "created_at": "2025-11-13T22:35:51.274Z"
+  }
+}
+]
