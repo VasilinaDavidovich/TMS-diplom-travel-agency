@@ -15,7 +15,7 @@ python manage.py migrate
 echo "Checking if database is empty..."
 if python manage.py shell -c "from hotels.models import Hotel; print('Database has data' if Hotel.objects.exists() else 'Database is empty')" | grep -q "Database is empty"; then
     echo "Loading fixtures..."
-    python manage.py loaddata countries.json cities.json users.json hotels.json hotel_images.json reviews.json bookings.json favorites.json
+    python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/users.json fixtures/hotels.json fixtures/hotel_images.json fixtures/reviews.json fixtures/bookings.json fixtures/favorites.json
 else
     echo "Database already has data, skipping fixtures"
 fi
