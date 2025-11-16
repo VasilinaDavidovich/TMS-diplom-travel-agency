@@ -1,8 +1,6 @@
-from rest_framework import generics, permissions, status
+from rest_framework import generics, permissions, viewsets
 from django.db.models import Q, Avg
 from typing import Any
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.response import Response
 
 from ..models import Hotel, Country, City, Review, Booking, Favorite
 
@@ -49,7 +47,7 @@ class HotelListView(generics.ListAPIView):
         if max_price:
             queryset = queryset.filter(price_per_night__lte=max_price)
 
-        # Поиск по названию и городу
+        # Поиск по названию и городу - ИСПОЛЬЗУЕТ Q!
         search = self.request.query_params.get('search')
         if search:
             queryset = queryset.filter(
@@ -58,7 +56,7 @@ class HotelListView(generics.ListAPIView):
                 Q(city__name__iexact=search)
             )
 
-        # Сортировка
+        # Сортировка - ИСПОЛЬЗУЕТ Avg!
         sort_by = self.request.query_params.get('sort_by')
         if sort_by == 'price_asc':
             queryset = queryset.order_by('price_per_night')
@@ -83,21 +81,41 @@ class HotelDetailView(generics.RetrieveAPIView):
     permission_classes = [permissions.AllowAny]
 
 
-# создание отзыва
-class ReviewCreateView(generics.CreateAPIView):
-    queryset = Review.objects.all()
+# ViewSet для отзывов
+class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        # Фильтр по пользователю: /reviews/?user=username
+        username = self.request.query_params.get('user')
+        if username:
+            return Review.objects.filter(user__username=username).select_related('hotel', 'user')
+
+        return Review.objects.all().select_related('hotel', 'user')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
 
-# создание бронирования
-class BookingCreateView(generics.CreateAPIView):
-    queryset = Booking.objects.all()
-    serializer_class = BookingCreateSerializer
+# ViewSet для бронирований
+class BookingViewSet(viewsets.ModelViewSet):
+    serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        # Фильтр по пользователю: /bookings/?user=username
+        username = self.request.query_params.get('user')
+        if username:
+            return Booking.objects.filter(user__username=username).select_related('hotel', 'user')
+
+        # По умолчанию - бронирования текущего пользователя
+        return Booking.objects.filter(user=self.request.user).select_related('hotel', 'user')
+
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return BookingCreateSerializer
+        return BookingSerializer
 
     def perform_create(self, serializer):
         hotel = serializer.validated_data['hotel']
@@ -106,15 +124,6 @@ class BookingCreateView(generics.CreateAPIView):
         nights = (check_out - check_in).days
         total_price = hotel.price_per_night * nights
         serializer.save(user=self.request.user, total_price=total_price)
-
-
-# список бронирований пользователя
-class UserBookingsView(generics.ListAPIView):
-    serializer_class = BookingSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user).select_related('hotel')
 
 
 # список стран
@@ -137,20 +146,19 @@ class CityListView(generics.ListAPIView):
         return queryset
 
 
-# Список избранных отелей (для личного кабинета)
-class FavoriteListView(generics.ListAPIView):
+# ViewSet для избранного
+class FavoriteViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return Favorite.objects.filter(user=self.request.user).select_related('hotel')
+        # Фильтр по пользователю: /favorites/?user=username
+        username = self.request.query_params.get('user')
+        if username:
+            return Favorite.objects.filter(user__username=username).select_related('hotel', 'user')
 
-
-# Добавить отель в избранное
-class FavoriteCreateView(generics.CreateAPIView):
-    queryset = Favorite.objects.all()
-    serializer_class = FavoriteSerializer
-    permission_classes = [permissions.IsAuthenticated]
+        # По умолчанию - избранное текущего пользователя
+        return Favorite.objects.filter(user=self.request.user).select_related('hotel', 'user')
 
     def perform_create(self, serializer):
         hotel_id = self.request.data.get('hotel')
@@ -159,39 +167,3 @@ class FavoriteCreateView(generics.CreateAPIView):
             from rest_framework import serializers
             raise serializers.ValidationError("Отель уже в избранном")
         serializer.save(user=self.request.user, hotel=hotel)
-
-
-# Удалить из избранного
-class FavoriteDeleteView(generics.DestroyAPIView):
-    serializer_class = FavoriteSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return Favorite.objects.filter(user=self.request.user)
-
-
-# Список отзывов пользователя
-class UserReviewsView(generics.ListAPIView):
-    serializer_class = ReviewSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return Review.objects.filter(user=self.request.user).select_related('hotel')
-
-
-# Удаление отзыва
-@api_view(['DELETE'])
-@permission_classes([permissions.IsAuthenticated])
-def delete_review(request, review_id):
-    try:
-        review = Review.objects.get(id=review_id, user=request.user)
-        review.delete()
-        return Response(
-            {"message": "Отзыв успешно удален"},
-            status=status.HTTP_200_OK
-        )
-    except Review.DoesNotExist:
-        return Response(
-            {"error": "Отзыв не найден или у вас нет прав для его удаления"},
-            status=status.HTTP_404_NOT_FOUND
-        )

@@ -23,11 +23,15 @@ services:
       - POSTGRES_DB=hoteldb
       - POSTGRES_USER=hoteluser
       - POSTGRES_PASSWORD=hotelpassword
+      - POSTGRES_HOST_AUTH_METHOD=scram-sha-256
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U hoteluser -d hoteldb"]
       interval: 5s
       timeout: 5s
       retries: 5
+    ports:
+      - "5432:5432"
 
 volumes:
   postgres_data:

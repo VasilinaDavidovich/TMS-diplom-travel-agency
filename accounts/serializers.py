@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from .models import CustomUser
 from django.contrib.auth.password_validation import validate_password
 from typing import Any, Dict
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = CustomUser
         fields = ('id', 'username', 'email', 'first_name', 'last_name')
 
 
@@ -18,7 +18,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(write_only=True)
 
     class Meta:
-        model = User
+        model = CustomUser
         fields = (
             'username',
             'email',
@@ -35,17 +35,17 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             })
         return attrs
 
-    def create(self, validated_data: Dict[str, Any]) -> User:
+    def create(self, validated_data: Dict[str, Any]) -> CustomUser:
         validated_data.pop('password2')
-        user = User.objects.create_user(**validated_data)
+        user = CustomUser.objects.create_user(**validated_data)
         return user
 
     def validate_email(self, value):
-        if User.objects.filter(email=value).exists():
+        if CustomUser.objects.filter(email=value).exists():
             raise serializers.ValidationError("Пользователь с таким email уже существует")
         return value
 
     def validate_username(self, value):
-        if User.objects.filter(username=value).exists():
+        if CustomUser.objects.filter(username=value).exists():
             raise serializers.ValidationError("Пользователь с таким именем уже существует")
         return value

@@ -8,7 +8,7 @@ class CountrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Country
-        fields = '__all__'
+        fields = ('id', 'name')
 
 
 class CitySerializer(serializers.ModelSerializer):
@@ -20,7 +20,7 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = '__all__'
+        fields = ('id', 'name', 'country', 'country_name')
 
 
 class HotelImageSerializer(serializers.ModelSerializer):
@@ -126,7 +126,23 @@ class HotelDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Hotel
-        fields = '__all__'
+        fields = (
+            'id',
+            'name',
+            'description',
+            'country',
+            'country_name',
+            'city',
+            'city_name',
+            'stars',
+            'address',
+            'price_per_night',
+            'created_at',
+            'images',
+            'reviews',
+            'average_rating',
+            'review_count'
+        )
 
 
 class BookingSerializer(serializers.ModelSerializer):
@@ -142,7 +158,18 @@ class BookingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = (
+            'id',
+            'hotel',
+            'hotel_name',
+            'user',
+            'user_name',
+            'check_in',
+            'check_out',
+            'guests',
+            'total_price',
+            'created_at'
+        )
         read_only_fields = ('user', 'total_price', 'created_at')
 
 
@@ -197,4 +224,4 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
     def get_hotel_image(self, obj):
         first_image = obj.hotel.images.first()
-        return first_image.image.url if first_image else None
+        return first_image.image.url if first_image and first_image.image else None

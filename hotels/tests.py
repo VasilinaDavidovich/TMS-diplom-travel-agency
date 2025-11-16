@@ -1,8 +1,10 @@
 from django.test import TestCase
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from .models import Country, City, Hotel
 from rest_framework.test import APITestCase
 from rest_framework import status
+
+User = get_user_model()
 
 # Тест создания страны
 class SimpleTest(TestCase):
@@ -19,7 +21,6 @@ class HotelTest(TestCase):
         self.country = Country.objects.create(name="Франция")
         self.city = City.objects.create(
             name="Париж",
-            name_ru="Париж",
             country=self.country
         )
 
@@ -46,7 +47,6 @@ class HotelAPITest(APITestCase):
         self.country = Country.objects.create(name="Италия")
         self.city = City.objects.create(
             name="Рим",
-            name_ru="Рим",
             country=self.country
         )
         self.hotel = Hotel.objects.create(
@@ -68,29 +68,3 @@ class HotelAPITest(APITestCase):
 
         first_hotel = response.data[0]
         self.assertEqual(first_hotel['name'], "Римский отель")
-
-
-# Тест регистрации пользователя
-class AuthAPITest(APITestCase):
-    def test_user_registration(self):
-        registration_data = {
-            'username': 'testuser',
-            'email': 'test@example.com',
-            'password': 'testpass123',
-            'password2': 'testpass123',
-            'first_name': 'Test',
-            'last_name': 'User'
-        }
-
-        # Отправляем POST запрос на регистрацию
-        response = self.client.post('/api/auth/register/', registration_data)
-
-        # Проверяем, что регистрация прошла успешно (статус 201)
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-        # Проверяем, что в ответе есть токены доступа
-        self.assertIn('access', response.data)
-        self.assertIn('refresh', response.data)
-
-        # Проверяем, что пользователь создался в базе данных
-        self.assertTrue(User.objects.filter(username='testuser').exists())

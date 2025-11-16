@@ -165,6 +165,44 @@
     </div>
 
     <script>
+        // Утилитарная функция для безопасных запросов
+        async function safeFetch(url, options = {}) {
+            try {
+                const response = await fetch(url, options);
+
+                // Проверяем Content-Type ответа
+                const contentType = response.headers.get('content-type');
+
+                if (!contentType || !contentType.includes('application/json')) {
+                    // Логируем для разработки, но не показываем пользователю
+                    console.warn('Сервер вернул не JSON ответ для URL:', url);
+
+                    // Пользователю - общее сообщение
+                    if (response.status >= 500) {
+                        throw new Error('Ошибка сервера. Пожалуйста, попробуйте позже.');
+                    } else {
+                        throw new Error('Произошла ошибка при обработке запроса.');
+                    }
+                }
+
+                const result = await response.json();
+                return { success: true, response, data: result };
+            } catch (error) {
+                console.error('Ошибка fetch для URL:', url, error);
+
+                // Упрощенные сообщения для пользователя
+                let userMessage = 'Произошла ошибка сети. Проверьте подключение.';
+                if (error.message.includes('сервер') || error.message.includes('Ошибка сервера')) {
+                    userMessage = 'Ошибка сервера. Пожалуйста, попробуйте позже.';
+                }
+
+                return {
+                    success: false,
+                    error: userMessage
+                };
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Проверяем авторизацию при загрузке
             checkAuthStatus();
@@ -220,42 +258,39 @@
 
                     console.log('Отправляемые данные:', data);
 
-                    try {
-                        const response = await fetch('/api/auth/api/register/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json',
-                            },
-                            body: JSON.stringify(data)
-                        });
+                    const result = await safeFetch('/api/auth/api/register/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
 
-                        console.log('Статус:', response.status);
-                        console.log('Заголовки:', response.headers);
-
-                        const responseText = await response.text();
-                        console.log('Ответ:', responseText);
-
-                        // Пробуем распарсить как JSON
-                        try {
-                            const result = JSON.parse(responseText);
-                            if (response.ok) {
-                                alert('✅ Регистрация успешна! Теперь вы можете войти.');
-                                // Переключаемся на форму входа
-                                registerForm.style.display = 'none';
-                                loginForm.style.display = 'block';
-                                // Очищаем форму
-                                registerForm.reset();
+                    if (result.success) {
+                        if (result.response.ok) {
+                            alert('✅ Регистрация успешна! Теперь вы можете войти.');
+                            // Переключаемся на форму входа
+                            registerForm.style.display = 'none';
+                            loginForm.style.display = 'block';
+                            // Очищаем форму
+                            registerForm.reset();
+                        } else {
+                            // Упрощенные сообщения об ошибках
+                            if (result.data.username) {
+                                alert('❌ Ошибка: ' + result.data.username[0]);
+                            } else if (result.data.email) {
+                                alert('❌ Ошибка: ' + result.data.email[0]);
+                            } else if (result.data.password) {
+                                alert('❌ Ошибка: ' + result.data.password[0]);
+                            } else if (result.data.non_field_errors) {
+                                alert('❌ Ошибка: ' + result.data.non_field_errors[0]);
                             } else {
-                                alert('❌ Ошибка: ' + JSON.stringify(result));
+                                alert('❌ Произошла ошибка при регистрации.');
                             }
-                        } catch (e) {
-                            console.error('Не JSON ответ:', responseText);
-                            alert('❌ Сервер вернул HTML вместо JSON');
                         }
-                    } catch (error) {
-                        console.error('Ошибка сети:', error);
-                        alert('❌ Ошибка сети: ' + error.message);
+                    } else {
+                        alert('❌ ' + result.error);
                     }
                 });
             }
@@ -274,36 +309,34 @@
 
                     console.log('Данные для входа:', data);
 
-                    try {
-                        const response = await fetch('/api/auth/api/login/', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(data)
-                        });
+                    const result = await safeFetch('/api/auth/api/login/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
 
-                        console.log('Статус ответа входа:', response.status);
-
-                        const result = await response.json();
-                        console.log('Ответ сервера входа:', result);
-
-                        if (response.ok) {
+                    if (result.success) {
+                        if (result.response.ok) {
                             alert('✅ Вход успешен!');
                             // Сохраняем токен в localStorage
-                            localStorage.setItem('access_token', result.access);
-                            localStorage.setItem('refresh_token', result.refresh);
+                            localStorage.setItem('access_token', result.data.access);
+                            localStorage.setItem('refresh_token', result.data.refresh);
                             // Закрываем модальное окно
                             const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
                             modal.hide();
                             // Обновляем интерфейс
                             updateAuthUI();
                         } else {
-                            alert('❌ Ошибка входа: ' + JSON.stringify(result));
+                            if (result.data.error) {
+                                alert('❌ Ошибка входа: ' + result.data.error);
+                            } else {
+                                alert('❌ Ошибка входа. Проверьте данные.');
+                            }
                         }
-                    } catch (error) {
-                        console.error('Ошибка сети при входе:', error);
-                        alert('❌ Ошибка сети: ' + error.message);
+                    } else {
+                        alert('❌ ' + result.error);
                     }
                 });
             }
