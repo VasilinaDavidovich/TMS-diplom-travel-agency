@@ -62,3 +62,5 @@ htmlcov/
 *_data.json
 *_data_*.json
 backup.json
+# Database backups
+backup.sql
