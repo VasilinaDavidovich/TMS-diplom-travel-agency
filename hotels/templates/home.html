@@ -36,7 +36,7 @@
 <div class="card bg-dark text-white mb-5">
     <div class="card-body">
         <h4 class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7)">🔍 Найти идеальный отель</h4>
-        <form id="searchForm" method="get" action="/api/search/">
+        <form id="searchForm" method="get" action="/search/">
             <div class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
@@ -100,7 +100,7 @@
 
 <div class="row mb-5">
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Вена" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Вена" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
@@ -112,7 +112,7 @@
         </a>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Прага" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Прага" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
@@ -124,7 +124,7 @@
         </a>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Будапешт" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Будапешт" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://images.unsplash.com/photo-1551867633-194f125bddfa?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
@@ -136,7 +136,7 @@
         </a>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Милан" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Милан" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://unsplash.com/photos/5QrM3dEf5mA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzYyNTUyNTg4fA&force=true"
@@ -148,7 +148,7 @@
         </a>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Амстердам" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Амстердам" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&w=400&h=250&fit=crop"
@@ -160,7 +160,7 @@
         </a>
     </div>
     <div class="col-md-2 mb-3">
-        <a href="/api/search/?search=Гальштатт" style="text-decoration: none; color: inherit;">
+        <a href="/search/?search=Гальштатт" style="text-decoration: none; color: inherit;">
             <div class="destination-card text-center"
                  style="cursor: pointer;">
                 <img src="https://unsplash.com/photos/BAoag1m197E/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8aGFsc3RhdHR8ZW58MHx8fHwxNzYyNTUxOTQwfDA&force=true"
@@ -232,7 +232,7 @@
                         <strong class="text-warning">
                             {{ hotel.price_per_night }}€ / ночь
                         </strong>
-                        <a href="/api/hotel/{{ hotel.id }}/" class="btn btn-primary btn-sm">
+                        <a href="/hotel/{{ hotel.id }}/" class="btn btn-primary btn-sm">
                             Подробнее
                         </a>
                     </div>
@@ -244,7 +244,7 @@
 </div>
 
 <div class="text-center mt-4">
-    <a href="/api/search/" class="btn btn-primary btn-lg">
+    <a href="/search/" class="btn btn-primary btn-lg">
         Показать все отели
     </a>
 </div>
@@ -280,7 +280,7 @@
         });
 
         document.getElementById('searchForm').addEventListener('submit', function(e) {
-            // Форма отправится автоматически благодаря method="get" и action="/api/search/"
+            // Форма отправится автоматически благодаря method="get" и action="/search/"
         });
     }
 

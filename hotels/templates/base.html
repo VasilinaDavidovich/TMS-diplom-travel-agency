@@ -79,7 +79,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/api/">
+            <a class="navbar-brand fw-bold" href="/">
                 🚀 Star Travel
             </a>
 
@@ -94,7 +94,7 @@
 
             <div class="navbar-nav">
                 <a class="nav-link" href="/">Главная</a>
-                <a class="nav-link" href="/api/search/">Отели</a>
+                <a class="nav-link" href="/search/">Отели</a>
                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</a>
             </div>
         </div>
@@ -176,7 +176,7 @@
                     if (e.key === 'Enter') {
                         const searchTerm = this.value.trim();
                         if (searchTerm) {
-                            window.location.href = `/api/search/?search=${encodeURIComponent(searchTerm)}`;
+                            window.location.href = `/search/?search=${encodeURIComponent(searchTerm)}`;
                         }
                     }
                 });
@@ -221,7 +221,7 @@
                     console.log('Отправляемые данные:', data);
 
                     try {
-                        const response = await fetch('/api/auth/register/', {
+                        const response = await fetch('/api/auth/api/register/', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -275,7 +275,7 @@
                     console.log('Данные для входа:', data);
 
                     try {
-                        const response = await fetch('/api/auth/login/', {
+                        const response = await fetch('/api/auth/api/login/', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

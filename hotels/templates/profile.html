@@ -130,7 +130,7 @@ function logout() {
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
         alert('Вы вышли из системы');
-        window.location.href = '/api/';
+        window.location.href = '/';
     }
 }
 
@@ -153,13 +153,13 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadUserData() {
     const token = localStorage.getItem('access_token');
     if (!token) {
-        window.location.href = '/api/';
+        window.location.href = '/';
         return;
     }
 
     try {
         // Загружаем информацию о пользователе
-        const userResponse = await fetch('/api/auth/current-user/', {
+        const userResponse = await fetch('/api/auth/api/current-user/', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -224,7 +224,7 @@ function displayBookings(bookings) {
         container.innerHTML = `
             <div class="text-center py-4">
                 <p class="text-muted">🎯 Начните планировать свое путешествие!</p>
-                <a href="/api/" class="btn btn-primary">Найти отели</a>
+                <a href="/" class="btn btn-primary">Найти отели</a>
             </div>
         `;
         return;
@@ -295,7 +295,7 @@ function displayFavorites(favorites) {
         container.innerHTML = `
             <div class="text-center py-4">
                 <p class="text-muted">❤️ Добавляйте отели в избранное, чтобы не потерять!</p>
-                <a href="/api/" class="btn btn-primary">Найти отели</a>
+                <a href="/" class="btn btn-primary">Найти отели</a>
             </div>
         `;
         return;
@@ -317,7 +317,7 @@ function displayFavorites(favorites) {
                     </div>
                     <div class="col-md-4 text-end">
                         <div class="mb-2">
-                            <a href="/api/hotel/${fav.hotel}/" class="btn btn-primary btn-sm me-2">Подробнее</a>
+                            <a href="/hotel/${fav.hotel}/" class="btn btn-primary btn-sm me-2">Подробнее</a>
                             <button class="btn btn-outline-danger btn-sm" onclick="removeFromFavorites(${fav.id})">
                                 Удалить
                             </button>
@@ -369,7 +369,7 @@ function displayUserReviews(reviews) {
         container.innerHTML = `
             <div class="text-center py-4">
                 <p class="text-muted">💬 Поделитесь своим мнением об отелях!</p>
-                <a href="/api/" class="btn btn-primary">Найти отели</a>
+                <a href="/" class="btn btn-primary">Найти отели</a>
             </div>
         `;
         return;
@@ -398,7 +398,7 @@ function displayUserReviews(reviews) {
                             <span class="rating-value">${review.rating}/5</span>
                         </div>
                         <div class="mb-2">
-                            <a href="/api/hotel/${review.hotel}/"
+                            <a href="/hotel/${review.hotel}/"
                                class="btn btn-primary btn-sm me-2">
                                 К отелю
                             </a>
@@ -481,7 +481,7 @@ async function deleteAccount() {
     const token = localStorage.getItem('access_token');
 
     try {
-        const response = await fetch('/api/auth/delete-account/', {
+        const response = await fetch('/api/auth/api/delete-account/', {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -493,7 +493,7 @@ async function deleteAccount() {
             alert('✅ Аккаунт успешно удален');
             localStorage.removeItem('access_token');
             localStorage.removeItem('refresh_token');
-            window.location.href = '/api/';
+            window.location.href = '/';
         } else {
             const error = await response.json();
             alert('❌ Ошибка: ' + JSON.stringify(error));

@@ -14,7 +14,7 @@
             <div class="card bg-dark text-white">
                 <div class="card-body">
                     <h5 style="color: rgba(255, 255, 255, 0.7)">Уточните поиск</h5>
-                    <form id="searchForm" method="get" action="/api/search/">
+                    <form id="searchForm" method="get" action="/search/">
                         <div class="row g-3">
                             <div class="col-md-3">
                                 <label class="form-label" style="color: rgba(255, 255, 255, 0.7)">Страна</label>
@@ -88,7 +88,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         🔍 Обновить поиск
                                     </button>
-                                    <a href="/api/" class="btn btn-outline-secondary">
+                                    <a href="/" class="btn btn-outline-secondary">
                                         ← На главную
                                     </a>
                                 </div>
@@ -220,7 +220,7 @@
                                 <strong class="text-warning">
                                     ${hotel.price_per_night}€ / ночь
                                 </strong>
-                                <a href="/api/hotel/${hotel.id}/" class="btn btn-primary btn-sm">
+                                <a href="/hotel/${hotel.id}/" class="btn btn-primary btn-sm">
                                     Подробнее
                                 </a>
                             </div>
