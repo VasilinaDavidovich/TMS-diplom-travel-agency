@@ -29,6 +29,7 @@ RUN pip install -r requirements.txt
 
 # Копируем весь проект
 COPY . .
+RUN chmod +x entrypoint.sh
 
 # Создаем папки для статических файлов и медиа
 RUN mkdir -p /app/static
@@ -37,8 +38,5 @@ RUN mkdir -p /app/media
 # Открываем порт 8000
 EXPOSE 8000
 
-# Создаем скрипт для запуска (вместо прямой команды)
-COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
