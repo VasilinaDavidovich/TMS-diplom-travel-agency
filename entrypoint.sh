@@ -8,6 +8,11 @@ done
 echo "Database started"
 
 echo "Applying migrations..."
+# Сначала базовые миграции
+python manage.py migrate contenttypes
+python manage.py migrate auth
+python manage.py migrate accounts
+# Затем все остальные
 python manage.py migrate
 
 echo "Loading fixtures..."
