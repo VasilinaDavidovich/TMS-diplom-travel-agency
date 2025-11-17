@@ -4,7 +4,7 @@ from typing import Any
 
 from ..models import Hotel, Country, City, Review, Booking, Favorite
 
-from ..serializers import (
+from .serializers import (
     HotelListSerializer,
     HotelDetailSerializer,
     ReviewSerializer,
@@ -15,62 +15,49 @@ from ..serializers import (
     FavoriteSerializer,
 )
 
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter
+from .filters import HotelFilter
 
 # список отелей с фильтрацией
 class HotelListView(generics.ListAPIView):
     serializer_class = HotelListSerializer
     permission_classes = [permissions.AllowAny]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = HotelFilter
 
     def get_queryset(self) -> Any:
-        queryset = Hotel.objects.all()
+        queryset = Hotel.objects.select_related('country', 'city').prefetch_related('images', 'reviews')
+        return queryset
+    
+    def filter_queryset(self, queryset):
 
-        # Фильтр по странам
-        country = self.request.query_params.get('country')
-        if country:
-            queryset = queryset.filter(country_id=country)
-
-        # Фильтр по городам
-        city = self.request.query_params.get('city')
-        if city:
-            queryset = queryset.filter(city_id=city)
-
-        # Фильтр по количеству звезд
-        stars = self.request.query_params.get('stars')
-        if stars:
-            queryset = queryset.filter(stars=stars)
-
-        # Фильтр по стоимости
-        min_price = self.request.query_params.get('min_price')
-        max_price = self.request.query_params.get('max_price')
-        if min_price:
-            queryset = queryset.filter(price_per_night__gte=min_price)
-        if max_price:
-            queryset = queryset.filter(price_per_night__lte=max_price)
-
-        # Поиск по названию и городу - ИСПОЛЬЗУЕТ Q!
-        search = self.request.query_params.get('search')
-        if search:
-            queryset = queryset.filter(
-                Q(name__icontains=search) |
-                Q(description__icontains=search) |
-                Q(city__name__iexact=search)
-            )
-
-        # Сортировка - ИСПОЛЬЗУЕТ Avg!
+        # Сначала применяем фильтры (DjangoFilterBackend)
+        queryset = super().filter_queryset(queryset)
+        
+        # Затем применяем сортировку
+        ordering = self.request.query_params.get('ordering')
         sort_by = self.request.query_params.get('sort_by')
-        if sort_by == 'price_asc':
-            queryset = queryset.order_by('price_per_night')
-        elif sort_by == 'price_desc':
-            queryset = queryset.order_by('-price_per_night')
-        elif sort_by == 'stars_asc':
-            queryset = queryset.order_by('stars')
-        elif sort_by == 'stars_desc':
-            queryset = queryset.order_by('-stars')
-        elif sort_by == 'rating_desc':
+        
+        # Сортировка по рейтингу (требует аннотацию)
+        if sort_by == 'rating_desc':
             queryset = queryset.annotate(
                 avg_rating=Avg('reviews__rating')
             ).order_by('-avg_rating', 'name')
-
+        # Сортировка по цене
+        elif ordering == 'price_per_night':
+            queryset = queryset.order_by('price_per_night', 'id')
+        elif ordering == '-price_per_night':
+            queryset = queryset.order_by('-price_per_night', 'id')
+        # Сортировка по звездам
+        elif ordering == 'stars':
+            queryset = queryset.order_by('stars', 'id')
+        elif ordering == '-stars':
+            queryset = queryset.order_by('-stars', 'id')
+        # Сортировка по умолчанию (если нет параметров)
+        else:
+            queryset = queryset.order_by('id')
+        
         return queryset
 
 
@@ -85,6 +72,7 @@ class HotelDetailView(generics.RetrieveAPIView):
 class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    pagination_class = None  # Отключаем пагинацию для личного кабинета
 
     def get_queryset(self):
         # Фильтр по пользователю: /reviews/?user=username
@@ -102,6 +90,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = None  # Отключаем пагинацию для личного кабинета
 
     def get_queryset(self):
         # Фильтр по пользователю: /bookings/?user=username
@@ -131,12 +120,14 @@ class CountryListView(generics.ListAPIView):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
     permission_classes = [permissions.AllowAny]
+    pagination_class = None
 
 
 # список городов с фильтрацией
 class CityListView(generics.ListAPIView):
     serializer_class = CitySerializer
     permission_classes = [permissions.AllowAny]
+    pagination_class = None
 
     def get_queryset(self) -> Any:
         queryset = City.objects.all()
@@ -150,6 +141,7 @@ class CityListView(generics.ListAPIView):
 class FavoriteViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteSerializer
     permission_classes = [permissions.IsAuthenticated]
+    pagination_class = None  # Отключаем пагинацию для личного кабинета
 
     def get_queryset(self):
         # Фильтр по пользователю: /favorites/?user=username

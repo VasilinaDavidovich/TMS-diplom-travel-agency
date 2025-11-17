@@ -69,7 +69,7 @@
                                         </h6>
                                     </div>
                                     <div class="col-md-8">
-                                        <select class="form-select" id="sortSelect" name="sort_by" onchange="this.form.submit()">
+                                        <select class="form-select" id="sortSelect" name="sort_by">
                                             <option value="name">По умолчанию</option>
                                             <option value="price_asc">💰 Цена (по возрастанию)</option>
                                             <option value="price_desc">💰 Цена (по убыванию)</option>
@@ -106,6 +106,11 @@
                 <span class="visually-hidden">Загрузка...</span>
             </div>
         </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="row mt-4" id="paginationContainer">
+        <!-- Кнопки пагинации появятся здесь -->
     </div>
 </div>
 
@@ -282,29 +287,167 @@
             maxPrice.value = urlParams.get('max_price');
         }
 
-        if (urlParams.get('sort_by')) {
-            sortSelect.value = urlParams.get('sort_by');
+        // Восстанавливаем sort_by из ordering или sort_by
+        const ordering = urlParams.get('ordering');
+        const sortBy = urlParams.get('sort_by');
+        
+        if (ordering) {
+            // Преобразуем ordering обратно в sort_by для формы
+            const orderingToSortBy = {
+                'price_per_night': 'price_asc',
+                '-price_per_night': 'price_desc',
+                'stars': 'stars_asc',
+                '-stars': 'stars_desc'
+            };
+            if (orderingToSortBy[ordering]) {
+                sortSelect.value = orderingToSortBy[ordering];
+            }
+        } else if (sortBy) {
+            sortSelect.value = sortBy;
         }
     }
 
-    // Загрузка отелей при открытии страницы
-    async function loadInitialHotels() {
+    // Сохраняем данные пагинации глобально
+let paginationData = null;
+
+// Загрузка отелей при открытии страницы
+    async function loadInitialHotels(pageUrl = null) {
         try {
-            // Убираем первый ? из window.location.search чтобы избежать ??
             const queryString = window.location.search.substring(1);
-            const response = await fetch(`/api/hotels/?${queryString}`);
-            const hotels = await response.json();
+            // Если передан URL страницы - используем его, иначе строим из queryString
+            const url = pageUrl || `/api/hotels/?${queryString}`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+
+            // Сохраняем данные пагинации
+            paginationData = {
+                count: data.count,
+                next: data.next,
+                previous: data.previous,
+                currentPage: getCurrentPageNumber(url)
+            };
+
+            // API возвращает объект с пагинацией
+            const hotels = data.results || data;
+
             displayHotels(hotels);
+            displayPagination(paginationData);
 
             const summary = document.getElementById('searchSummary');
             if (hotels.length === 0) {
                 summary.textContent = '😔 Отелей не найдено. Попробуйте изменить параметры поиска.';
             } else {
-                summary.textContent = `Найдено отелей: ${hotels.length}`;
+                const startItem = (paginationData.currentPage - 1) * 9 + 1;
+                const endItem = Math.min(startItem + hotels.length - 1, paginationData.count);
+                summary.textContent = `Найдено отелей: ${paginationData.count} (показано ${startItem}-${endItem})`;
             }
         } catch (error) {
             console.error('Ошибка загрузки отелей:', error);
         }
+    }
+
+    // Получить номер текущей страницы из URL
+    function getCurrentPageNumber(url) {
+        const urlParams = new URLSearchParams(url.split('?')[1] || '');
+        return parseInt(urlParams.get('page') || '1');
+    }
+
+    // Отображение кнопок пагинации
+    function displayPagination(pagination) {
+        const container = document.getElementById('paginationContainer');
+
+        if (!pagination || pagination.count <= 9) {
+            // Если отелей меньше 10, пагинация не нужна
+            container.innerHTML = '';
+            return;
+        }
+
+        const totalPages = Math.ceil(pagination.count / 9);
+        const currentPage = pagination.currentPage || 1;
+
+        let paginationHTML = '<div class="col-12"><nav aria-label="Навигация по страницам">';
+        paginationHTML += '<ul class="pagination justify-content-center">';
+
+        // Кнопка "Предыдущая"
+        if (pagination.previous) {
+            paginationHTML += `<li class="page-item">
+                <a class="page-link" href="#" onclick="loadPage('${pagination.previous}'); return false;">
+                    ← Предыдущая
+                </a>
+            </li>`;
+        } else {
+            paginationHTML += `<li class="page-item disabled">
+                <span class="page-link">← Предыдущая</span>
+            </li>`;
+        }
+
+        // Номера страниц (показываем текущую и соседние)
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+
+        if (startPage > 1) {
+            paginationHTML += `<li class="page-item">
+                <a class="page-link" href="#" onclick="loadPage(null, 1); return false;">1</a>
+            </li>`;
+            if (startPage > 2) {
+                paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            if (i === currentPage) {
+                paginationHTML += `<li class="page-item active">
+                    <span class="page-link">${i}</span>
+                </li>`;
+            } else {
+                paginationHTML += `<li class="page-item">
+                    <a class="page-link" href="#" onclick="loadPage(null, ${i}); return false;">${i}</a>
+                </li>`;
+            }
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
+            }
+            paginationHTML += `<li class="page-item">
+                <a class="page-link" href="#" onclick="loadPage(null, ${totalPages}); return false;">${totalPages}</a>
+            </li>`;
+        }
+
+        // Кнопка "Следующая"
+        if (pagination.next) {
+            paginationHTML += `<li class="page-item">
+                <a class="page-link" href="#" onclick="loadPage('${pagination.next}'); return false;">
+                    Следующая →
+                </a>
+            </li>`;
+        } else {
+            paginationHTML += `<li class="page-item disabled">
+                <span class="page-link">Следующая →</span>
+            </li>`;
+        }
+
+        paginationHTML += '</ul></nav></div>';
+        container.innerHTML = paginationHTML;
+    }
+
+    // Загрузка конкретной страницы
+    function loadPage(pageUrl, pageNumber = null) {
+        if (pageNumber) {
+            // Строим URL с номером страницы
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('page', pageNumber);
+            const queryString = urlParams.toString();
+            loadInitialHotels(`/api/hotels/?${queryString}`);
+        } else if (pageUrl) {
+            // Используем готовый URL из API
+            loadInitialHotels(pageUrl);
+        }
+
+        // Прокрутка вверх страницы
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Инициализация
@@ -314,6 +457,61 @@
             const countryId = this.value;
             loadCities(countryId);
         });
+
+        // Обработчик изменения сортировки - отправляем форму через наш обработчик
+        document.getElementById('sortSelect').addEventListener('change', function() {
+            document.getElementById('searchForm').dispatchEvent(new Event('submit'));
+        });
+
+        // Обработчик формы - сбрасываем страницу при новом поиске
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        // Предотвращаем стандартную отправку формы
+        e.preventDefault();
+
+        // Собираем данные из формы
+        const formData = new FormData(this);
+        const urlParams = new URLSearchParams();
+
+        // Преобразуем sort_by в ordering для DRF OrderingFilter
+        const sortBy = formData.get('sort_by');
+        const sortByToOrdering = {
+            'price_asc': 'price_per_night',
+            'price_desc': '-price_per_night',
+            'stars_asc': 'stars',
+            'stars_desc': '-stars',
+            'rating_desc': 'rating_desc'  // Обрабатывается отдельно в views.py
+        };
+
+        // Добавляем все поля формы в URL параметры
+        for (const [key, value] of formData.entries()) {
+            if (value) {  // Добавляем только непустые значения
+                if (key === 'sort_by') {
+                    // Преобразуем sort_by в ordering (кроме rating_desc)
+                    if (sortBy && sortBy !== 'name' && sortBy !== 'rating_desc') {
+                        urlParams.append('ordering', sortByToOrdering[value]);
+                    } else if (sortBy === 'rating_desc') {
+                        // rating_desc оставляем как sort_by для специальной обработки
+                        urlParams.append('sort_by', 'rating_desc');
+                    }
+                } else {
+                    urlParams.append(key, value);
+                }
+            }
+        }
+
+        // Убираем параметр page при новом поиске
+        urlParams.delete('page');
+
+        // Обновляем URL с новыми параметрами
+        const newUrl = '/search/?' + urlParams.toString();
+        window.history.pushState({}, '', newUrl);
+
+        // Обновляем значения формы из URL (чтобы они отобразились)
+        setFormValuesFromUrl();
+
+        // Загружаем отели с первой страницы с новыми фильтрами
+        loadInitialHotels();
+    });
 
         // Загрузка данных
         loadCountries().then(() => {

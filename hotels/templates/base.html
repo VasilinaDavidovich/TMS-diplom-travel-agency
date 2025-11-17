@@ -258,7 +258,7 @@
 
                     console.log('Отправляемые данные:', data);
 
-                    const result = await safeFetch('/api/auth/api/register/', {
+                    const result = await safeFetch('/api/auth/register/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -309,7 +309,7 @@
 
                     console.log('Данные для входа:', data);
 
-                    const result = await safeFetch('/api/auth/api/login/', {
+                    const result = await safeFetch('/api/auth/login/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

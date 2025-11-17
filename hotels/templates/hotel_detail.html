@@ -886,7 +886,7 @@
         if (!token) return;
 
         // Получаем текущего пользователя чтобы узнать username
-        const userResult = await safeFetch('/api/auth/api/current-user/', {
+        const userResult = await safeFetch('/api/auth/current-user/', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

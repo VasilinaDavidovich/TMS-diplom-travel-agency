@@ -12,7 +12,7 @@ urlpatterns: List[path] = [
     path('api/auth/', include('accounts.urls')),
 
     # API аутентификация
-    path('api/auth/api/', include('accounts.api.urls')),
+    path('api/auth/', include('accounts.api.urls')),
 
     # API отелей
     path('api/', include('hotels.api.urls')),

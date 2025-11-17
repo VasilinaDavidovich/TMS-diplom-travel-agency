@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.utils import timezone
 from typing import Any, Dict, Optional
-from .models import Country, City, Hotel, HotelImage, Review, Booking, Favorite
+from ..models import Country, City, Hotel, HotelImage, Review, Booking, Favorite
 
 
 class CountrySerializer(serializers.ModelSerializer):
