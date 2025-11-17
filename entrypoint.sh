@@ -7,18 +7,11 @@ while ! nc -z db 5432; do
 done
 echo "Database started"
 
-# Применяем миграции
 echo "Applying migrations..."
 python manage.py migrate
 
-# Загружаем фикстуры (если база пустая)
-echo "Checking if database is empty..."
-if python manage.py shell -c "from hotels.models import Hotel; print('Database has data' if Hotel.objects.exists() else 'Database is empty')" | grep -q "Database is empty"; then
-    echo "Loading fixtures..."
-    python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
-else
-    echo "Database already has data, skipping fixtures"
-fi
+echo "Loading fixtures..."
+python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
 
 # Собираем статические файлы
 echo "Collecting static files..."
