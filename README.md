@@ -35,23 +35,23 @@ git clone <url-репозитория>
 cd star-travel
 ```
 
-2. Настройте окружение:
-# Скопируйте пример настроек
-cp .env.example .env
-# Отредактируйте .env файл, указав свои настройки базы данных
-
-3. Запустите приложение:
+2. Запустите приложение:
 ```bash
-docker-compose up --build
+docker-compose up --build -d
 ```
 
-4. Приложение автоматически:
+3. Приложение автоматически:
 - ✅ Создаст базу данных PostgreSQL
 - ✅ Применит миграции
-- ✅ Загрузит демо-данные (страны, города, отели)
 - ✅ Запустит сервер
 
+4. Загрузите демо-данные (если база данных пустая):
+```bash
+docker-compose exec web python manage.py shell -c "from hotels.models import Hotel; from django.core.management import call_command; call_command('loaddata', 'fixtures/countries.json', 'fixtures/cities.json', 'fixtures/hotels.json', 'fixtures/hotel_images.json') if Hotel.objects.count() == 0 else print('База данных не пустая, fixtures не загружены')"
+```
+
 5. Приложение будет доступно по адресу: http://localhost:8000
+
 Демо-данные включают:
 - 🏨 15+ отелей в Европе
 - 🌍 5 стран (Австрия, Венгрия, Италия, Чехия, Нидерланды)
@@ -152,9 +152,9 @@ docker-compose exec web python manage.py test
 VTour/
 │─ accounts/              # Приложение аутентификации
 │   ├── api/              # API аутентификации
+│   │   ├── serializers.py # Сериализаторы пользователей
 │   │   ├── urls.py       # API маршруты аутентификации
 │   │   └── views.py      # API представления аутентификации
-│   ├── serializers.py    # Сериализаторы пользователей
 │   ├── urls.py           # Frontend маршруты аутентификации
 │   └── views.py          # Frontend представления аутентификации
 ├── backend/              # Настройки Django
@@ -165,12 +165,13 @@ VTour/
 │   └── ...
 ├── hotels/               # Приложение отелей
 │   ├── api/              # API отелей
+│   │   ├── filters.py    # Фильтры для API
+│   │   ├── serializers.py # Сериализаторы API
 │   │   ├── urls.py       # API маршруты отелей
 │   │   └── views.py      # API представления отелей
 │   ├── migrations/       # Миграции базы данных
 │   ├── templates/        # HTML шаблоны
 │   ├── models.py         # Модели данных
-│   ├── serializers.py    # Сериализаторы API 
 │   ├── tests.py          # Тесты
 │   ├── urls.py           # Frontend URL маршруты 
 │   └── views.py          # Frontend представления
@@ -196,12 +197,23 @@ python manage.py createsuperuser
 ```
 
 ### Работа с фикстурами
-```bash
-# Создание фикстур
-python manage.py dumpdata --indent 2 accounts.CustomUser > fixtures/users.json
-python manage.py dumpdata --indent 2 hotels > fixtures/hotels_data.json
 
-# Загрузка фикстур
+#### Загрузка фикстур (Docker)
+```bash
+# Загрузка всех фикстур (только если база данных пустая)
+docker-compose exec web python manage.py shell -c "from hotels.models import Hotel; from django.core.management import call_command; call_command('loaddata', 'fixtures/countries.json', 'fixtures/cities.json', 'fixtures/hotels.json', 'fixtures/hotel_images.json') if Hotel.objects.count() == 0 else print('База данных не пустая, fixtures не загружены')"
+
+# Или загрузка конкретных фикстур (без проверки)
+docker-compose exec web python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
+```
+
+#### Создание фикстур
+```bash
+# Создание фикстур (Docker)
+docker-compose exec web python manage.py dumpdata --indent 2 accounts.CustomUser > fixtures/users.json
+docker-compose exec web python manage.py dumpdata --indent 2 hotels > fixtures/hotels_data.json
+
+# Загрузка фикстур (без Docker)
 python manage.py loaddata fixtures/filename.json
 ```
 

@@ -4,19 +4,25 @@ services:
   web:
     build: .
     volumes:
-      - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
+      - ./fixtures:/app/fixtures
     ports:
       - "8000:8000"
     environment:
       - DEBUG=1
+      - SECRET_KEY=django-insecure-dev-key-change-in-production-12345
+      - DB_NAME=hoteldb
+      - DB_USER=hoteluser
+      - DB_PASSWORD=hotelpassword
+      - DB_HOST=db
+      - DB_PORT=5432
     depends_on:
       db:
         condition: service_healthy
 
   db:
-    image: postgres:13
+    image: postgres:16
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:

@@ -15,9 +15,6 @@ python manage.py migrate accounts
 # Затем все остальные
 python manage.py migrate
 
-echo "Loading fixtures..."
-python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
-
 # Собираем статические файлы
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
