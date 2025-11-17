@@ -27,9 +27,12 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# Копируем entrypoint.sh и даем права на выполнение
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
 # Копируем весь проект
 COPY . .
-RUN chmod +x entrypoint.sh
 
 # Создаем папки для статических файлов и медиа
 RUN mkdir -p /app/static
