@@ -9,11 +9,7 @@ echo "Database started"
 
 # Применяем миграции
 echo "Applying migrations..."
-# Применяем миграции в правильном порядке с обходом проблем зависимостей
-python manage.py migrate auth --fake-if-needed
-python manage.py migrate admin --fake-if-needed
-python manage.py migrate accounts --fake-if-needed
-python manage.py migrate --run-syncdb
+python manage.py migrate
 
 # Загружаем фикстуры (если база пустая)
 echo "Checking if database is empty..."
