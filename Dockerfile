@@ -27,12 +27,11 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Копируем entrypoint.sh и даем права на выполнение
-COPY entrypoint.sh .
-RUN chmod +x entrypoint.sh
-
 # Копируем весь проект
 COPY . .
+
+# Даем права на выполнение entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 # Создаем папки для статических файлов и медиа
 RUN mkdir -p /app/static
@@ -41,5 +40,5 @@ RUN mkdir -p /app/media
 # Открываем порт 8000
 EXPOSE 8000
 
-
-ENTRYPOINT ["./entrypoint.sh"]
+# Запускаем entrypoint через bash
+ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
