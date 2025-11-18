@@ -45,9 +45,9 @@ docker-compose up --build -d
 - ✅ Применит миграции
 - ✅ Запустит сервер
 
-4. Загрузите демо-данные (если база данных пустая):
+4. Загрузите демо-данные:
 ```bash
-docker-compose exec web python manage.py shell -c "from hotels.models import Hotel; from django.core.management import call_command; call_command('loaddata', 'fixtures/countries.json', 'fixtures/cities.json', 'fixtures/hotels.json', 'fixtures/hotel_images.json') if Hotel.objects.count() == 0 else print('База данных не пустая, fixtures не загружены')"
+docker-compose exec web python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
 ```
 
 5. Приложение будет доступно по адресу: http://localhost:8000
@@ -200,10 +200,7 @@ python manage.py createsuperuser
 
 #### Загрузка фикстур (Docker)
 ```bash
-# Загрузка всех фикстур (только если база данных пустая)
-docker-compose exec web python manage.py shell -c "from hotels.models import Hotel; from django.core.management import call_command; call_command('loaddata', 'fixtures/countries.json', 'fixtures/cities.json', 'fixtures/hotels.json', 'fixtures/hotel_images.json') if Hotel.objects.count() == 0 else print('База данных не пустая, fixtures не загружены')"
-
-# Или загрузка конкретных фикстур (без проверки)
+# Загрузка всех фикстур
 docker-compose exec web python manage.py loaddata fixtures/countries.json fixtures/cities.json fixtures/hotels.json fixtures/hotel_images.json
 ```
 
