@@ -5,7 +5,7 @@ services:
     build: .
     volumes:
       - static_volume:/app/static
-      - media_volume:/app/media
+      - ./media:/app/media
       - ./fixtures:/app/fixtures
     ports:
       - "8000:8000"
@@ -42,4 +42,3 @@ services:
 volumes:
   postgres_data:
   static_volume:
-  media_volume:
